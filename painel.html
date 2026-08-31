@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hoje — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=4" />
+<link rel="stylesheet" href="css/style.css?v=5" />
 </head>
 <body>
 <header class="topbar">
@@ -191,13 +191,26 @@
   <h2>Comunidades e materiais oficiais</h2>
   <p style="color:var(--text-dim)">Livros públicos do DECEA/ANAC, fóruns e bancos de questões selecionados.
   <a href="recursos.html">Ver recursos →</a></p>
+
+  <h2>Backup do progresso</h2>
+  <div class="card backup-card">
+    <p style="margin-top:0;">Seu streak, simulados, flashcards e cronograma ficam salvos só neste navegador. Se limpar os dados ou trocar de aparelho, tudo se perde — baixe um backup de vez em quando.</p>
+    <div class="field-row" style="align-items:center;">
+      <button onclick="exportProgress()">⬇ Baixar backup</button>
+      <label class="btn secondary" style="cursor:pointer; display:inline-flex; align-items:center;">
+        ⬆ Importar backup
+        <input type="file" accept="application/json" id="import-file" style="display:none" onchange="handleImportFile(this)" />
+      </label>
+      <span id="import-status" style="font-size:0.85rem; color:var(--text-dim);"></span>
+    </div>
+  </div>
 </main>
 
 <footer>Nimb · material de apoio não-oficial para estudo. Sempre confira a norma vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
 
-<script src="js/app.js?v=4"></script>
-<script src="js/palette.js?v=4"></script>
-<script src="js/srs.js?v=4"></script>
+<script src="js/app.js?v=5"></script>
+<script src="js/palette.js?v=5"></script>
+<script src="js/srs.js?v=5"></script>
 <script>
 renderCountdown("countdown");
 const input = document.getElementById("exam-date-input");
@@ -302,6 +315,23 @@ async function loadReadiness(flashAll) {
         <span class="readiness-pct">${pct}%</span>
       </div>`;
   }).join("");
+}
+
+function handleImportFile(input) {
+  const file = input.files[0];
+  const status = document.getElementById("import-status");
+  if (!file) return;
+  importProgressFile(file, (err) => {
+    if (err) {
+      status.style.color = "var(--danger)";
+      status.textContent = "Erro: " + err.message;
+    } else {
+      status.style.color = "var(--ok)";
+      status.textContent = "Importado! Recarregando...";
+      setTimeout(() => location.reload(), 900);
+    }
+  });
+  input.value = "";
 }
 
 (async function init() {

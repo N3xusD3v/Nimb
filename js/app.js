@@ -174,6 +174,47 @@ function selfCheck(btn, correct, feedbackText) {
   fb.classList.add("show");
 }
 
+// ---- Backup: export/import all progress as a downloadable JSON file ----
+// Everything lives in localStorage only (no server), so clearing browser data
+// or switching devices would otherwise wipe streak, SRS state, quiz history, etc.
+function exportProgress() {
+  const data = {};
+  Object.values(STORE_KEYS).forEach((key) => {
+    const raw = localStorage.getItem(key);
+    if (raw !== null) data[key] = raw;
+  });
+  const payload = { app: "nimb", version: 1, exportedAt: todayStr(), data };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `nimb-progresso-${todayStr()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importProgressFile(file, onDone) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const payload = JSON.parse(reader.result);
+      if (!payload || payload.app !== "nimb" || typeof payload.data !== "object") {
+        throw new Error("Este não parece ser um arquivo de backup do Nimb.");
+      }
+      Object.entries(payload.data).forEach(([key, raw]) => {
+        localStorage.setItem(key, raw);
+      });
+      onDone(null);
+    } catch (e) {
+      onDone(e);
+    }
+  };
+  reader.onerror = () => onDone(new Error("Falha ao ler o arquivo."));
+  reader.readAsText(file);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   highlightActiveNav();
 });
