@@ -8,7 +8,15 @@
 </head>
 <body>
 <header class="topbar">
-  <div class="brand">Nimb <span class="tag">IFRH · ANAC</span></div>
+  <div class="brand">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="2.5" y1="5" x2="21.5" y2="5"/><line x1="12" y1="5" x2="12" y2="7.3"/>
+      <path d="M7 7.3h6a3 3 0 0 1 3 3v1.7H7a3 3 0 0 1-3-3V7.3Z"/>
+      <path d="M9.5 15.3v-3.3"/><path d="M5.5 19h9"/>
+      <path d="M18 11.7v4.3l2.5 2.5"/>
+    </svg>
+    Nimb <span class="tag">IFRH · ANAC</span>
+  </div>
   <nav class="mainnav">
     <a href="index.html">Painel</a>
     <a href="regulamento.html">Regulamento</a>
@@ -26,9 +34,18 @@
   <p style="color:var(--text-dim)" id="stats-line">Carregando...</p>
   <div class="flash-card" id="flash-card" onclick="flipCard()">Carregando...</div>
   <div class="flash-actions" id="flash-actions" style="display:none">
-    <button class="secondary" onclick="grade(0)">😵 Errei</button>
-    <button class="secondary" onclick="grade(1)">🤔 Difícil</button>
-    <button onclick="grade(2)">✅ Fácil</button>
+    <button class="secondary" onclick="grade(0)">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9.5 9.5 5 5"/><path d="m14.5 9.5-5 5"/></svg>
+      Errei
+    </button>
+    <button class="secondary" onclick="grade(1)">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15h6"/><circle cx="9" cy="10" r="0.7" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="0.7" fill="currentColor" stroke="none"/></svg>
+      Difícil
+    </button>
+    <button onclick="grade(2)">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.5 2.5L16 9.3"/></svg>
+      Fácil
+    </button>
   </div>
 </main>
 <footer>Nimb · algoritmo de repetição espaçada simplificado (estilo SM-2).</footer>
