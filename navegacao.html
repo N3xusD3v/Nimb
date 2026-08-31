@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Navegação — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=3" />
+<link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
 <header class="topbar">
@@ -24,6 +24,10 @@
     <a href="plano.html">Plano 15 dias</a>
     <a href="recursos.html">Recursos</a>
   </nav>
+    <button class="cmdk-trigger" onclick="openPalette()" type="button">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      Buscar <kbd>Ctrl K</kbd>
+    </button>
 </header>
 <main>
   <h1>Navegação — Prova NAV (20 questões, 100 min)</h1>
@@ -45,6 +49,16 @@ GS = TAS × cos(WCA) − WS × cos A</div>
     <li><strong>FROM:</strong> a estação está atrás (a radial selecionada afasta da estação).</li>
     <li>Interceptação de radial: ângulos de 30° a 90° são os mais usados — quanto maior o ângulo, mais rápida a interceptação, exigindo mais atenção ao CDI.</li>
   </ul>
+
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: o CDI mostra "FROM" com a agulha centrada. O que isso indica sobre a posição da aeronave?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, false, 'Errado — TO indicaria que a estação está à frente; aqui o indicador mostra FROM.')">Está se aproximando da estação nessa radial</button>
+      <button onclick="selfCheck(this, true, 'FROM indica que a radial selecionada leva para longe da estação — ela está atrás.')">Está se afastando da estação nessa radial</button>
+      <button onclick="selfCheck(this, false, 'Sobrevoar a estação causa uma reversão momentânea da agulha (station passage), não um FROM estável.')">Está exatamente sobre a estação</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
 
   <h2>3. Aproximações por instrumentos</h2>
   <table>
@@ -92,6 +106,16 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   <p><strong>Exemplo:</strong> descer de 6.500 para 1.500 ft (Δ=5.000 ft) com GS=100kt → TOD ≈ 5.000/300 ≈ 16,7 NM antes · ROD ≈ 500 ft/min · confirmação: 5.000/500=10min × (100/60) ≈ 16,7 NM ✓</p>
   <p>Pratique na <a href="calculadoras.html">calculadora de tempo/distância/combustível e descida</a>.</p>
 
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: voando a GS=120kt, você precisa perder 4.000 ft antes de um fixo. A que distância do fixo deve iniciar a descida (regra dos 300)?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, false, 'A conta é 4.000/300, não envolve a GS diretamente na distância — releia a fórmula.')">40 NM</button>
+      <button onclick="selfCheck(this, true, '4.000 ft / 300 ≈ 13,3 NM antes do fixo — a GS entra apenas para achar o ROD (120×5=600 ft/min), não a distância do TOD.')">Aproximadamente 13,3 NM</button>
+      <button onclick="selfCheck(this, false, 'Isso seria dividir por 30, não por 300 — releia a regra dos 300.')">Aproximadamente 133 NM</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
+
   <h2>7. Conversão de unidades</h2>
   <table>
     <tr><td>1 NM</td><td>1.852 m = 6.076,12 ft</td></tr>
@@ -100,6 +124,7 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   </table>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=3"></script>
+<script src="js/app.js?v=4"></script>
+<script src="js/palette.js?v=4"></script>
 </body>
 </html>

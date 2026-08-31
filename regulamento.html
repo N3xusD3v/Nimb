@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Regulamento — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=3" />
+<link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
 <header class="topbar">
@@ -24,6 +24,10 @@
     <a href="plano.html">Plano 15 dias</a>
     <a href="recursos.html">Recursos</a>
   </nav>
+    <button class="cmdk-trigger" onclick="openPalette()" type="button">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      Buscar <kbd>Ctrl K</kbd>
+    </button>
 </header>
 <main>
   <h1>Regulamento — Prova REG (20 questões, 30 min)</h1>
@@ -56,6 +60,16 @@
 Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categoria nos últimos 6 meses,
                                        OU aprovação em exame de proficiência IFR (pode ser em FSTD)</div>
   <div class="note warn">Vencer a recência não cancela a habilitação — apenas suspende o privilégio de voar IFR até regularizar.</div>
+
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: das 40 horas de voo por instrumentos exigidas para a habilitação IFR, quantas no máximo podem ser cumpridas em simulador (FSTD)?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, false, 'A resposta certa é 20 horas — releia a tabela acima.')">10 horas</button>
+      <button onclick="selfCheck(this, true, 'RBAC 61.223(a)(6): das 40 horas de instrumento, até 20h podem ser em FSTD.')">20 horas</button>
+      <button onclick="selfCheck(this, false, 'A resposta certa é 20 horas — releia a tabela acima.')">Todas as 40 horas</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
 
   <h2>3. RBAC 91 — Regras de operação IFR</h2>
   <h3>Reserva de combustível (91.167)</h3>
@@ -103,6 +117,16 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
   </table>
   <p>Sentido padrão de curvas: <strong>à direita</strong>, salvo indicação contrária na carta. Tipos de entrada — direta, paralela e setor/offset — definidos pelo ângulo de chegada ao fixo (ver <a href="navegacao.html">Navegação</a>).</p>
 
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: duas aeronaves se aproximam quase de frente. O que a regra de prioridade determina?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, true, 'Regra clássica de aproximação frontal (ICA 100-12): ambas alteram o rumo para a direita.')">Ambas alteram o rumo para a direita</button>
+      <button onclick="selfCheck(this, false, 'Errado — em aproximação frontal, ambas alteram o rumo para a direita, não apenas a mais rápida.')">Apenas a mais rápida deve desviar</button>
+      <button onclick="selfCheck(this, false, 'Errado — em aproximação frontal, ambas alteram o rumo para a direita, não para a esquerda.')">Ambas alteram o rumo para a esquerda</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
+
   <h2>5. Plano de voo IFR</h2>
   <p>Plano de voo IFR é obrigatório antes da decolagem (formulário ICAO, aprovado via DECEA/AIS), contendo tipo de voo, indicativo, tipo de aeronave/esteira de turbulência, equipamento, aeródromo/hora de partida, velocidade/nível/rota de cruzeiro, destino/tempo estimado/alternativa, e informações suplementares (autonomia, pessoas a bordo, equipamento de emergência).</p>
 
@@ -123,6 +147,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
   </table>
 </main>
 <footer>Nimb · resumo de estudo — sempre confira o RBAC/ICA vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=3"></script>
+<script src="js/app.js?v=4"></script>
+<script src="js/palette.js?v=4"></script>
 </body>
 </html>

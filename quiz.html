@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Simulados — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=3" />
+<link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
 <header class="topbar">
@@ -24,6 +24,10 @@
     <a href="plano.html">Plano 15 dias</a>
     <a href="recursos.html">Recursos</a>
   </nav>
+    <button class="cmdk-trigger" onclick="openPalette()" type="button">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      Buscar <kbd>Ctrl K</kbd>
+    </button>
 </header>
 <main>
   <h1 id="quiz-title">Simulado</h1>
@@ -36,7 +40,8 @@
   <div class="card" id="quiz-box" style="max-width:700px"></div>
 </main>
 <footer>Nimb · questões originais de prática, não são questões oficiais da banca ANAC.</footer>
-<script src="js/app.js?v=3"></script>
-<script src="js/quiz.js?v=3"></script>
+<script src="js/app.js?v=4"></script>
+<script src="js/palette.js?v=4"></script>
+<script src="js/quiz.js?v=4"></script>
 </body>
 </html>

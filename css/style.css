@@ -618,3 +618,143 @@ html.js .reveal.in-view {
 @media (max-width: 720px) {
   .today-grid { grid-template-columns: 1fr; }
 }
+
+/* ---- Command palette (Ctrl/Cmd+K) ---- */
+.cmdk-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.cmdk-trigger:hover { border-color: var(--accent); color: var(--text); }
+.cmdk-trigger kbd {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.cmdk-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 12, 0.7);
+  backdrop-filter: blur(3px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  z-index: 200;
+}
+.cmdk-overlay.open { display: flex; }
+
+.cmdk-box {
+  width: min(560px, 92vw);
+  max-height: 70vh;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cmdk-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.cmdk-input-row input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+.cmdk-input-row kbd {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.cmdk-list { overflow-y: auto; padding: 0.5rem; }
+.cmdk-group {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  padding: 0.6rem 0.7rem 0.3rem;
+}
+.cmdk-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: var(--text);
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.cmdk-item.selected, .cmdk-item:hover { background: var(--bg-elev-2); }
+.cmdk-item .cmdk-hint { color: var(--text-dim); font-size: 0.78rem; }
+.cmdk-empty { padding: 1.5rem; text-align: center; color: var(--text-dim); }
+
+@media (max-width: 640px) {
+  .cmdk-trigger { display: none; }
+}
+
+/* ---- Inline self-check (retrieval practice inside content pages) ---- */
+.selfcheck {
+  background: var(--bg-elev);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.selfcheck-q {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.selfcheck-q .icon { color: var(--accent); flex-shrink: 0; margin-top: 0.15rem; }
+.selfcheck-opts { display: flex; flex-direction: column; gap: 0.5rem; }
+.selfcheck-opts button {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  font-weight: 500;
+  font-size: 0.92rem;
+  border-radius: 8px;
+}
+.selfcheck-opts button.correct { border-color: var(--ok); background: rgba(76, 217, 123, 0.12); }
+.selfcheck-opts button.wrong { border-color: var(--danger); background: rgba(255, 107, 107, 0.12); }
+.selfcheck-feedback {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  display: none;
+}
+.selfcheck-feedback.show { display: block; }

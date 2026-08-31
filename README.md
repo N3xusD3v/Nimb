@@ -23,6 +23,7 @@ python -m http.server 8080
 - `data/` — bancos de questões, flashcards e plano em JSON
 - `js/app.js` — utilidades compartilhadas (localStorage, progresso, contagem regressiva)
 - `js/onboarding.js` — animação de entrada (scroll-reveal) e lógica do formulário de onboarding da landing page
+- `js/palette.js` — paleta de comando (Ctrl/Cmd+K) para navegação rápida entre páginas, simulados e calculadoras
 - `robots.txt`, `sitemap.xml` — SEO básico
 
 ## Metodologia de estudo (baseada em evidência)
@@ -32,6 +33,8 @@ python -m http.server 8080
 - **Interleaving** — o simulado "misto" (REG+MET+NAV embaralhados) é a opção recomendada por padrão, já que misturar matérias produz retenção superior a revisar uma de cada vez.
 - **Sequência de estudo (streak)** — reforço por aversão à perda: qualquer ação de estudo (simulado, flashcard, tarefa do plano) conta para a sequência diária, exibida no painel.
 - **Pontuação de prontidão** — combina desempenho nos simulados (peso 0,65) com o que já foi consolidado nos flashcards (peso 0,35) por matéria.
+- **Retrieval prompts embutidos no conteúdo** — cada página de matéria tem 2 mini-testes inline logo após a seção correspondente, para forçar recuperação ativa antes de seguir lendo, em vez de reconhecimento passivo.
+- **Paleta de comando (Ctrl/Cmd+K)** — navegação rápida sem tirar as mãos do teclado, incluindo deep-links direto para cada calculadora.
 
 Cache-busting (`?v=N`) nos arquivos CSS/JS evita que usuários fiquem presos numa versão desatualizada após um deploy — ao editar `css/style.css` ou qualquer `js/*.js`, incremente o `?v=` em todas as páginas que os referenciam.
 

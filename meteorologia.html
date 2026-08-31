@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Meteorologia — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=3" />
+<link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body>
 <header class="topbar">
@@ -24,6 +24,10 @@
     <a href="plano.html">Plano 15 dias</a>
     <a href="recursos.html">Recursos</a>
   </nav>
+    <button class="cmdk-trigger" onclick="openPalette()" type="button">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      Buscar <kbd>Ctrl K</kbd>
+    </button>
 </header>
 <main>
   <h1>Meteorologia — Prova MET (20 questões, 35 min)</h1>
@@ -56,6 +60,16 @@
   <h3>Incrementos de visibilidade</h3>
   <p>50 em 50 m até 800 m · 100 em 100 m entre 800 e 5.000 m · 1.000 em 1.000 m entre 5.000 e 9.999 m · "9999" = 10 km ou mais.</p>
 
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: um METAR traz "SCT025 BKN040". Qual é o teto?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, false, 'SCT (3-4 oitavos) não define teto — só conta o BKN.')">2.500 ft (do SCT)</button>
+      <button onclick="selfCheck(this, true, 'Só BKN/OVC definem teto. SCT (3-4 oitavos) não conta — o teto é 4.000 ft.')">4.000 ft (do BKN)</button>
+      <button onclick="selfCheck(this, false, 'Existe teto sim — o grupo BKN (5-7 oitavos) define teto a 4.000 ft.')">Não há teto reportado</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
+
   <h2>2. TAF — grupos de mudança</h2>
   <table>
     <tr><th>Grupo</th><th>Significado</th></tr>
@@ -83,6 +97,16 @@
     <li><strong>Nevoeiro frontal/de evaporação:</strong> associado à passagem de frentes.</li>
   </ul>
 
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: um METAR mostra temperatura 18°C e ponto de orvalho 17°C, à noite com céu claro e vento calmo. O que isso sugere?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, true, 'Spread de 1°C + noite/céu claro/vento fraco = condição clássica de nevoeiro de radiação.')">Alto risco de nevoeiro de radiação</button>
+      <button onclick="selfCheck(this, false, 'Spread de 1°C indica o oposto — ar próximo da saturação, alto risco de nevoeiro.')">Ar seco, sem risco de nevoeiro</button>
+      <button onclick="selfCheck(this, false, 'Essas condições (céu claro, vento fraco, spread baixo) não indicam gelo — indicam nevoeiro de radiação.')">Risco de gelo estrutural</button>
+    </div>
+    <div class="selfcheck-feedback"></div>
+  </div>
+
   <h2>5. Massas de ar e frentes</h2>
   <table>
     <tr><th>Frente</th><th>Características</th></tr>
@@ -100,6 +124,7 @@ DA = PA + K × (OAT − ISA)</div>
   <div class="note">Itens não confirmados nesta pesquisa: gradientes exatos de temperatura/pressão por tipo de frente; limites numéricos de certificação de degelo de rotor de helicóptero.</div>
 </main>
 <footer>Nimb · resumo de estudo — confira sempre a ICA 105-xx vigente em publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=3"></script>
+<script src="js/app.js?v=4"></script>
+<script src="js/palette.js?v=4"></script>
 </body>
 </html>

@@ -160,6 +160,20 @@ function getReadiness(materia, flashcardsForMateria) {
   return Math.round(quizPct * 0.65 + masteryPct * 0.35);
 }
 
+// ---- Inline self-check widgets (retrieval practice embedded in content pages) ----
+function selfCheck(btn, correct, feedbackText) {
+  const box = btn.closest(".selfcheck");
+  if (box.dataset.answered) return;
+  box.dataset.answered = "true";
+  box.querySelectorAll(".selfcheck-opts button").forEach((b) => {
+    b.disabled = true;
+    if (b === btn) b.classList.add(correct ? "correct" : "wrong");
+  });
+  const fb = box.querySelector(".selfcheck-feedback");
+  fb.textContent = (correct ? "✓ Correto. " : "✗ Não é essa. ") + (feedbackText || "");
+  fb.classList.add("show");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   highlightActiveNav();
 });

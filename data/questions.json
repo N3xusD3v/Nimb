@@ -284,5 +284,226 @@
     ],
     "correta": 0,
     "explicacao": "BECMG (becoming) indica mudança gradual dentro da janela de tempo informada — aqui, entre 20h e 22h UTC do dia 18."
+  },
+  {
+    "id": "reg-q10",
+    "materia": "regulamento",
+    "pergunta": "Segundo o RBAC 91.1039(d), quando um aeródromo pode ser usado como alternativa num plano de voo IFR?",
+    "opcoes": [
+      "Quando a previsão (TAF) atende aos mínimos específicos publicados para uso como alternativa (geralmente mais altos que os mínimos de pouso normais)",
+      "Sempre que o aeródromo tiver pista pavimentada",
+      "Quando o piloto decidir, sem necessidade de previsão",
+      "Apenas se o aeródromo tiver torre de controle"
+    ],
+    "correta": 0,
+    "explicacao": "RBAC 91.1039(d): o aeródromo só serve como alternativa se a previsão atender aos tetos e visibilidades publicados especificamente para uso como alternativa, valores publicados por aeródromo nas cartas IAC/AIP-Brasil."
+  },
+  {
+    "id": "reg-q11",
+    "materia": "regulamento",
+    "pergunta": "Qual código de ajuste de altímetro faz o instrumento indicar o nível de voo (FL), usando 1013,2 hPa como referência padrão?",
+    "opcoes": [
+      "QNE",
+      "QNH",
+      "QFE",
+      "QFF"
+    ],
+    "correta": 0,
+    "explicacao": "QNE (1013,2 hPa) faz o altímetro indicar nível de voo. QNH indica altitude (referência ao nível do mar); QFE indica altura (referência ao aeródromo)."
+  },
+  {
+    "id": "reg-q12",
+    "materia": "regulamento",
+    "pergunta": "Se o QNH está acima de 1013,2 hPa, quanto deve ser somado à altitude de transição para determinar o nível de transição?",
+    "opcoes": [
+      "500 ft",
+      "1.000 ft",
+      "1.500 ft",
+      "Nada, o valor é igual"
+    ],
+    "correta": 0,
+    "explicacao": "Regra de arredondamento: se QNH menor ou igual a 1013,2 hPa, soma-se 1.000 ft; se QNH maior que 1013,2 hPa, soma-se 500 ft à altitude de transição."
+  },
+  {
+    "id": "reg-q13",
+    "materia": "regulamento",
+    "pergunta": "Na regra de ultrapassagem entre duas aeronaves, quem tem prioridade e por qual lado deve ocorrer a manobra?",
+    "opcoes": [
+      "A aeronave ultrapassada tem prioridade; quem ultrapassa deve virar pela direita",
+      "A aeronave que ultrapassa tem sempre prioridade, por qualquer lado",
+      "A aeronave ultrapassada deve ceder e desviar para a esquerda",
+      "Não há regra específica, cada caso é avaliado pelo controle"
+    ],
+    "correta": 0,
+    "explicacao": "Regra classica de direito de passagem: a aeronave ultrapassada tem prioridade; a que ultrapassa aborda por tras em angulo inferior a 70 graus do plano de simetria e passa pela direita."
+  },
+  {
+    "id": "reg-q14",
+    "materia": "regulamento",
+    "pergunta": "Entre duas aeronaves em aproximação final para pouso na mesma pista, qual regra de prioridade se aplica?",
+    "opcoes": [
+      "A aeronave mais baixa tem prioridade; a mais alta cede passagem",
+      "A aeronave mais rápida tem prioridade",
+      "A aeronave mais alta tem prioridade",
+      "Prioridade é sempre por ordem de chamada ao controle"
+    ],
+    "correta": 0,
+    "explicacao": "Entre duas aeronaves em aproximação final, a mais alta cede passagem à mais baixa."
+  },
+  {
+    "id": "reg-q15",
+    "materia": "regulamento",
+    "pergunta": "Qual lei institui o Código Brasileiro de Aeronáutica (CBAer)?",
+    "opcoes": [
+      "Lei nº 7.565/1986",
+      "Lei nº 11.182/2005",
+      "Lei nº 13.475/2017",
+      "Decreto nº 9.540/2018"
+    ],
+    "correta": 0,
+    "explicacao": "A Lei nº 7.565/1986 institui o Código Brasileiro de Aeronáutica. A Lei nº 11.182/2005 cria a ANAC; a Lei nº 13.475/2017 rege a profissão de aeronauta."
+  },
+  {
+    "id": "met-q08",
+    "materia": "meteorologia",
+    "pergunta": "No código de visibilidade do METAR, de quanto em quanto ela é reportada entre 800 m e 5.000 m?",
+    "opcoes": [
+      "De 100 em 100 metros",
+      "De 50 em 50 metros",
+      "De 1.000 em 1.000 metros",
+      "De 500 em 500 metros"
+    ],
+    "correta": 0,
+    "explicacao": "Incrementos de codificação: 50 em 50 m até 800 m; 100 em 100 m entre 800 e 5.000 m; 1.000 em 1.000 m entre 5.000 e 9.999 m (\"9999\" = 10 km ou mais)."
+  },
+  {
+    "id": "met-q09",
+    "materia": "meteorologia",
+    "pergunta": "No TAF, qual grupo indica uma mudança abrupta das condições a partir de um horário específico (ex: FM181800)?",
+    "opcoes": [
+      "FM (from)",
+      "BECMG (becoming)",
+      "TEMPO",
+      "PROB40"
+    ],
+    "correta": 0,
+    "explicacao": "FM indica mudança abrupta a partir do horário informado. BECMG indica mudança gradual dentro de uma janela; TEMPO indica variações temporárias; PROB indica probabilidade percentual."
+  },
+  {
+    "id": "met-q10",
+    "materia": "meteorologia",
+    "pergunta": "O que o grupo PROB40 no TAF indica quando combinado com TEMPO ou BECMG?",
+    "opcoes": [
+      "40% de probabilidade de ocorrência do fenômeno descrito",
+      "Vento de 40 nós",
+      "Visibilidade de 40% reduzida",
+      "40 minutos de duração garantida do fenômeno"
+    ],
+    "correta": 0,
+    "explicacao": "PROB40 (ou PROB30) indica a probabilidade percentual (40% ou 30%) de ocorrência do fenômeno combinado com TEMPO ou BECMG."
+  },
+  {
+    "id": "met-q11",
+    "materia": "meteorologia",
+    "pergunta": "Qual a principal diferença entre gelo claro (clear ice) e geada/escarcha (rime ice)?",
+    "opcoes": [
+      "Gelo claro é denso e perigoso (gotas grandes/Cb); rime ice é opaco e quebradiço (nuvens estratiformes)",
+      "Gelo claro só ocorre acima de 0°C; rime ice só abaixo de -40°C",
+      "Não há diferença prática entre os dois",
+      "Rime ice é mais denso e perigoso que o gelo claro"
+    ],
+    "correta": 0,
+    "explicacao": "Gelo claro (clear ice): denso e perigoso, associado a gotas grandes/Cumulonimbus. Geada/escarcha (rime ice): opaca e quebradiça, associada a nuvens estratiformes."
+  },
+  {
+    "id": "met-q12",
+    "materia": "meteorologia",
+    "pergunta": "Quais características estão associadas à passagem de uma frente fria?",
+    "opcoes": [
+      "Cumulonimbus, chuva intensa, mudança rápida de vento e queda de temperatura",
+      "Deterioração gradual, nuvens estratiformes e garoa prolongada",
+      "Céu sempre claro e sem qualquer alteração de vento",
+      "Apenas aumento de temperatura sem mudança de nebulosidade"
+    ],
+    "correta": 0,
+    "explicacao": "Frente fria: ar frio avança sob ar quente, associada a Cumulonimbus, chuva intensa, mudança rápida de vento e queda de temperatura. Frente quente: deterioração gradual, nuvens estratiformes, garoa."
+  },
+  {
+    "id": "nav-q07",
+    "materia": "navegacao",
+    "pergunta": "Qual faixa de ângulo de interceptação de uma radial VOR é normalmente usada, equilibrando velocidade de interceptação e precisão?",
+    "opcoes": [
+      "30° a 90°",
+      "5° a 10°",
+      "150° a 180°",
+      "Exatamente 45°, sempre"
+    ],
+    "correta": 0,
+    "explicacao": "Ângulos de 30° a 90° são os mais usados para interceptar uma radial — quanto maior o ângulo, mais rápida a interceptação, exigindo mais atenção ao CDI."
+  },
+  {
+    "id": "nav-q08",
+    "materia": "navegacao",
+    "pergunta": "Nos mínimos de uma aproximação ILS CAT I, qual o valor mínimo de RVR (ou visibilidade) exigido?",
+    "opcoes": [
+      "RVR ≥ 550 m (ou visibilidade ≥ 800 m)",
+      "RVR ≥ 300 m",
+      "RVR ≥ 1.200 m",
+      "Não há mínimo de RVR em CAT I"
+    ],
+    "correta": 0,
+    "explicacao": "CAT I: DH não inferior a 60 m (200 ft), RVR não inferior a 550 m ou visibilidade não inferior a 800 m. CAT II exige RVR maior ou igual a 300 m com DH entre 30 e 60 m."
+  },
+  {
+    "id": "nav-q09",
+    "materia": "navegacao",
+    "pergunta": "Uma aeronave com Vat (velocidade de referência) de 110 kt se enquadra em qual categoria de aproximação?",
+    "opcoes": [
+      "Categoria B (91–120 kt)",
+      "Categoria A (< 91 kt)",
+      "Categoria C (121–140 kt)",
+      "Categoria D (141–165 kt)"
+    ],
+    "correta": 0,
+    "explicacao": "Categorias por Vat: A menor que 91 kt, B 91-120 kt, C 121-140 kt, D 141-165 kt, E 166-210 kt. Com Vat=110 kt, a aeronave cai na Categoria B."
+  },
+  {
+    "id": "nav-q10",
+    "materia": "navegacao",
+    "pergunta": "Qual é a fórmula aproximada do raio de uma curva padrão (rate 1, 3°/s) em função da TAS?",
+    "opcoes": [
+      "Raio (NM) ≈ TAS (kt) / 62,8",
+      "Raio (NM) ≈ TAS (kt) × 62,8",
+      "Raio (NM) ≈ TAS (kt) / 5",
+      "Raio (NM) ≈ TAS (kt) × 5"
+    ],
+    "correta": 0,
+    "explicacao": "Raio de curva padrão (rate 1) ≈ TAS / 62,8. Exemplo: TAS=120kt → raio ≈ 1,9 NM."
+  },
+  {
+    "id": "nav-q11",
+    "materia": "navegacao",
+    "pergunta": "Quantos metros equivalem a 1 milha náutica (NM)?",
+    "opcoes": [
+      "1.852 metros",
+      "1.609 metros",
+      "1.000 metros",
+      "2.000 metros"
+    ],
+    "correta": 0,
+    "explicacao": "1 NM = 1.852 metros = 6.076,12 pés. (1.609 m é a milha terrestre/estatute mile, não a náutica.)"
+  },
+  {
+    "id": "nav-q12",
+    "materia": "navegacao",
+    "pergunta": "Usando a regra prática do gradiente de 3° (regra dos 300), qual a distância aproximada necessária para perder 3.000 ft de altitude?",
+    "opcoes": [
+      "10 NM",
+      "3 NM",
+      "30 NM",
+      "1 NM"
+    ],
+    "correta": 0,
+    "explicacao": "Distância até o TOD (NM) ≈ altitude a perder (ft) / 300. Para 3.000 ft: 3.000/300 = 10 NM."
   }
 ]
