@@ -7,15 +7,7 @@ function saveSrsState(state) {
   setJSON(STORE_KEYS.srs, state);
 }
 
-function todayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function addDays(dateStr, days) {
-  const d = new Date(dateStr + "T00:00:00");
-  d.setDate(d.getDate() + days);
-  return d.toISOString().slice(0, 10);
-}
+// todayStr() and addDays() are defined in js/app.js (loaded before this file)
 
 // grade: 0 = errei, 1 = difícil, 2 = fácil
 function gradeCard(id, grade) {

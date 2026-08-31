@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Painel — Nimb IFRH</title>
+<title>Hoje — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
 <header class="topbar">
@@ -29,18 +29,66 @@
 <main>
   <section class="hero">
     <div>
-      <h1>Preparatório para a habilitação IFRH</h1>
-      <p>Voo por Instrumentos em Helicóptero — Regulamento, Meteorologia e Navegação. Nota mínima ANAC: 70% por matéria.</p>
-      <div style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-dim)">
-        Data da prova:
-        <input type="date" id="exam-date-input" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.2rem 0.4rem;" />
+      <h1 id="day-title">Preparatório IFRH</h1>
+      <p id="priority-banner" style="display:none; color:var(--text-dim); font-size:0.9rem; margin-top:0.4rem;"></p>
+      <div style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-dim); display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <span>Data da prova:
+          <input type="date" id="exam-date-input" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.2rem 0.4rem;" />
+        </span>
+        <span class="streak-badge" id="streak-badge"></span>
       </div>
-      <p id="priority-banner" class="note" style="display:none; margin-top:1rem;"></p>
     </div>
     <div class="countdown" id="countdown"></div>
   </section>
 
-  <h2>Módulos de estudo</h2>
+  <div class="today-grid">
+    <div class="card today-focus">
+      <div class="card-head"><h3 id="focus-title">Foco de hoje</h3></div>
+      <ul id="focus-tasks" class="focus-tasks"></ul>
+      <a class="cta" href="plano.html">Ver plano completo de 15 dias →</a>
+    </div>
+
+    <div class="card today-review">
+      <div class="card-head">
+        <span class="icon-badge c-pink">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14.5-4.5"/><path d="M20 3.5v4.5h-4.5"/><path d="M20 12a8 8 0 0 1-14.5 4.5"/><path d="M4 20.5V16h4.5"/></svg>
+        </span>
+        <h3>Revisão pendente</h3>
+      </div>
+      <p id="review-summary">Carregando...</p>
+      <a class="cta" href="flashcards.html">Revisar agora →</a>
+    </div>
+  </div>
+
+  <h2>Prontidão por matéria</h2>
+  <p style="color:var(--text-dim); margin-top:-0.75rem;">Combina seu desempenho nos simulados com o que você já consolidou nos flashcards.</p>
+  <div class="readiness-list" id="readiness-list"></div>
+
+  <h2>Ação rápida</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-head">
+        <span class="icon-badge c-blue">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3.5h6a1 1 0 0 1 1 1V5h1.5A1.5 1.5 0 0 1 19 6.5v13a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-13A1.5 1.5 0 0 1 6.5 5H8v-.5a1 1 0 0 1 1-1Z"/><path d="M9 4.5h6"/><path d="m9 13 2 2 4-4"/></svg>
+        </span>
+        <h3>Simulado misto <span class="tag-pill" style="background:rgba(76,217,123,0.15); color:var(--ok);">recomendado</span></h3>
+      </div>
+      <p>Questões de REG, MET e NAV embaralhadas — misturar matérias fixa melhor do que revisar uma de cada vez.</p>
+      <a class="cta" href="quiz.html?materia=todas">Começar →</a>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="icon-badge c-pink">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/></svg>
+        </span>
+        <h3>Flashcards</h3>
+      </div>
+      <p>Revisão espaçada — os erros dos seus últimos simulados aparecem primeiro na fila.</p>
+      <a class="cta" href="flashcards.html">Revisar →</a>
+    </div>
+  </div>
+
+  <h2>Todos os módulos</h2>
   <div class="grid">
     <div class="card">
       <div class="card-head">
@@ -136,10 +184,6 @@
     </div>
   </div>
 
-  <h2>Plano intensivo de 15 dias</h2>
-  <p style="color:var(--text-dim)">Cronograma diário cobrindo as três matérias com blocos de teoria, cálculo e simulado.
-  <a href="plano.html">Ver cronograma completo →</a></p>
-
   <h2>Comunidades e materiais oficiais</h2>
   <p style="color:var(--text-dim)">Livros públicos do DECEA/ANAC, fóruns e bancos de questões selecionados.
   <a href="recursos.html">Ver recursos →</a></p>
@@ -147,24 +191,120 @@
 
 <footer>Nimb · material de apoio não-oficial para estudo. Sempre confira a norma vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
 
-<script src="js/app.js"></script>
+<script src="js/app.js?v=3"></script>
+<script src="js/srs.js?v=3"></script>
 <script>
-  renderCountdown("countdown");
-  const input = document.getElementById("exam-date-input");
-  input.value = getExamDate();
-  input.addEventListener("change", () => { setExamDate(input.value); renderCountdown("countdown"); });
-  ["regulamento", "meteorologia", "navegacao"].forEach((m) => {
-    const el = document.getElementById("bar-" + m);
-    if (el) el.style.width = materiaProgressPct(m) + "%";
-  });
+renderCountdown("countdown");
+const input = document.getElementById("exam-date-input");
+input.value = getExamDate();
+input.addEventListener("change", () => { setExamDate(input.value); renderCountdown("countdown"); loadToday(); });
 
-  const MATERIA_LABEL = { regulamento: "Regulamento", meteorologia: "Meteorologia", navegacao: "Navegação" };
-  const priority = getJSON(STORE_KEYS.priority, null);
-  if (priority && MATERIA_LABEL[priority]) {
-    const banner = document.getElementById("priority-banner");
-    banner.style.display = "block";
-    banner.innerHTML = `Você priorizou <strong>${MATERIA_LABEL[priority]}</strong> no onboarding — <a href="${priority}.html">comece por aí →</a>`;
+["regulamento", "meteorologia", "navegacao"].forEach((m) => {
+  const el = document.getElementById("bar-" + m);
+  if (el) el.style.width = materiaProgressPct(m) + "%";
+});
+
+const MATERIA_LABEL = { regulamento: "Regulamento", meteorologia: "Meteorologia", navegacao: "Navegação" };
+const priority = getJSON(STORE_KEYS.priority, null);
+if (priority && MATERIA_LABEL[priority]) {
+  const banner = document.getElementById("priority-banner");
+  banner.style.display = "block";
+  banner.innerHTML = `Você priorizou <strong>${MATERIA_LABEL[priority]}</strong> no onboarding — <a href="${priority}.html">comece por aí →</a>`;
+}
+
+function renderStreak() {
+  const s = getStreak();
+  const el = document.getElementById("streak-badge");
+  if (s.count > 0) {
+    el.innerHTML = `🔥 <strong>${s.count}</strong> dia${s.count > 1 ? "s" : ""} seguido${s.count > 1 ? "s" : ""} de estudo`;
+  } else {
+    el.innerHTML = `Comece sua sequência hoje`;
   }
+}
+
+async function loadToday() {
+  const res = await fetch("data/plano.json");
+  const plano = await res.json();
+  const todayDay = 16 - daysUntilExam();
+  const day = plano.find((d) => d.dia === todayDay);
+  const titleEl = document.getElementById("day-title");
+  const focusTitle = document.getElementById("focus-title");
+  const tasksEl = document.getElementById("focus-tasks");
+
+  if (!day) {
+    titleEl.textContent = daysUntilExam() > 15 ? "Preparatório IFRH — ainda faltam dias para o plano começar" : "Preparatório IFRH — plano de 15 dias concluído";
+    focusTitle.textContent = "Foco de hoje";
+    tasksEl.innerHTML = `<li style="color:var(--text-dim)">${daysUntilExam() > 15 ? "Ajuste a data da prova acima para alinhar o cronograma de 15 dias, ou já comece pelos módulos abaixo." : "Continue revisando simulados e flashcards até o dia da prova."}</li>`;
+    return;
+  }
+
+  titleEl.textContent = `Dia ${day.dia} de 15 — ${day.foco}`;
+  focusTitle.textContent = `Foco de hoje (dia ${day.dia})`;
+  const checklist = getJSON(STORE_KEYS.plano, {});
+  const done = checklist[day.dia] || [];
+  tasksEl.innerHTML = day.tarefas.map((t, i) => `
+    <li class="${done.includes(i) ? "done" : ""}">
+      <label style="cursor:pointer; display:flex; gap:0.5rem; align-items:flex-start;">
+        <input type="checkbox" ${done.includes(i) ? "checked" : ""} onchange="toggleTodayTask(${day.dia}, ${i})" />
+        <span>${t}</span>
+      </label>
+    </li>`).join("");
+}
+
+function toggleTodayTask(dia, idx) {
+  const checklist = getJSON(STORE_KEYS.plano, {});
+  const arr = checklist[dia] || [];
+  const pos = arr.indexOf(idx);
+  if (pos >= 0) arr.splice(pos, 1); else arr.push(idx);
+  checklist[dia] = arr;
+  setJSON(STORE_KEYS.plano, checklist);
+  recordActivity();
+  renderStreak();
+  loadToday();
+}
+
+async function loadReview() {
+  const res = await fetch("data/flashcards.json");
+  const base = await res.json();
+  const missed = getMissedCards();
+  const all = [...missed, ...base];
+  const s = srsStats(all);
+  const missedDue = dueCards(missed).length;
+  const summary = document.getElementById("review-summary");
+  if (s.due === 0) {
+    summary.textContent = "Tudo em dia! Nenhum flashcard pendente agora.";
+  } else {
+    summary.innerHTML = `<strong>${s.due}</strong> card${s.due > 1 ? "s" : ""} pendente${s.due > 1 ? "s" : ""}` +
+      (missedDue > 0 ? `, incluindo <strong style="color:var(--danger)">${missedDue}</strong> de erros recentes de simulado` : "") + ".";
+  }
+  return all;
+}
+
+async function loadReadiness(flashAll) {
+  const subjects = [
+    { key: "regulamento", label: "Regulamento" },
+    { key: "meteorologia", label: "Meteorologia" },
+    { key: "navegacao", label: "Navegação" },
+  ];
+  const list = document.getElementById("readiness-list");
+  list.innerHTML = subjects.map((s) => {
+    const cardsForSubject = flashAll.filter((c) => c.materia === s.key);
+    const pct = getReadiness(s.key, cardsForSubject);
+    return `
+      <div class="readiness-row">
+        <span class="readiness-label">${s.label}</span>
+        <div class="progress-bar readiness-bar"><div style="width:${pct}%"></div></div>
+        <span class="readiness-pct">${pct}%</span>
+      </div>`;
+  }).join("");
+}
+
+(async function init() {
+  renderStreak();
+  await loadToday();
+  const flashAll = await loadReview();
+  await loadReadiness(flashAll);
+})();
 </script>
 </body>
 </html>

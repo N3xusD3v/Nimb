@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Flashcards — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
 <header class="topbar">
@@ -45,8 +45,8 @@
   </div>
 </main>
 <footer>Nimb · algoritmo de repetição espaçada simplificado (estilo SM-2).</footer>
-<script src="js/app.js"></script>
-<script src="js/srs.js"></script>
+<script src="js/app.js?v=3"></script>
+<script src="js/srs.js?v=3"></script>
 <script>
 let CARDS = [];
 let QUEUE = [];
@@ -55,16 +55,20 @@ let FLIPPED = false;
 
 async function loadCards() {
   const res = await fetch("data/flashcards.json");
-  CARDS = await res.json();
-  QUEUE = dueCards(CARDS);
+  const base = await res.json();
+  const missed = getMissedCards();
+  CARDS = [...missed, ...base];
+  // due cards first, with missed-question cards (from wrong quiz answers) prioritized
+  QUEUE = dueCards(CARDS).sort((a, b) => (a.tag ? 0 : 1) - (b.tag ? 0 : 1));
   updateStats();
   nextCard();
 }
 
 function updateStats() {
   const s = srsStats(CARDS);
+  const missedDue = dueCards(getMissedCards()).length;
   document.getElementById("stats-line").textContent =
-    `${s.due} para revisar hoje · ${s.learned}/${s.total} consolidados`;
+    `${s.due} para revisar hoje` + (missedDue > 0 ? ` (${missedDue} de erros de simulado)` : "") + ` · ${s.learned}/${s.total} consolidados`;
 }
 
 function nextCard() {
@@ -76,19 +80,30 @@ function nextCard() {
     return;
   }
   CURRENT = QUEUE.shift();
-  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${CURRENT.materia}</span></div><div style="margin-top:1rem">${CURRENT.frente}</div>`;
+  const tagHtml = CURRENT.tag
+    ? `<span class="tag-pill" style="background:rgba(255,107,107,0.15); color:var(--danger);">${CURRENT.tag}</span> `
+    : "";
+  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${materiaLabelSrs(CURRENT.materia)}</span> ${tagHtml}</div><div style="margin-top:1rem">${CURRENT.frente}</div>`;
+}
+
+function materiaLabelSrs(m) {
+  return { regulamento: "Regulamento", meteorologia: "Meteorologia", navegacao: "Navegação" }[m] || m;
 }
 
 function flipCard() {
   if (!CURRENT || FLIPPED) return;
   FLIPPED = true;
-  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${CURRENT.materia}</span></div><div style="margin-top:1rem">${CURRENT.verso}</div>`;
+  const tagHtml = CURRENT.tag
+    ? `<span class="tag-pill" style="background:rgba(255,107,107,0.15); color:var(--danger);">${CURRENT.tag}</span> `
+    : "";
+  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${materiaLabelSrs(CURRENT.materia)}</span> ${tagHtml}</div><div style="margin-top:1rem">${CURRENT.verso}</div>`;
   document.getElementById("flash-actions").style.display = "flex";
 }
 
 function grade(g) {
   if (!CURRENT) return;
   gradeCard(CURRENT.id, g);
+  recordActivity();
   updateStats();
   nextCard();
 }

@@ -6,6 +6,8 @@ const STORE_KEYS = {
   plano: "nimb_plano_checklist",
   priority: "nimb_priority_subject",
   onboarded: "nimb_onboarded",
+  missed: "nimb_missed_cards",
+  streak: "nimb_streak",
 };
 
 const DEFAULT_EXAM_DATE = "2026-09-15";
@@ -83,6 +85,79 @@ function materiaProgressPct(materia) {
   const progress = getQuizProgress();
   const m = progress[materia];
   return m ? m.best : 0;
+}
+
+// ---- Shared date helpers (also used by js/srs.js) ----
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function addDays(dateStr, days) {
+  const d = new Date(dateStr + "T00:00:00");
+  d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+// ---- Streak (loss-aversion habit mechanic) ----
+// Call on any meaningful study action: finishing a quiz, grading a flashcard, checking a plano task.
+function recordActivity() {
+  const s = getJSON(STORE_KEYS.streak, { count: 0, last: null });
+  const today = todayStr();
+  if (s.last === today) return s; // already counted today
+  if (s.last === addDays(today, -1)) {
+    s.count += 1; // consecutive day
+  } else {
+    s.count = 1; // gap or first time — restart
+  }
+  s.last = today;
+  setJSON(STORE_KEYS.streak, s);
+  return s;
+}
+
+function getStreak() {
+  const s = getJSON(STORE_KEYS.streak, { count: 0, last: null });
+  // if last activity wasn't today or yesterday, the streak is effectively broken (shown as 0)
+  if (s.last && s.last !== todayStr() && s.last !== addDays(todayStr(), -1)) {
+    return { count: 0, last: s.last };
+  }
+  return s;
+}
+
+// ---- Missed-question review (auto-generated from wrong quiz answers) ----
+// Reuses the flashcard SRS engine (js/srs.js) so errors resurface on a spaced schedule,
+// exactly like the general spaced-repetition literature recommends for targeted weak-point review.
+function addMissedQuestion(q, correctText) {
+  const missed = getJSON(STORE_KEYS.missed, {});
+  missed[q.id] = {
+    id: "missed-" + q.id,
+    materia: q.materia,
+    frente: q.pergunta,
+    verso: `<strong>Resposta certa:</strong> ${correctText}<br><br>${q.explicacao || ""}`,
+    tag: "erro no simulado",
+    timesWrong: (missed[q.id]?.timesWrong || 0) + 1,
+  };
+  setJSON(STORE_KEYS.missed, missed);
+  // force this card to be due immediately by clearing any existing SRS schedule for it
+  const srsState = getJSON(STORE_KEYS.srs, {});
+  delete srsState["missed-" + q.id];
+  setJSON(STORE_KEYS.srs, srsState);
+}
+
+function getMissedCards() {
+  const missed = getJSON(STORE_KEYS.missed, {});
+  return Object.values(missed);
+}
+
+// ---- Readiness score: blends quiz accuracy + flashcard mastery per subject ----
+function getReadiness(materia, flashcardsForMateria) {
+  const progress = getQuizProgress();
+  const quizPct = progress[materia] ? progress[materia].best : 0;
+  const srsState = getJSON(STORE_KEYS.srs, {});
+  const cards = flashcardsForMateria || [];
+  const masteredCount = cards.filter((c) => srsState[c.id] && srsState[c.id].reps >= 3).length;
+  const masteryPct = cards.length ? Math.round((masteredCount / cards.length) * 100) : 0;
+  // quiz performance matters more than raw flashcard exposure, but both count
+  return Math.round(quizPct * 0.65 + masteryPct * 0.35);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

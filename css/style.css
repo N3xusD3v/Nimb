@@ -579,3 +579,42 @@ html.js .reveal.in-view {
   .landing-nav .links { display: none; }
   .priority-options { grid-template-columns: 1fr; }
 }
+
+/* ---- Painel "Hoje" ---- */
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(245, 185, 66, 0.12);
+  color: var(--warn);
+  border: 1px solid rgba(245, 185, 66, 0.3);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.today-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.today-focus, .today-review { display: flex; flex-direction: column; }
+.today-focus .cta, .today-review .cta { margin-top: auto; padding-top: 0.75rem; }
+
+.focus-tasks { list-style: none; padding: 0; margin: 0 0 0.5rem; display: flex; flex-direction: column; gap: 0.55rem; }
+.focus-tasks li { font-size: 0.92rem; }
+.focus-tasks li.done span { color: var(--text-dim); text-decoration: line-through; }
+.focus-tasks input { accent-color: var(--accent); margin-top: 0.2rem; }
+
+.readiness-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.readiness-row { display: flex; align-items: center; gap: 1rem; }
+.readiness-label { width: 120px; flex-shrink: 0; font-weight: 600; font-size: 0.9rem; }
+.readiness-bar { flex-grow: 1; height: 10px; }
+.readiness-bar > div { background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.4s ease; }
+.readiness-pct { width: 42px; text-align: right; font-family: var(--mono); font-size: 0.85rem; color: var(--text-dim); }
+
+@media (max-width: 720px) {
+  .today-grid { grid-template-columns: 1fr; }
+}

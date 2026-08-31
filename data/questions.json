@@ -1,155 +1,287 @@
 [
   {
+    "id": "reg-q01",
     "materia": "regulamento",
     "pergunta": "Segundo o RBAC 61.223, quantas horas de experiência de voo por instrumentos são exigidas para a habilitação IFR, e no máximo quantas dessas horas podem ser cumpridas em FSTD (simulador) qualificado pela ANAC?",
-    "opcoes": ["40 horas totais, no máximo 20 horas em FSTD", "50 horas totais, no máximo 25 horas em FSTD", "30 horas totais, no máximo 10 horas em FSTD", "60 horas totais, sem uso de FSTD permitido"],
+    "opcoes": [
+      "40 horas totais, no máximo 20 horas em FSTD",
+      "50 horas totais, no máximo 25 horas em FSTD",
+      "30 horas totais, no máximo 10 horas em FSTD",
+      "60 horas totais, sem uso de FSTD permitido"
+    ],
     "correta": 0,
     "explicacao": "RBAC 61.223(a)(6): 40 horas de voo por instrumentos, das quais no máximo 20 horas podem ser em FSTD sob supervisão de instrutor."
   },
   {
+    "id": "reg-q02",
     "materia": "regulamento",
     "pergunta": "Quantas horas de voo como piloto em comando (PIC) em voo de navegação são exigidas para a habilitação IFR, e quantas dessas horas devem ser na categoria (helicóptero)?",
-    "opcoes": ["50 horas, mínimo 10 horas na categoria", "100 horas, mínimo 25 horas na categoria", "35 horas, mínimo 5 horas na categoria", "20 horas, sem exigência de horas na categoria"],
+    "opcoes": [
+      "50 horas, mínimo 10 horas na categoria",
+      "100 horas, mínimo 25 horas na categoria",
+      "35 horas, mínimo 5 horas na categoria",
+      "20 horas, sem exigência de horas na categoria"
+    ],
     "correta": 0,
     "explicacao": "RBAC 61.223(a)(6): 50 horas de PIC em navegação, das quais no mínimo 10 horas na categoria da aeronave."
   },
   {
+    "id": "reg-q03",
     "materia": "regulamento",
     "pergunta": "Qual é a validade da habilitação de voo por instrumentos (IFR) segundo o RBAC 61?",
-    "opcoes": ["12 meses, com tolerância de 30 dias antes/depois do mês de vencimento", "24 meses, sem tolerância", "5 anos, igual à licença", "Não tem prazo de validade"],
+    "opcoes": [
+      "12 meses, com tolerância de 30 dias antes/depois do mês de vencimento",
+      "24 meses, sem tolerância",
+      "5 anos, igual à licença",
+      "Não tem prazo de validade"
+    ],
     "correta": 0,
     "explicacao": "RBAC 61.19(b)(3): validade de 12 meses; RBAC 61.33 dá tolerância de 30 dias antes ou depois do mês de vencimento."
   },
   {
+    "id": "reg-q04",
     "materia": "regulamento",
     "pergunta": "Para atuar como PIC em voo IFR, a regra de recência do RBAC 61.21(b) exige que, nos últimos 6 meses, o piloto tenha realizado:",
-    "opcoes": ["No mínimo 6 aproximações por instrumentos na categoria, ou aprovação em exame de proficiência IFR", "No mínimo 3 pousos noturnos", "No mínimo 10 horas de voo VFR", "Nenhuma exigência, apenas a habilitação válida"],
+    "opcoes": [
+      "No mínimo 6 aproximações por instrumentos na categoria, ou aprovação em exame de proficiência IFR",
+      "No mínimo 3 pousos noturnos",
+      "No mínimo 10 horas de voo VFR",
+      "Nenhuma exigência, apenas a habilitação válida"
+    ],
     "correta": 0,
     "explicacao": "RBAC 61.21(b): 6 aproximações por instrumentos na categoria nos últimos 6 meses, ou proficiência IFR aprovada — ambos podem ser em FSTD qualificado."
   },
   {
+    "id": "reg-q05",
     "materia": "regulamento",
     "pergunta": "O exame teórico IFR da ANAC é composto por quantas provas e qual a nota mínima de aprovação?",
-    "opcoes": ["3 provas (REG, MET, NAV), 70% em cada uma", "1 prova única, 70% no total", "3 provas, com média geral mínima de 70%", "4 provas, 60% em cada uma"],
+    "opcoes": [
+      "3 provas (REG, MET, NAV), 70% em cada uma",
+      "1 prova única, 70% no total",
+      "3 provas, com média geral mínima de 70%",
+      "4 provas, 60% em cada uma"
+    ],
     "correta": 0,
     "explicacao": "IS 00-003H: REG (20 questões/30min), MET (20/35min) e NAV (20/100min) — aprovação exige 70% em CADA prova, não é média."
   },
   {
+    "id": "reg-q06",
     "materia": "regulamento",
     "pergunta": "Se um candidato reprovar em 1 das 3 provas do exame IFR (tendo atingido ao menos 30% de acerto nela), o que a IS 00-003H permite?",
-    "opcoes": ["Refazer apenas a prova reprovada em 2ª época, em até 90 dias", "Refazer o exame completo imediatamente sem custo", "Nada — precisa esperar 1 ano para tentar de novo", "Passa automaticamente por arredondamento"],
+    "opcoes": [
+      "Refazer apenas a prova reprovada em 2ª época, em até 90 dias",
+      "Refazer o exame completo imediatamente sem custo",
+      "Nada — precisa esperar 1 ano para tentar de novo",
+      "Passa automaticamente por arredondamento"
+    ],
     "correta": 0,
     "explicacao": "IS 00-003H §5.13.2/5.13.3: pode reprovar em até (N-1)/2 provas (1 de 3, no caso do IFR) e refazer só essa em 2ª época, dentro de 90 dias da 1ª prova."
   },
   {
+    "id": "reg-q07",
     "materia": "regulamento",
     "pergunta": "O exame teórico IFR é totalmente dispensado quando o candidato:",
-    "opcoes": ["Já possui habilitação de voo por instrumentos vigente em outra categoria de aeronave", "Tem mais de 500 horas de voo total", "É instrutor de voo visual (INVA/INVH)", "Nunca é dispensado, mesmo com IFR em outra categoria"],
+    "opcoes": [
+      "Já possui habilitação de voo por instrumentos vigente em outra categoria de aeronave",
+      "Tem mais de 500 horas de voo total",
+      "É instrutor de voo visual (INVA/INVH)",
+      "Nunca é dispensado, mesmo com IFR em outra categoria"
+    ],
     "correta": 0,
     "explicacao": "IS 00-003H: habilitação IFR vigente em outra categoria (ex: avião) dispensa o exame teórico IFR completo para a nova categoria."
   },
   {
+    "id": "met-q01",
     "materia": "meteorologia",
     "pergunta": "Em um METAR, o grupo \"BKN015\" significa:",
-    "opcoes": ["Nuvens fragmentadas (broken) com base a 1500 pés", "Céu claro acima de 15.000 pés", "Vento de 15 nós em rajada", "Visibilidade de 1500 metros"],
+    "opcoes": [
+      "Nuvens fragmentadas (broken) com base a 1500 pés",
+      "Céu claro acima de 15.000 pés",
+      "Vento de 15 nós em rajada",
+      "Visibilidade de 1500 metros"
+    ],
     "correta": 0,
     "explicacao": "BKN = broken (5 a 7 oitavos de céu coberto); o número após indica a altura da base em centenas de pés (015 = 1500 ft)."
   },
   {
+    "id": "met-q02",
     "materia": "meteorologia",
     "pergunta": "Qual condição favorece a formação de nevoeiro de radiação?",
-    "opcoes": ["Noite de céu claro, vento fraco e alta umidade relativa", "Céu encoberto e vento forte", "Ar quente sobre superfície fria", "Chuva contínua durante o dia"],
+    "opcoes": [
+      "Noite de céu claro, vento fraco e alta umidade relativa",
+      "Céu encoberto e vento forte",
+      "Ar quente sobre superfície fria",
+      "Chuva contínua durante o dia"
+    ],
     "correta": 0,
     "explicacao": "O nevoeiro de radiação forma-se por resfriamento noturno da superfície sob céu claro e vento fraco, elevando a umidade relativa até a saturação."
   },
   {
+    "id": "met-q03",
     "materia": "meteorologia",
     "pergunta": "A altitude densidade é a altitude de pressão corrigida para:",
-    "opcoes": ["Desvios da temperatura padrão (ISA)", "Velocidade do vento", "Umidade relativa do ar", "Fase da lua"],
+    "opcoes": [
+      "Desvios da temperatura padrão (ISA)",
+      "Velocidade do vento",
+      "Umidade relativa do ar",
+      "Fase da lua"
+    ],
     "correta": 0,
     "explicacao": "DA = PA + 120 × (OAT − Temperatura ISA na PA); representa o efeito combinado de altitude e temperatura na densidade do ar (afeta desempenho)."
   },
   {
+    "id": "met-q04",
     "materia": "meteorologia",
     "pergunta": "Gelo estrutural em voo é mais provável de se formar quando a aeronave voa através de nuvens com temperatura entre:",
-    "opcoes": ["0°C e -20°C, com presença de água líquida super-resfriada", "-40°C e -60°C", "acima de 10°C", "Apenas em céu claro (CAVOK)"],
+    "opcoes": [
+      "0°C e -20°C, com presença de água líquida super-resfriada",
+      "-40°C e -60°C",
+      "acima de 10°C",
+      "Apenas em céu claro (CAVOK)"
+    ],
     "correta": 0,
     "explicacao": "Gotículas de água super-resfriada (líquidas abaixo de 0°C) congelam ao contato com a aeronave; a faixa 0°C a -20°C é a mais crítica para gelo estrutural."
   },
   {
+    "id": "met-q05",
     "materia": "meteorologia",
     "pergunta": "Um TAF é uma previsão que cobre tipicamente qual período?",
-    "opcoes": ["24 ou 30 horas para um aeródromo específico", "7 dias para uma região", "1 hora, apenas observação atual", "Apenas para rotas oceânicas"],
+    "opcoes": [
+      "24 ou 30 horas para um aeródromo específico",
+      "7 dias para uma região",
+      "1 hora, apenas observação atual",
+      "Apenas para rotas oceânicas"
+    ],
     "correta": 0,
     "explicacao": "O TAF (Terminal Aerodrome Forecast) é uma previsão pontual para o aeródromo, geralmente com validade de 24 ou 30 horas."
   },
   {
+    "id": "nav-q01",
     "materia": "navegacao",
     "pergunta": "No triângulo de velocidades, se o vento vem de uma direção à direita da rota (proa), a correção de deriva (WCA) deve ser aplicada para:",
-    "opcoes": ["A direita (proa maior que a rota)", "A esquerda (proa menor que a rota)", "Não é necessária correção", "Sempre para o norte"],
+    "opcoes": [
+      "A direita (proa maior que a rota)",
+      "A esquerda (proa menor que a rota)",
+      "Não é necessária correção",
+      "Sempre para o norte"
+    ],
     "correta": 0,
     "explicacao": "Vento pela direita empurra a aeronave para a esquerda da rota; para compensar, aponta-se a proa mais para a direita (WCA positivo)."
   },
   {
+    "id": "nav-q02",
     "materia": "navegacao",
     "pergunta": "Ao sintonizar um VOR e o indicador (OBS/CDI) mostrar \"FROM\" com a agulha centrada, isso indica que a aeronave está:",
-    "opcoes": ["Numa radial que se afasta da estação, no rumo selecionado", "Sobrevoando exatamente a estação", "Fora de alcance do VOR", "Numa radial que se aproxima da estação"],
+    "opcoes": [
+      "Numa radial que se afasta da estação, no rumo selecionado",
+      "Sobrevoando exatamente a estação",
+      "Fora de alcance do VOR",
+      "Numa radial que se aproxima da estação"
+    ],
     "correta": 0,
     "explicacao": "\"FROM\" indica que a radial selecionada leva para longe da estação; \"TO\" indicaria uma radial que aproxima da estação."
   },
   {
+    "id": "nav-q03",
     "materia": "navegacao",
     "pergunta": "Na aproximação ILS, a Altitude de Decisão (DA) é o conceito equivalente a qual outro termo usado em aproximações não-precisão?",
-    "opcoes": ["MDA (Altitude Mínima de Descida)", "TOD (Top of Descent)", "IAF (Fixo de Aproximação Inicial)", "QNH"],
+    "opcoes": [
+      "MDA (Altitude Mínima de Descida)",
+      "TOD (Top of Descent)",
+      "IAF (Fixo de Aproximação Inicial)",
+      "QNH"
+    ],
     "correta": 0,
     "explicacao": "DA/DH é usado em aproximações de precisão (ILS); MDA é o equivalente em aproximações de não-precisão, onde não há guiagem vertical contínua."
   },
   {
+    "id": "nav-q04",
     "materia": "navegacao",
     "pergunta": "Na ausência de instrução em contrário na carta, o padrão de espera (holding) usa curvas:",
-    "opcoes": ["À direita (padrão)", "À esquerda (padrão)", "Alternadas a cada volta", "Definidas apenas pelo piloto"],
+    "opcoes": [
+      "À direita (padrão)",
+      "À esquerda (padrão)",
+      "Alternadas a cada volta",
+      "Definidas apenas pelo piloto"
+    ],
     "correta": 0,
     "explicacao": "O padrão internacional (ICAO) para holding, salvo indicação contrária na carta, é com todas as curvas à direita."
   },
   {
+    "id": "nav-q05",
     "materia": "navegacao",
     "pergunta": "Um arco DME de 10 milhas é usado em uma aproximação para:",
-    "opcoes": ["Manter a aeronave a uma distância constante de uma estação enquanto muda de rumo", "Medir apenas a altitude da aeronave", "Substituir o uso do altímetro", "Indicar exclusivamente a velocidade no solo"],
+    "opcoes": [
+      "Manter a aeronave a uma distância constante de uma estação enquanto muda de rumo",
+      "Medir apenas a altitude da aeronave",
+      "Substituir o uso do altímetro",
+      "Indicar exclusivamente a velocidade no solo"
+    ],
     "correta": 0,
     "explicacao": "O arco DME mantém distância constante (raio) de uma estação, permitindo à aeronave contornar obstáculos ou se alinhar gradualmente com o curso final."
   },
   {
+    "id": "nav-q06",
     "materia": "navegacao",
     "pergunta": "As categorias de aproximação (A, B, C, D) do RBAC/ICAO são definidas com base em:",
-    "opcoes": ["Velocidade de referência de pouso (Vref) da aeronave", "Envergadura da aeronave", "Número de motores", "Fabricante da aeronave"],
+    "opcoes": [
+      "Velocidade de referência de pouso (Vref) da aeronave",
+      "Envergadura da aeronave",
+      "Número de motores",
+      "Fabricante da aeronave"
+    ],
     "correta": 0,
     "explicacao": "A categoria de aproximação é baseada na velocidade Vref (ou 1,3 Vso), determinando os mínimos de aproximação aplicáveis a cada aeronave."
   },
   {
+    "id": "reg-q08",
     "materia": "regulamento",
     "pergunta": "Segundo o RBAC 91.167, qual é a reserva de combustível final exigida para helicópteros após alcançar o aeródromo de alternativa, em velocidade normal de cruzeiro?",
-    "opcoes": ["30 minutos", "45 minutos", "60 minutos", "15 minutos"],
+    "opcoes": [
+      "30 minutos",
+      "45 minutos",
+      "60 minutos",
+      "15 minutos"
+    ],
     "correta": 0,
     "explicacao": "RBAC 91.167(a)(3): 30 minutos para helicópteros (45 minutos é o valor para aviões)."
   },
   {
+    "id": "reg-q09",
     "materia": "regulamento",
     "pergunta": "No caso de duas aeronaves se aproximando em rota de colisão frontal (ou quase frontal), a regra de prioridade determina que:",
-    "opcoes": ["Ambas alterem o rumo para a direita", "A aeronave mais rápida deve ceder passagem", "Apenas a aeronave mais alta deve desviar", "Ambas devem subir imediatamente"],
+    "opcoes": [
+      "Ambas alterem o rumo para a direita",
+      "A aeronave mais rápida deve ceder passagem",
+      "Apenas a aeronave mais alta deve desviar",
+      "Ambas devem subir imediatamente"
+    ],
     "correta": 0,
     "explicacao": "Regra clássica de direito de passagem (ICA 100-12): em aproximação frontal, ambas as aeronaves alteram o rumo para a direita."
   },
   {
+    "id": "met-q06",
     "materia": "meteorologia",
     "pergunta": "No código de nuvens do METAR, qual grupo de cobertura (oitavos) NÃO define \"teto\"?",
-    "opcoes": ["FEW e SCT", "BKN e OVC", "Apenas OVC", "Todos definem teto"],
+    "opcoes": [
+      "FEW e SCT",
+      "BKN e OVC",
+      "Apenas OVC",
+      "Todos definem teto"
+    ],
     "correta": 0,
     "explicacao": "Só há teto quando há BKN (5-7 oitavos) ou OVC (8 oitavos). FEW (1-2) e SCT (3-4) não configuram teto."
   },
   {
+    "id": "met-q07",
     "materia": "meteorologia",
     "pergunta": "No TAF, o grupo \"BECMG 1820/1822\" indica:",
-    "opcoes": ["Mudança gradual das condições entre 20h e 22h UTC do dia 18", "Mudança abrupta exatamente às 18:20 UTC", "Probabilidade de 18% de chuva", "Vento variável entre 180° e 220°"],
+    "opcoes": [
+      "Mudança gradual das condições entre 20h e 22h UTC do dia 18",
+      "Mudança abrupta exatamente às 18:20 UTC",
+      "Probabilidade de 18% de chuva",
+      "Vento variável entre 180° e 220°"
+    ],
     "correta": 0,
     "explicacao": "BECMG (becoming) indica mudança gradual dentro da janela de tempo informada — aqui, entre 20h e 22h UTC do dia 18."
   }

@@ -58,7 +58,13 @@ function answerQuiz(btn) {
   if (QUIZ_STATE.answered) return;
   QUIZ_STATE.answered = true;
   const correct = btn.dataset.correct === "true";
-  if (correct) QUIZ_STATE.correct += 1;
+  if (correct) {
+    QUIZ_STATE.correct += 1;
+  } else {
+    const q = QUIZ_STATE.questions[QUIZ_STATE.idx];
+    const correctText = q.opcoes[q.correta];
+    addMissedQuestion(q, correctText);
+  }
   document.querySelectorAll(".quiz-options button").forEach((b) => {
     b.disabled = true;
     if (b.dataset.correct === "true") b.classList.add("correct");
@@ -78,15 +84,18 @@ function finishQuiz() {
   const total = questions.length;
   const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
   if (materia && materia !== "todas") recordQuizResult(materia, correct, total);
+  recordActivity();
 
+  const missedCount = total - correct;
   const pass = pct >= 70;
   document.getElementById("quiz-box").innerHTML = `
     <div class="quiz-question">Resultado: ${correct}/${total} (${pct}%)</div>
     <div class="note ${pass ? "" : "warn"}">
       <strong>${pass ? "Aprovado" : "Abaixo do mínimo"}</strong> — a ANAC exige nota mínima de 70% por matéria.
     </div>
+    ${missedCount > 0 ? `<div class="note">${missedCount} questão${missedCount > 1 ? "ões" : ""} errada${missedCount > 1 ? "s" : ""} ${missedCount > 1 ? "foram adicionadas" : "foi adicionada"} à sua revisão espaçada. <a href="flashcards.html">Revisar agora →</a></div>` : ""}
     <button onclick="location.reload()">Repetir simulado</button>
-    <a class="btn secondary" style="margin-left:0.5rem; display:inline-block" href="index.html">Voltar ao painel</a>
+    <a class="btn secondary" style="margin-left:0.5rem; display:inline-block" href="painel.html">Voltar ao painel</a>
   `;
 }
 
