@@ -609,5 +609,174 @@
     ],
     "correta": 0,
     "explicacao": "Regra mnemônica \"Variation West, Magnetic Best\": com variação oeste, soma-se ao rumo verdadeiro. MC = TC + variação W = 090 + 10 = 100°. (Com variação leste, seria o contrário: subtrai-se — \"Variation East, Magnetic Least\".)"
+  },
+  {
+    "id": "reg-q18",
+    "materia": "regulamento",
+    "pergunta": "Duas aeronaves em rota convergente, aproximadamente no mesmo nível, sem estarem em aproximação frontal nem ultrapassagem. Qual delas deve ceder passagem?",
+    "opcoes": [
+      "A aeronave que estiver mais alta cede à mais baixa",
+      "A aeronave que tiver a outra à sua direita cede passagem",
+      "A aeronave mais rápida cede à mais lenta",
+      "Nenhuma cede — ambas devem manter o rumo"
+    ],
+    "correta": 1,
+    "explicacao": "ICA 100-12: em rota convergente, a aeronave que tem a outra à sua direita deve ceder passagem (regra semelhante à do trânsito marítimo)."
+  },
+  {
+    "id": "reg-q19",
+    "materia": "regulamento",
+    "pergunta": "O espaço aéreo RVSM (separação vertical reduzida) no Brasil se aplica a qual faixa de níveis de voo?",
+    "opcoes": [
+      "FL100 a FL180",
+      "FL180 a FL290",
+      "FL290 a FL410",
+      "FL410 a FL510"
+    ],
+    "correta": 2,
+    "explicacao": "RVSM cobre FL290 a FL410 (ICA 100-12, tabelas de níveis de cruzeiro). Qualquer aeronave que cruze nesses níveis precisa de aprovação RVSM — na prática irrelevante para a maioria dos helicópteros, cujo teto de serviço não alcança essa faixa."
+  },
+  {
+    "id": "reg-q20",
+    "materia": "regulamento",
+    "pergunta": "Ao ajustar o altímetro com o código QFE, o instrumento passa a indicar:",
+    "opcoes": [
+      "Altitude (referência: nível médio do mar)",
+      "Altura (referência: elevação do aeródromo)",
+      "Nível de voo (referência: 1013,2 hPa)",
+      "Altitude densidade"
+    ],
+    "correta": 1,
+    "explicacao": "QFE referencia a elevação do próprio aeródromo — o altímetro marca zero no solo, indicando altura (AGL). QNH indica altitude (AMSL); QNE (1013,2 hPa padrão) indica nível de voo."
+  },
+  {
+    "id": "met-q17",
+    "materia": "meteorologia",
+    "pergunta": "Quais características estão tipicamente associadas à passagem de uma frente quente?",
+    "opcoes": [
+      "Passagem rápida, nuvens Cumulonimbus, forte turbulência e queda brusca de temperatura",
+      "Nebulosidade estratiforme extensa que se aproxima gradualmente, chuva contínua e elevação lenta da temperatura",
+      "Céu claro sem nuvens antes e depois da passagem",
+      "Só ocorre à noite, com nevoeiro de radiação associado"
+    ],
+    "correta": 1,
+    "explicacao": "Frente quente: aproximação lenta e gradual, nebulosidade estratiforme em camadas (cirrus → stratus), chuva contínua e prolongada, temperatura sobe após a passagem. Contraste com a frente fria (passagem rápida, Cb, turbulência, queda de temperatura)."
+  },
+  {
+    "id": "met-q18",
+    "materia": "meteorologia",
+    "pergunta": "Um METAR reporta temperatura e ponto de orvalho com um spread (diferença) de 1°C ou menos. O que isso indica?",
+    "opcoes": [
+      "Alta probabilidade de nevoeiro — o ar está próximo da saturação",
+      "Baixíssima umidade relativa",
+      "Formação de gelo estrutural iminente, independente da nebulosidade",
+      "Vento forte e turbulência associada"
+    ],
+    "correta": 0,
+    "explicacao": "Quanto menor o spread temperatura/ponto de orvalho, mais próximo da saturação está o ar — spread ≤1°C é regra prática clássica de alto risco de nevoeiro (especialmente à noite, céu claro e vento fraco: nevoeiro de radiação)."
+  },
+  {
+    "id": "met-q19",
+    "materia": "meteorologia",
+    "pergunta": "Um TAF tem validade típica de quantas horas, e em quais horários sinóticos costuma ser emitido?",
+    "opcoes": [
+      "6 horas, emitido a cada hora cheia",
+      "12 horas, emitido em 03Z, 09Z, 15Z e 21Z",
+      "24 ou 30 horas, emitido em 00Z, 06Z, 12Z e 18Z",
+      "48 horas, emitido apenas duas vezes ao dia"
+    ],
+    "correta": 2,
+    "explicacao": "TAF tem validade típica de 24 ou 30 horas, com emissões nos horários sinóticos padrão: 00Z, 06Z, 12Z e 18Z."
+  },
+  {
+    "id": "met-q20",
+    "materia": "meteorologia",
+    "pergunta": "Qual é a faixa de temperatura mais crítica para a formação de gelo estrutural em voo (maior concentração de água líquida super-resfriada)?",
+    "opcoes": [
+      "+5°C a 0°C",
+      "0°C a −20°C",
+      "−20°C a −40°C",
+      "Abaixo de −40°C"
+    ],
+    "correta": 1,
+    "explicacao": "A faixa 0°C a −20°C concentra a maior quantidade de água líquida super-resfriada, sendo a mais crítica para gelo estrutural. Abaixo de −20°C a formação torna-se rara (menos água líquida disponível)."
+  },
+  {
+    "id": "nav-q15",
+    "materia": "navegacao",
+    "pergunta": "Num procedimento de espera (holding) abaixo do FL140, qual é a duração padrão da perna de afastamento (outbound)?",
+    "opcoes": [
+      "30 segundos",
+      "1 minuto",
+      "1,5 minuto",
+      "2 minutos"
+    ],
+    "correta": 1,
+    "explicacao": "Abaixo de FL140, a perna de afastamento padrão é de 1 minuto. Entre FL140 e FL340, passa a 1,5 minuto (ar mais fino exige mais tempo/distância para completar as curvas)."
+  },
+  {
+    "id": "nav-q16",
+    "materia": "navegacao",
+    "pergunta": "No diagrama de setores de entrada em espera (circuito padrão, curvas à direita), a entrada teardrop ocupa o setor de 70°, adjacente a qual curso?",
+    "opcoes": [
+      "Adjacente ao curso de chegada (inbound), do lado do circuito",
+      "Adjacente ao curso de afastamento (outbound), do lado oposto ao circuito",
+      "Ocupa exatamente o lado do circuito, os 180° inteiros",
+      "É sempre o setor oposto ao selecionado pelo piloto"
+    ],
+    "correta": 1,
+    "explicacao": "O setor teardrop (70°) fica do lado não-circuito (oposto ao lado das curvas), adjacente ao curso de afastamento (outbound) — por isso a entrada teardrop já parte de um rumo próximo ao outbound, só ajustando ~30° para dentro do circuito."
+  },
+  {
+    "id": "nav-q17",
+    "materia": "navegacao",
+    "pergunta": "Voando com velocidade no solo (GS) de 90 kt, quanto tempo leva para percorrer 45 NM?",
+    "opcoes": [
+      "20 minutos",
+      "30 minutos",
+      "45 minutos",
+      "60 minutos"
+    ],
+    "correta": 1,
+    "explicacao": "Tempo (h) = Distância / GS = 45/90 = 0,5 h = 30 minutos."
+  },
+  {
+    "id": "nav-q18",
+    "materia": "navegacao",
+    "pergunta": "Nos mínimos de uma aproximação ILS CAT II, qual o valor mínimo de RVR (alcance visual na pista)?",
+    "opcoes": [
+      "RVR ≥ 800 m",
+      "RVR ≥ 550 m",
+      "RVR ≥ 300 m",
+      "Não há RVR mínimo definido para CAT II"
+    ],
+    "correta": 2,
+    "explicacao": "CAT II exige RVR ≥ 300 m (DH entre 30–60 m / 100–200 ft). CAT I exige RVR ≥ 550 m (ou visibilidade ≥ 800 m) com DH ≥ 60 m (200 ft)."
+  },
+  {
+    "id": "nav-q19",
+    "materia": "navegacao",
+    "pergunta": "Uma velocidade de 100 kt equivale a aproximadamente quantos km/h?",
+    "opcoes": [
+      "100 km/h",
+      "135 km/h",
+      "160 km/h",
+      "185 km/h"
+    ],
+    "correta": 3,
+    "explicacao": "1 kt = 1,852 km/h → 100 kt × 1,852 ≈ 185 km/h."
+  },
+  {
+    "id": "nav-q20",
+    "materia": "navegacao",
+    "pergunta": "Um voo consome combustível a um fluxo de 40 L/h durante 1h30min de voo efetivo. Qual o consumo total (sem considerar reserva)?",
+    "opcoes": [
+      "40 L",
+      "60 L",
+      "80 L",
+      "100 L"
+    ],
+    "correta": 1,
+    "explicacao": "Combustível = Fluxo × Tempo = 40 L/h × 1,5 h = 60 L. Lembre-se de somar a reserva final exigida (30 min para helicópteros, RBAC 91.167) antes de decidir o combustível total a embarcar."
   }
 ]

@@ -1,39 +1,278 @@
 [
-  { "id": "reg-1", "materia": "regulamento", "frente": "Horas mínimas de PIC em navegação para IFR (RBAC 61.223)?", "verso": "50 horas, das quais no mínimo 10 horas na categoria (helicóptero)." },
-  { "id": "reg-2", "materia": "regulamento", "frente": "Horas mínimas de voo por instrumentos para IFR, e quanto pode ser em FSTD?", "verso": "40 horas totais; no máximo 20 horas podem ser em FSTD qualificado pela ANAC." },
-  { "id": "reg-3", "materia": "regulamento", "frente": "Horas mínimas de instrução em duplo comando para IFR?", "verso": "15 horas com CIAC certificado, na categoria." },
-  { "id": "reg-4", "materia": "regulamento", "frente": "Validade da habilitação IFR?", "verso": "12 meses (RBAC 61.19(b)(3)), com tolerância de 30 dias antes/depois do mês de vencimento (61.33)." },
-  { "id": "reg-5", "materia": "regulamento", "frente": "Regra de recência para atuar como PIC em voo IFR (RBAC 61.21(b))?", "verso": "6 aproximações por instrumentos na categoria nos últimos 6 meses, ou aprovação em exame de proficiência IFR (pode ser em FSTD)." },
-  { "id": "reg-6", "materia": "regulamento", "frente": "Estrutura do exame teórico IFR da ANAC (provas, questões, tempo)?", "verso": "REG: 20 questões/30min. MET: 20 questões/35min. NAV: 20 questões/100min. Total: 60 questões/165min." },
-  { "id": "reg-7", "materia": "regulamento", "frente": "Nota mínima de aprovação no exame teórico ANAC?", "verso": "70% de acertos em CADA prova (não é média entre as provas)." },
-  { "id": "reg-8", "materia": "regulamento", "frente": "Regra da 2ª época para o exame IFR (3 provas)?", "verso": "Pode reprovar em até 1 das 3 provas (com no mínimo 30% de acerto nela) e refazer só essa, em até 90 dias da 1ª prova." },
-  { "id": "reg-9", "materia": "regulamento", "frente": "Quando o exame teórico IFR é totalmente dispensado?", "verso": "Quando o candidato já possui habilitação de voo por instrumentos vigente em outra categoria de aeronave." },
-  { "id": "reg-10", "materia": "regulamento", "frente": "Regra dos '90 dias' na IS 00-003H?", "verso": "São exigíveis nos exames as normas (Lei, Regulamento, Portaria) em vigor até 90 dias antes da data da prova." },
-  { "id": "met-1", "materia": "meteorologia", "frente": "Faixa de temperatura mais crítica para gelo estrutural?", "verso": "0°C a -20°C, onde há água líquida super-resfriada em maior quantidade." },
-  { "id": "met-2", "materia": "meteorologia", "frente": "Condições que favorecem nevoeiro de radiação?", "verso": "Noite de céu claro, vento fraco (calmo a ~5kt) e alta umidade relativa — resfriamento radiativo da superfície." },
-  { "id": "met-3", "materia": "meteorologia", "frente": "O que significa BKN e FEW em um METAR?", "verso": "FEW = 1 a 2 oitavos de céu coberto. BKN = broken, 5 a 7 oitavos. (SCT = 3-4, OVC = 8 oitavos)." },
-  { "id": "met-4", "materia": "meteorologia", "frente": "Fórmula da altitude densidade?", "verso": "DA = PA + 120 × (OAT − ISA), onde ISA = 15 − 2×(PA/1000)." },
-  { "id": "met-5", "materia": "meteorologia", "frente": "Validade típica de um TAF?", "verso": "24 ou 30 horas, para um aeródromo específico." },
-  { "id": "nav-1", "materia": "navegacao", "frente": "Fórmula do ângulo de correção de deriva (WCA)?", "verso": "WCA = asin( (WS × sin(WD − TC)) / TAS )." },
-  { "id": "nav-2", "materia": "navegacao", "frente": "Fórmula da velocidade no solo (GS) no triângulo de velocidades?", "verso": "GS = TAS × cos(WCA) − WS × cos(WD − TC)." },
-  { "id": "nav-3", "materia": "navegacao", "frente": "Diferença entre DA/DH e MDA?", "verso": "DA/DH: usado em aproximações de precisão (ILS), com guiagem vertical contínua. MDA: aproximações de não-precisão, altitude mínima sem guiagem vertical." },
-  { "id": "nav-4", "materia": "navegacao", "frente": "Sentido padrão das curvas em um holding (sem indicação contrária)?", "verso": "Todas as curvas à direita (padrão ICAO)." },
-  { "id": "nav-5", "materia": "navegacao", "frente": "Regra prática da razão de descida para plano de 3°?", "verso": "ROD (ft/min) ≈ GS (kt) × 5." },
-  { "id": "nav-6", "materia": "navegacao", "frente": "O que baseia a categoria de aproximação (A/B/C/D)?", "verso": "A velocidade de referência de pouso (Vref) ou 1,3×Vso da aeronave." },
-  { "id": "nav-7", "materia": "navegacao", "frente": "Indicação 'TO' vs 'FROM' no VOR?", "verso": "'TO' = seguindo a radial selecionada, a estação está à frente. 'FROM' = a estação está atrás." },
-  { "id": "reg-11", "materia": "regulamento", "frente": "Reserva final de combustível após a alternativa (RBAC 91.167)?", "verso": "Helicópteros: 30 minutos em cruzeiro normal. Aviões: 45 minutos." },
-  { "id": "reg-12", "materia": "regulamento", "frente": "Prioridade em aproximação frontal entre duas aeronaves?", "verso": "Ambas alteram o rumo para a direita." },
-  { "id": "reg-13", "materia": "regulamento", "frente": "Prioridade em convergência entre duas aeronaves?", "verso": "Quem tem a outra aeronave à sua direita cede a passagem." },
-  { "id": "reg-14", "materia": "regulamento", "frente": "Perna de afastamento no holding, abaixo de FL140 e entre FL140-FL340?", "verso": "1 minuto abaixo de FL140; 1,5 minuto entre FL140 e FL340." },
-  { "id": "nav-8", "materia": "navegacao", "frente": "Faixas de Vat para categorias de aproximação A a D?", "verso": "A: <91kt · B: 91-120kt · C: 121-140kt · D: 141-165kt." },
-  { "id": "nav-9", "materia": "navegacao", "frente": "Mínimos CAT I do ILS (DH e RVR/visibilidade)?", "verso": "DH ≥ 60m (200ft); RVR ≥ 550m ou visibilidade ≥ 800m." },
-  { "id": "met-6", "materia": "meteorologia", "frente": "Regra prática de spread T/Td para risco de nevoeiro?", "verso": "Spread de 1°C ou menos indica alta probabilidade de nevoeiro." },
-  { "id": "met-7", "materia": "meteorologia", "frente": "Quais grupos de nuvens NÃO definem teto no METAR?", "verso": "FEW e SCT não definem teto; apenas BKN e OVC definem." },
-  { "id": "reg-15", "materia": "regulamento", "frente": "Qual lei institui o Código Brasileiro de Aeronáutica?", "verso": "Lei nº 7.565/1986." },
-  { "id": "reg-16", "materia": "regulamento", "frente": "Qual lei cria a ANAC?", "verso": "Lei nº 11.182/2005." },
-  { "id": "reg-17", "materia": "regulamento", "frente": "Qual decreto rege o sistema de investigação e prevenção de acidentes aeronáuticos no Brasil?", "verso": "Decreto nº 9.540/2018." },
-  { "id": "reg-18", "materia": "regulamento", "frente": "Regra de nível de cruzeiro IFR por rumo magnético (RM)?", "verso": "RM 000-179°: nível ímpar (FL035, FL055...). RM 180-359°: nível par (FL040, FL060...). Sem o +500ft do VFR." },
-  { "id": "met-8", "materia": "meteorologia", "frente": "Diferença entre SIGMET e AIRMET?", "verso": "SIGMET: fenômenos severos, qualquer altitude. AIRMET: menor intensidade, só superfície-FL100. Ambos válidos por 4h (até 6h)." },
-  { "id": "met-9", "materia": "meteorologia", "frente": "O que significa 'WS R09' num reporte meteorológico?", "verso": "Windshear (tesoura de vento) reportado na pista 09." },
-  { "id": "nav-10", "materia": "navegacao", "frente": "Conversão de rota verdadeira (TC) para rumo magnético (MC) com variação oeste vs leste?", "verso": "Variação Oeste: MC = TC + variação (\"West is Best\"). Variação Leste: MC = TC − variação (\"East is Least\")." }
+  {
+    "id": "reg-1",
+    "materia": "regulamento",
+    "frente": "Horas mínimas de PIC em navegação para IFR (RBAC 61.223)?",
+    "verso": "50 horas, das quais no mínimo 10 horas na categoria (helicóptero)."
+  },
+  {
+    "id": "reg-2",
+    "materia": "regulamento",
+    "frente": "Horas mínimas de voo por instrumentos para IFR, e quanto pode ser em FSTD?",
+    "verso": "40 horas totais; no máximo 20 horas podem ser em FSTD qualificado pela ANAC."
+  },
+  {
+    "id": "reg-3",
+    "materia": "regulamento",
+    "frente": "Horas mínimas de instrução em duplo comando para IFR?",
+    "verso": "15 horas com CIAC certificado, na categoria."
+  },
+  {
+    "id": "reg-4",
+    "materia": "regulamento",
+    "frente": "Validade da habilitação IFR?",
+    "verso": "12 meses (RBAC 61.19(b)(3)), com tolerância de 30 dias antes/depois do mês de vencimento (61.33)."
+  },
+  {
+    "id": "reg-5",
+    "materia": "regulamento",
+    "frente": "Regra de recência para atuar como PIC em voo IFR (RBAC 61.21(b))?",
+    "verso": "6 aproximações por instrumentos na categoria nos últimos 6 meses, ou aprovação em exame de proficiência IFR (pode ser em FSTD)."
+  },
+  {
+    "id": "reg-6",
+    "materia": "regulamento",
+    "frente": "Estrutura do exame teórico IFR da ANAC (provas, questões, tempo)?",
+    "verso": "REG: 20 questões/30min. MET: 20 questões/35min. NAV: 20 questões/100min. Total: 60 questões/165min."
+  },
+  {
+    "id": "reg-7",
+    "materia": "regulamento",
+    "frente": "Nota mínima de aprovação no exame teórico ANAC?",
+    "verso": "70% de acertos em CADA prova (não é média entre as provas)."
+  },
+  {
+    "id": "reg-8",
+    "materia": "regulamento",
+    "frente": "Regra da 2ª época para o exame IFR (3 provas)?",
+    "verso": "Pode reprovar em até 1 das 3 provas (com no mínimo 30% de acerto nela) e refazer só essa, em até 90 dias da 1ª prova."
+  },
+  {
+    "id": "reg-9",
+    "materia": "regulamento",
+    "frente": "Quando o exame teórico IFR é totalmente dispensado?",
+    "verso": "Quando o candidato já possui habilitação de voo por instrumentos vigente em outra categoria de aeronave."
+  },
+  {
+    "id": "reg-10",
+    "materia": "regulamento",
+    "frente": "Regra dos '90 dias' na IS 00-003H?",
+    "verso": "São exigíveis nos exames as normas (Lei, Regulamento, Portaria) em vigor até 90 dias antes da data da prova."
+  },
+  {
+    "id": "met-1",
+    "materia": "meteorologia",
+    "frente": "Faixa de temperatura mais crítica para gelo estrutural?",
+    "verso": "0°C a -20°C, onde há água líquida super-resfriada em maior quantidade."
+  },
+  {
+    "id": "met-2",
+    "materia": "meteorologia",
+    "frente": "Condições que favorecem nevoeiro de radiação?",
+    "verso": "Noite de céu claro, vento fraco (calmo a ~5kt) e alta umidade relativa — resfriamento radiativo da superfície."
+  },
+  {
+    "id": "met-3",
+    "materia": "meteorologia",
+    "frente": "O que significa BKN e FEW em um METAR?",
+    "verso": "FEW = 1 a 2 oitavos de céu coberto. BKN = broken, 5 a 7 oitavos. (SCT = 3-4, OVC = 8 oitavos)."
+  },
+  {
+    "id": "met-4",
+    "materia": "meteorologia",
+    "frente": "Fórmula da altitude densidade?",
+    "verso": "DA = PA + 120 × (OAT − ISA), onde ISA = 15 − 2×(PA/1000)."
+  },
+  {
+    "id": "met-5",
+    "materia": "meteorologia",
+    "frente": "Validade típica de um TAF?",
+    "verso": "24 ou 30 horas, para um aeródromo específico."
+  },
+  {
+    "id": "nav-1",
+    "materia": "navegacao",
+    "frente": "Fórmula do ângulo de correção de deriva (WCA)?",
+    "verso": "WCA = asin( (WS × sin(WD − TC)) / TAS )."
+  },
+  {
+    "id": "nav-2",
+    "materia": "navegacao",
+    "frente": "Fórmula da velocidade no solo (GS) no triângulo de velocidades?",
+    "verso": "GS = TAS × cos(WCA) − WS × cos(WD − TC)."
+  },
+  {
+    "id": "nav-3",
+    "materia": "navegacao",
+    "frente": "Diferença entre DA/DH e MDA?",
+    "verso": "DA/DH: usado em aproximações de precisão (ILS), com guiagem vertical contínua. MDA: aproximações de não-precisão, altitude mínima sem guiagem vertical."
+  },
+  {
+    "id": "nav-4",
+    "materia": "navegacao",
+    "frente": "Sentido padrão das curvas em um holding (sem indicação contrária)?",
+    "verso": "Todas as curvas à direita (padrão ICAO)."
+  },
+  {
+    "id": "nav-5",
+    "materia": "navegacao",
+    "frente": "Regra prática da razão de descida para plano de 3°?",
+    "verso": "ROD (ft/min) ≈ GS (kt) × 5."
+  },
+  {
+    "id": "nav-6",
+    "materia": "navegacao",
+    "frente": "O que baseia a categoria de aproximação (A/B/C/D)?",
+    "verso": "A velocidade de referência de pouso (Vref) ou 1,3×Vso da aeronave."
+  },
+  {
+    "id": "nav-7",
+    "materia": "navegacao",
+    "frente": "Indicação 'TO' vs 'FROM' no VOR?",
+    "verso": "'TO' = seguindo a radial selecionada, a estação está à frente. 'FROM' = a estação está atrás."
+  },
+  {
+    "id": "reg-11",
+    "materia": "regulamento",
+    "frente": "Reserva final de combustível após a alternativa (RBAC 91.167)?",
+    "verso": "Helicópteros: 30 minutos em cruzeiro normal. Aviões: 45 minutos."
+  },
+  {
+    "id": "reg-12",
+    "materia": "regulamento",
+    "frente": "Prioridade em aproximação frontal entre duas aeronaves?",
+    "verso": "Ambas alteram o rumo para a direita."
+  },
+  {
+    "id": "reg-13",
+    "materia": "regulamento",
+    "frente": "Prioridade em convergência entre duas aeronaves?",
+    "verso": "Quem tem a outra aeronave à sua direita cede a passagem."
+  },
+  {
+    "id": "reg-14",
+    "materia": "regulamento",
+    "frente": "Perna de afastamento no holding, abaixo de FL140 e entre FL140-FL340?",
+    "verso": "1 minuto abaixo de FL140; 1,5 minuto entre FL140 e FL340."
+  },
+  {
+    "id": "nav-8",
+    "materia": "navegacao",
+    "frente": "Faixas de Vat para categorias de aproximação A a D?",
+    "verso": "A: <91kt · B: 91-120kt · C: 121-140kt · D: 141-165kt."
+  },
+  {
+    "id": "nav-9",
+    "materia": "navegacao",
+    "frente": "Mínimos CAT I do ILS (DH e RVR/visibilidade)?",
+    "verso": "DH ≥ 60m (200ft); RVR ≥ 550m ou visibilidade ≥ 800m."
+  },
+  {
+    "id": "met-6",
+    "materia": "meteorologia",
+    "frente": "Regra prática de spread T/Td para risco de nevoeiro?",
+    "verso": "Spread de 1°C ou menos indica alta probabilidade de nevoeiro."
+  },
+  {
+    "id": "met-7",
+    "materia": "meteorologia",
+    "frente": "Quais grupos de nuvens NÃO definem teto no METAR?",
+    "verso": "FEW e SCT não definem teto; apenas BKN e OVC definem."
+  },
+  {
+    "id": "reg-15",
+    "materia": "regulamento",
+    "frente": "Qual lei institui o Código Brasileiro de Aeronáutica?",
+    "verso": "Lei nº 7.565/1986."
+  },
+  {
+    "id": "reg-16",
+    "materia": "regulamento",
+    "frente": "Qual lei cria a ANAC?",
+    "verso": "Lei nº 11.182/2005."
+  },
+  {
+    "id": "reg-17",
+    "materia": "regulamento",
+    "frente": "Qual decreto rege o sistema de investigação e prevenção de acidentes aeronáuticos no Brasil?",
+    "verso": "Decreto nº 9.540/2018."
+  },
+  {
+    "id": "reg-18",
+    "materia": "regulamento",
+    "frente": "Regra de nível de cruzeiro IFR por rumo magnético (RM)?",
+    "verso": "RM 000-179°: nível ímpar (FL035, FL055...). RM 180-359°: nível par (FL040, FL060...). Sem o +500ft do VFR."
+  },
+  {
+    "id": "met-8",
+    "materia": "meteorologia",
+    "frente": "Diferença entre SIGMET e AIRMET?",
+    "verso": "SIGMET: fenômenos severos, qualquer altitude. AIRMET: menor intensidade, só superfície-FL100. Ambos válidos por 4h (até 6h)."
+  },
+  {
+    "id": "met-9",
+    "materia": "meteorologia",
+    "frente": "O que significa 'WS R09' num reporte meteorológico?",
+    "verso": "Windshear (tesoura de vento) reportado na pista 09."
+  },
+  {
+    "id": "nav-10",
+    "materia": "navegacao",
+    "frente": "Conversão de rota verdadeira (TC) para rumo magnético (MC) com variação oeste vs leste?",
+    "verso": "Variação Oeste: MC = TC + variação (\"West is Best\"). Variação Leste: MC = TC − variação (\"East is Least\")."
+  },
+  {
+    "id": "reg-19",
+    "materia": "regulamento",
+    "frente": "Em rota convergente (sem ser frontal nem ultrapassagem), quem cede passagem?",
+    "verso": "Quem tem a outra aeronave à sua DIREITA cede passagem."
+  },
+  {
+    "id": "reg-20",
+    "materia": "regulamento",
+    "frente": "Faixa de níveis do espaço aéreo RVSM no Brasil?",
+    "verso": "FL290 a FL410. Irrelevante na prática para a maioria dos helicópteros (teto de serviço menor)."
+  },
+  {
+    "id": "reg-21",
+    "materia": "regulamento",
+    "frente": "O que o código QFE faz o altímetro indicar?",
+    "verso": "Altura (AGL) — referência é a elevação do próprio aeródromo, altímetro marca zero no solo."
+  },
+  {
+    "id": "met-10",
+    "materia": "meteorologia",
+    "frente": "Características da passagem de uma frente QUENTE?",
+    "verso": "Aproximação lenta/gradual, nuvens estratiformes extensas, chuva contínua, temperatura SOBE depois da passagem."
+  },
+  {
+    "id": "met-11",
+    "materia": "meteorologia",
+    "frente": "Faixa de temperatura mais crítica para gelo estrutural?",
+    "verso": "0°C a −20°C (mais água líquida super-resfriada). Rara abaixo de −20°C."
+  },
+  {
+    "id": "met-12",
+    "materia": "meteorologia",
+    "frente": "Validade típica do TAF e horários sinóticos de emissão?",
+    "verso": "24 ou 30 horas, emitido em 00Z, 06Z, 12Z e 18Z."
+  },
+  {
+    "id": "nav-11",
+    "materia": "navegacao",
+    "frente": "Duração da perna de afastamento no holding abaixo de FL140?",
+    "verso": "1 minuto (1,5 min entre FL140 e FL340)."
+  },
+  {
+    "id": "nav-12",
+    "materia": "navegacao",
+    "frente": "RVR mínimo exigido em CAT II (ILS)?",
+    "verso": "RVR ≥ 300 m (DH 30–60 m / 100–200 ft)."
+  },
+  {
+    "id": "nav-13",
+    "materia": "navegacao",
+    "frente": "Conversão rápida: 1 kt em km/h?",
+    "verso": "1 kt = 1,852 km/h."
+  }
 ]
