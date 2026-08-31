@@ -12,6 +12,12 @@ const STORE_KEYS = {
 
 const DEFAULT_EXAM_DATE = "2026-09-15";
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  });
+}
+
 function getJSON(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
