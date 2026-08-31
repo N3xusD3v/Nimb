@@ -4,6 +4,8 @@ const STORE_KEYS = {
   quiz: "nimb_quiz_progress",
   srs: "nimb_flashcards_srs",
   plano: "nimb_plano_checklist",
+  priority: "nimb_priority_subject",
+  onboarded: "nimb_onboarded",
 };
 
 const DEFAULT_EXAM_DATE = "2026-09-15";

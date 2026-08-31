@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://nimb.n3xus.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://nimb.n3xus.dev/painel.html</loc><priority>0.9</priority></url>
+  <url><loc>https://nimb.n3xus.dev/regulamento.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nimb.n3xus.dev/meteorologia.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nimb.n3xus.dev/navegacao.html</loc><priority>0.8</priority></url>
+  <url><loc>https://nimb.n3xus.dev/calculadoras.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nimb.n3xus.dev/quiz.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nimb.n3xus.dev/flashcards.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nimb.n3xus.dev/plano.html</loc><priority>0.7</priority></url>
+  <url><loc>https://nimb.n3xus.dev/recursos.html</loc><priority>0.6</priority></url>
+</urlset>

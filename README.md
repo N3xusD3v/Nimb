@@ -12,7 +12,8 @@ python -m http.server 8080
 
 ## Estrutura
 
-- `index.html` — painel com contagem regressiva e progresso por matéria
+- `index.html` — landing page / onboarding (hero, proposta de valor, formulário de 2 perguntas que personaliza o painel, "como funciona", matérias, metodologia/fontes, FAQ)
+- `painel.html` — painel do app com contagem regressiva e progresso por matéria (destino após o onboarding)
 - `regulamento.html`, `meteorologia.html`, `navegacao.html` — conteúdo de estudo por matéria
 - `calculadoras.html` — triângulo de velocidades, tempo/distância/combustível, altitude densidade, razão de descida, conversões
 - `quiz.html` — simulados por matéria (nota de corte 70%, igual à ANAC)
@@ -21,6 +22,8 @@ python -m http.server 8080
 - `recursos.html` — normas oficiais, bancos de questões e comunidades
 - `data/` — bancos de questões, flashcards e plano em JSON
 - `js/app.js` — utilidades compartilhadas (localStorage, progresso, contagem regressiva)
+- `js/onboarding.js` — animação de entrada (scroll-reveal) e lógica do formulário de onboarding da landing page
+- `robots.txt`, `sitemap.xml` — SEO básico
 
 ## Fontes normativas usadas
 

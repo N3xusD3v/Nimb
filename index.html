@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nimb — Preparatório IFRH/ANAC</title>
+<title>Nimb — Passe no IFR da ANAC (Habilitação IFRH)</title>
+<meta name="description" content="Prepare-se para o exame teórico IFR da ANAC (habilitação de voo por instrumentos em helicóptero) com conteúdo extraído direto do RBAC 61, RBAC 91 e IS 00-003H, calculadoras verificadas, simulados no formato oficial e um plano de estudos de 15 dias." />
+<meta name="theme-color" content="#0b0f14" />
+<link rel="canonical" href="https://nimb.n3xus.dev/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nimb — Passe no IFR da ANAC" />
+<meta property="og:description" content="Regulamento, Meteorologia e Navegação extraídos direto das normas oficiais da ANAC/DECEA. Calculadoras verificadas, simulados no formato da prova e plano de 15 dias." />
+<meta property="og:url" content="https://nimb.n3xus.dev/" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Nimb — Passe no IFR da ANAC" />
+<meta name="twitter:description" content="Preparatório para a habilitação IFRH baseado nas normas oficiais da ANAC/DECEA." />
+
 <link rel="stylesheet" href="css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é a habilitação IFRH?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IFRH é a habilitação de Voo por Instrumentos em Helicóptero da ANAC. Para obtê-la é preciso concluir um curso teórico aprovado, ser aprovado no exame teórico IFR e no exame prático de proficiência." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como é estruturado o exame teórico IFR da ANAC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O exame IFR tem 3 provas: REG (Regulamentos, 20 questões, 30 min), MET (Meteorologia, 20 questões, 35 min) e NAV (Navegação, 20 questões, 100 min). A nota mínima é 70% em cada prova, não é média entre elas." }
+    },
+    {
+      "@type": "Question",
+      "name": "O Nimb é afiliado à ANAC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O Nimb é um material de apoio independente e não-oficial. Todo o conteúdo é baseado em normas públicas (RBAC 61, RBAC 91, IS 00-003H, ICA 100-12) e deve ser confirmado na fonte oficial antes da prova." }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso pagar para usar o Nimb?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O Nimb roda inteiramente no seu navegador, sem cadastro, sem cobrança e sem servidor guardando seus dados — seu progresso fica salvo localmente no seu dispositivo." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<header class="topbar">
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<header class="landing-nav">
   <div class="brand">
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <line x1="2.5" y1="5" x2="21.5" y2="5"/><line x1="12" y1="5" x2="12" y2="7.3"/>
@@ -17,149 +61,223 @@
     </svg>
     Nimb <span class="tag">IFRH · ANAC</span>
   </div>
-  <nav class="mainnav">
-    <a href="index.html">Painel</a>
-    <a href="regulamento.html">Regulamento</a>
-    <a href="meteorologia.html">Meteorologia</a>
-    <a href="navegacao.html">Navegação</a>
-    <a href="calculadoras.html">Calculadoras</a>
-    <a href="quiz.html">Simulados</a>
-    <a href="flashcards.html">Flashcards</a>
-    <a href="plano.html">Plano 15 dias</a>
-    <a href="recursos.html">Recursos</a>
+  <nav class="links" aria-label="Navegação principal">
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#materias">Matérias</a>
+    <a href="#metodologia">Fontes</a>
+    <a href="#faq">Dúvidas</a>
   </nav>
+  <a class="btn nav-cta" href="#onboarding">Começar agora</a>
 </header>
 
-<main>
-  <section class="hero">
-    <div>
-      <h1>Preparatório para a habilitação IFRH</h1>
-      <p>Voo por Instrumentos em Helicóptero — Regulamento, Meteorologia e Navegação. Nota mínima ANAC: 70% por matéria.</p>
-      <div style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-dim)">
-        Data da prova:
-        <input type="date" id="exam-date-input" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.2rem 0.4rem;" />
+<main id="conteudo">
+  <div class="landing-main">
+    <section class="landing-hero">
+      <span class="hero-badge reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Conteúdo extraído direto do RBAC 61, RBAC 91 e IS 00-003H
+      </span>
+      <h1 class="reveal">Passe no IFR da ANAC</h1>
+      <p class="lead reveal">Preparatório para a habilitação de Voo por Instrumentos em Helicóptero (IFRH) — Regulamento, Meteorologia e Navegação, com calculadoras verificadas, simulados no formato oficial e um plano de estudos de 15 dias.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-lg" href="#onboarding">Começar meu plano agora</a>
+        <a class="btn-ghost" href="painel.html">Já comecei — ir ao painel</a>
       </div>
-    </div>
-    <div class="countdown" id="countdown"></div>
-  </section>
+      <div class="stat-strip reveal">
+        <div class="stat"><div class="num">3</div><div class="lbl">matérias (REG · MET · NAV)</div></div>
+        <div class="stat"><div class="num">60</div><div class="lbl">questões, formato oficial</div></div>
+        <div class="stat"><div class="num">70%</div><div class="lbl">nota de corte por prova</div></div>
+        <div class="stat"><div class="num">15</div><div class="lbl">dias de plano intensivo</div></div>
+      </div>
+      <div class="source-strip reveal">
+        <span>Fontes:</span>
+        <a class="tag-pill" href="https://www.anac.gov.br/assuntos/legislacao/legislacao-1/rbha-e-rbac/rbac/rbac-61" target="_blank" rel="noopener">RBAC 61</a>
+        <a class="tag-pill" href="https://www.anac.gov.br/assuntos/legislacao/legislacao-1/rbha-e-rbac/rbac/rbac-91" target="_blank" rel="noopener">RBAC 91</a>
+        <a class="tag-pill" href="https://www.anac.gov.br/assuntos/legislacao/legislacao-1/boletim-de-pessoal/2024/bps-v-19-no-53-30-12-2024-a-03-01-2025/is-00-003h/visualizar_ato_normativo" target="_blank" rel="noopener">IS 00-003H</a>
+        <a class="tag-pill" href="https://publicacoes.decea.mil.br/publicacao/ica-100-12" target="_blank" rel="noopener">ICA 100-12</a>
+      </div>
+    </section>
 
-  <h2>Módulos de estudo</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-blue">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-            <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5Z"/>
-          </svg>
-        </span>
-        <h3>Regulamento (RTA)</h3>
+    <section class="landing-section tight" id="onboarding" aria-labelledby="onboard-title">
+      <div class="onboard-card reveal">
+        <span class="section-kicker">Comece agora</span>
+        <h2 id="onboard-title">Vamos montar seu plano</h2>
+        <p>Duas perguntas rápidas — leva menos de 30 segundos.</p>
+        <form id="onboard-form">
+          <div class="onboard-field">
+            <label for="onboard-date">Quando é a sua prova?</label>
+            <input type="date" id="onboard-date" name="date" style="width:100%; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.75rem; font-family:var(--mono);" />
+          </div>
+          <div class="onboard-field">
+            <label>Qual matéria você quer priorizar primeiro?</label>
+            <div class="priority-options">
+              <label><input type="radio" name="priority" value="regulamento" /> Regulamento</label>
+              <label><input type="radio" name="priority" value="meteorologia" /> Meteorologia</label>
+              <label><input type="radio" name="priority" value="navegacao" /> Navegação</label>
+              <label><input type="radio" name="priority" value="none" checked /> Ainda não sei</label>
+            </div>
+          </div>
+          <div class="onboard-actions">
+            <button type="submit" class="btn">Gerar meu plano de estudos</button>
+            <a href="painel.html" id="onboard-skip" class="onboard-skip">Pular e ver o painel →</a>
+          </div>
+        </form>
       </div>
-      <p>RBAC 61 (habilitação IFR), RBAC 91 (regras de operação IFR), Regras do Ar, procedimentos de espera e aproximação.</p>
-      <div class="progress-bar"><div id="bar-regulamento" style="width:0%"></div></div>
-      <a class="cta" href="regulamento.html">Estudar →</a>
-    </div>
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-teal">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6.5 19a4.3 4.3 0 0 1-.5-8.6 5.8 5.8 0 0 1 11.2-2A4.3 4.3 0 0 1 17 19H6.5Z"/>
-            <path d="M8 21.5 9 19.5"/><path d="M12 21.5 13 19.5"/><path d="M16 21.5 17 19.5"/>
-          </svg>
-        </span>
-        <h3>Meteorologia</h3>
+    </section>
+
+    <section class="landing-section" id="como-funciona" aria-labelledby="como-funciona-title">
+      <span class="section-kicker reveal">Como funciona</span>
+      <h2 id="como-funciona-title" class="reveal">Da inscrição à aprovação em 4 passos</h2>
+      <p class="section-sub reveal">Sem cadastro, sem mensalidade — o app roda no seu navegador e guarda seu progresso localmente.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <h3>Diagnóstico</h3>
+          <p>Faça um simulado geral para descobrir em qual matéria você está mais fraco antes de gastar tempo estudando o que já sabe.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">2</div>
+          <h3>Plano intensivo</h3>
+          <p>Um cronograma de 15 dias cobrindo REG, MET e NAV com blocos de teoria, cálculo e simulado, ajustado à sua data de prova.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">3</div>
+          <h3>Estudo ativo</h3>
+          <p>Resumos objetivos, calculadoras de navegação verificadas e flashcards com repetição espaçada para fixar os números que mais caem.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">4</div>
+          <h3>Simulado cronometrado</h3>
+          <p>Treine no tempo real da prova — REG 30 min, MET 35 min, NAV 100 min — com a mesma nota de corte de 70% da ANAC.</p>
+        </div>
       </div>
-      <p>METAR/TAF/SIGMET, mínimos IFR, gelo, nevoeiro, massas de ar e frentes, altitude densidade.</p>
-      <div class="progress-bar"><div id="bar-meteorologia" style="width:0%"></div></div>
-      <a class="cta" href="meteorologia.html">Estudar →</a>
-    </div>
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-amber">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="m14.5 9.5-1.7 4.7a1 1 0 0 1-.6.6l-4.7 1.7 1.7-4.7a1 1 0 0 1 .6-.6z"/>
-          </svg>
-        </span>
-        <h3>Navegação Aérea</h3>
+    </section>
+
+    <section class="landing-section" id="materias" aria-labelledby="materias-title">
+      <span class="section-kicker reveal">Matérias</span>
+      <h2 id="materias-title" class="reveal">As três provas do exame IFR</h2>
+      <p class="section-sub reveal">Cada módulo cita a norma de origem — você sempre sabe de onde veio cada informação.</p>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="card-head">
+            <span class="icon-badge c-blue">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5V4.5Z"/>
+              </svg>
+            </span>
+            <h3>Regulamento (REG)</h3>
+          </div>
+          <p>RBAC 61 (habilitação IFR), RBAC 91 (regras de operação), Regras do Ar — recência, validade, reserva de combustível e mais.</p>
+          <a class="cta" href="regulamento.html">Ver conteúdo →</a>
+        </div>
+        <div class="card reveal">
+          <div class="card-head">
+            <span class="icon-badge c-teal">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6.5 19a4.3 4.3 0 0 1-.5-8.6 5.8 5.8 0 0 1 11.2-2A4.3 4.3 0 0 1 17 19H6.5Z"/>
+                <path d="M8 21.5 9 19.5"/><path d="M12 21.5 13 19.5"/><path d="M16 21.5 17 19.5"/>
+              </svg>
+            </span>
+            <h3>Meteorologia (MET)</h3>
+          </div>
+          <p>Decodificação de METAR/TAF, gelo, nevoeiro, massas de ar e frentes, altitude densidade — com fórmulas e exemplos resolvidos.</p>
+          <a class="cta" href="meteorologia.html">Ver conteúdo →</a>
+        </div>
+        <div class="card reveal">
+          <div class="card-head">
+            <span class="icon-badge c-amber">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="m14.5 9.5-1.7 4.7a1 1 0 0 1-.6.6l-4.7 1.7 1.7-4.7a1 1 0 0 1 .6-.6z"/>
+              </svg>
+            </span>
+            <h3>Navegação (NAV)</h3>
+          </div>
+          <p>Triângulo de velocidades, VOR/ADF/ILS, categorias de aproximação, holding e arcos DME — a prova mais longa, 100 minutos.</p>
+          <a class="cta" href="navegacao.html">Ver conteúdo →</a>
+        </div>
       </div>
-      <p>Triângulo de velocidades, VOR/ADF/ILS, arcos DME, categorias de aproximação, cartas IAC.</p>
-      <div class="progress-bar"><div id="bar-navegacao" style="width:0%"></div></div>
-      <a class="cta" href="navegacao.html">Estudar →</a>
-    </div>
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-purple">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="5" y="2.5" width="14" height="19" rx="2"/>
-            <rect x="7.5" y="5" width="9" height="3.2" rx="0.6"/>
-            <circle cx="8.4" cy="12.6" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="12" cy="12.6" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="15.6" cy="12.6" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="8.4" cy="16.1" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="12" cy="16.1" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="15.6" cy="16.1" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="8.4" cy="19.6" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="12" cy="19.6" r="0.65" fill="currentColor" stroke="none"/>
-            <circle cx="15.6" cy="19.6" r="0.65" fill="currentColor" stroke="none"/>
-          </svg>
-        </span>
-        <h3>Calculadoras</h3>
+      <p class="section-sub reveal" style="margin-top:2rem; margin-bottom:0;">Mais ferramentas: <a href="calculadoras.html">calculadoras verificadas</a> · <a href="quiz.html">simulados cronometrados</a> · <a href="flashcards.html">flashcards com repetição espaçada</a> · <a href="plano.html">plano de 15 dias</a>.</p>
+    </section>
+
+    <section class="landing-section" id="metodologia" aria-labelledby="metodologia-title">
+      <span class="section-kicker reveal">Metodologia</span>
+      <h2 id="metodologia-title" class="reveal">Como garantimos precisão</h2>
+      <p class="section-sub reveal">Nenhum número é "de memória". Cada fato citado no Nimb foi conferido em uma norma primária — e sinalizamos explicitamente o que ainda não conseguimos confirmar.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <h3>Fontes primárias</h3>
+          <p>RBAC 61, RBAC 91 e IS 00-003H lidos na íntegra na ANAC; ICA 100-12 e ICA 105 do DECEA para regras do ar e meteorologia.</p>
+        </div>
+        <div class="step-card reveal">
+          <h3>Transparência sobre lacunas</h3>
+          <p>Quando uma fonte secundária diverge (ex: constante da altitude densidade), mostramos as duas versões em vez de arriscar uma resposta errada.</p>
+        </div>
+        <div class="step-card reveal">
+          <h3>Cálculos verificados</h3>
+          <p>Toda fórmula de navegação foi resolvida manualmente e conferida por dois métodos antes de virar calculadora.</p>
+        </div>
       </div>
-      <p>Ferramentas interativas: vento/deriva, tempo-distância-combustível, altitude densidade, razão de descida.</p>
-      <a class="cta" href="calculadoras.html">Abrir →</a>
-    </div>
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-green">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 3.5h6a1 1 0 0 1 1 1V5h1.5A1.5 1.5 0 0 1 19 6.5v13a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-13A1.5 1.5 0 0 1 6.5 5H8v-.5a1 1 0 0 1 1-1Z"/>
-            <path d="M9 4.5h6"/>
-            <path d="m9 13 2 2 4-4"/>
-          </svg>
-        </span>
-        <h3>Simulados</h3>
+      <p class="section-sub reveal" style="margin-top:2rem; margin-bottom:0;"><a href="recursos.html">Ver lista completa de recursos e fontes →</a></p>
+    </section>
+
+    <section class="landing-section" id="faq" aria-labelledby="faq-title">
+      <span class="section-kicker reveal">Dúvidas frequentes</span>
+      <h2 id="faq-title" class="reveal">Perguntas comuns</h2>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>O que é a habilitação IFRH? <svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-body">É a habilitação de Voo por Instrumentos em Helicóptero da ANAC (RBAC 61, Subparte L). Exige curso teórico aprovado, aprovação no exame teórico IFR e no exame prático de proficiência.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Como é a prova IFR da ANAC? <svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-body">3 provas: REG (20 questões/30min), MET (20/35min) e NAV (20/100min) — total de 60 questões em 165 minutos.</div>
+        </details>
+        <details class="faq-item">
+          <summary>A nota mínima é por matéria ou é uma média? <svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-body">É por prova: você precisa de 70% de acerto em CADA uma das três provas (REG, MET e NAV), não uma média geral entre elas.</div>
+        </details>
+        <details class="faq-item">
+          <summary>O Nimb é afiliado à ANAC? <svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-body">Não. É material de apoio independente e não-oficial. Sempre confira a norma vigente em anac.gov.br e publicacoes.decea.mil.br antes da prova.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso pagar ou criar conta? <svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="faq-body">Não. O Nimb roda inteiramente no seu navegador — sem cadastro, sem cobrança. Seu progresso é salvo localmente no seu dispositivo (localStorage).</div>
+        </details>
       </div>
-      <p>Questões de múltipla escolha por matéria, no formato e nota de corte da ANAC (70%).</p>
-      <a class="cta" href="quiz.html">Praticar →</a>
-    </div>
-    <div class="card">
-      <div class="card-head">
-        <span class="icon-badge c-pink">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 3 3 8l9 5 9-5-9-5Z"/>
-            <path d="m3 12 9 5 9-5"/>
-            <path d="m3 16 9 5 9-5"/>
-          </svg>
-        </span>
-        <h3>Flashcards</h3>
+    </section>
+
+    <section class="landing-section">
+      <div class="final-cta reveal">
+        <h2>Pronto para começar seu plano de 15 dias?</h2>
+        <p>Duas perguntas e você já sai com um cronograma pronto.</p>
+        <a class="btn btn-lg" href="#onboarding">Começar meu plano agora</a>
       </div>
-      <p>Revisão espaçada (SRS) dos fatos e números que mais caem na prova.</p>
-      <a class="cta" href="flashcards.html">Revisar →</a>
-    </div>
+    </section>
   </div>
-
-  <h2>Plano intensivo de 15 dias</h2>
-  <p style="color:var(--text-dim)">Cronograma diário cobrindo as três matérias com blocos de teoria, cálculo e simulado.
-  <a href="plano.html">Ver cronograma completo →</a></p>
-
-  <h2>Comunidades e materiais oficiais</h2>
-  <p style="color:var(--text-dim)">Livros públicos do DECEA/ANAC, fóruns e bancos de questões selecionados.
-  <a href="recursos.html">Ver recursos →</a></p>
 </main>
 
-<footer>Nimb · material de apoio não-oficial para estudo. Sempre confira a norma vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
+<footer class="landing-footer">
+  <div class="foot-inner">
+    <div>
+      <div class="brand" style="margin-bottom:0.5rem;">Nimb <span class="tag">IFRH · ANAC</span></div>
+      <p style="max-width:420px;">Material de apoio não-oficial para estudo. Sempre confira a norma vigente em <a href="https://www.anac.gov.br" target="_blank" rel="noopener">anac.gov.br</a> e <a href="https://publicacoes.decea.mil.br" target="_blank" rel="noopener">publicacoes.decea.mil.br</a>.</p>
+    </div>
+    <div>
+      <div style="color:var(--text); font-weight:600; margin-bottom:0.5rem;">Navegação</div>
+      <div style="display:flex; flex-direction:column; gap:0.3rem;">
+        <a href="painel.html">Painel</a>
+        <a href="plano.html">Plano de 15 dias</a>
+        <a href="recursos.html">Recursos e fontes</a>
+        <a href="https://github.com/N3xusD3v/Nimb" target="_blank" rel="noopener">Código no GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script src="js/app.js"></script>
-<script>
-  renderCountdown("countdown");
-  const input = document.getElementById("exam-date-input");
-  input.value = getExamDate();
-  input.addEventListener("change", () => { setExamDate(input.value); renderCountdown("countdown"); });
-  ["regulamento", "meteorologia", "navegacao"].forEach((m) => {
-    const el = document.getElementById("bar-" + m);
-    if (el) el.style.width = materiaProgressPct(m) + "%";
-  });
-</script>
+<script src="js/onboarding.js"></script>
 </body>
 </html>
