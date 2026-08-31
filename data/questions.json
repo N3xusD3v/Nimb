@@ -505,5 +505,109 @@
     ],
     "correta": 0,
     "explicacao": "Distância até o TOD (NM) ≈ altitude a perder (ft) / 300. Para 3.000 ft: 3.000/300 = 10 NM."
+  },
+  {
+    "id": "reg-q16",
+    "materia": "regulamento",
+    "pergunta": "Voando IFR num rumo magnético de 090°, qual tipo de nível de voo deve ser selecionado, e há acréscimo de 500 ft como no VFR?",
+    "opcoes": [
+      "Nível ímpar (ex: FL035, FL055); sem acréscimo de 500 ft — essa regra é só do VFR",
+      "Nível par (ex: FL040, FL060); com acréscimo de 500 ft",
+      "Nível ímpar, sempre somando 500 ft, igual ao VFR",
+      "Qualquer nível, a regra de paridade não existe para IFR"
+    ],
+    "correta": 0,
+    "explicacao": "RM 000-179°: nível ímpar (FL035, FL055...). RM 180-359°: nível par. No IFR os níveis são \"cheios\", sem o acréscimo de +500 ft que existe apenas na regra VFR — pegadinha clássica da prova."
+  },
+  {
+    "id": "reg-q17",
+    "materia": "regulamento",
+    "pergunta": "Voando IFR num rumo magnético de 270°, qual nível de voo é apropriado?",
+    "opcoes": [
+      "Par (ex: FL060)",
+      "Ímpar (ex: FL055)",
+      "Par, somando 500 ft (FL060+500)",
+      "Depende apenas da altitude mínima de segurança"
+    ],
+    "correta": 0,
+    "explicacao": "RM 180° a 359° → nível par (FL040, FL060, FL080...). RM 270° cai nessa faixa, então o nível deve ser par."
+  },
+  {
+    "id": "met-q13",
+    "materia": "meteorologia",
+    "pergunta": "Qual a principal diferença entre um SIGMET e um AIRMET?",
+    "opcoes": [
+      "SIGMET cobre fenômenos severos em qualquer altitude; AIRMET cobre fenômenos de menor intensidade em baixos níveis (superfície até FL100)",
+      "SIGMET só vale para aeródromos; AIRMET só vale para rotas",
+      "Não há diferença, são sinônimos",
+      "AIRMET é sempre mais severo que o SIGMET"
+    ],
+    "correta": 0,
+    "explicacao": "SIGMET: fenômenos significativos/severos (CB, gelo severo, turbulência severa) em qualquer nível. AIRMET: fenômenos de menor intensidade, restritos a baixos níveis (superfície a FL100). Ambos têm validade de 4h (até 6h em casos excepcionais)."
+  },
+  {
+    "id": "met-q14",
+    "materia": "meteorologia",
+    "pergunta": "No METAR, o grupo \"FEW021///\" (com barras após a altura da nuvem) indica o quê?",
+    "opcoes": [
+      "Nuvem detectada, mas não foi possível identificar se é CB ou TCU",
+      "Erro de transmissão, deve ser ignorado",
+      "Ausência total de nuvens",
+      "Nuvem certamente identificada como Cumulonimbus"
+    ],
+    "correta": 0,
+    "explicacao": "As barras (///) no lugar do tipo de nuvem significativa indicam que uma nuvem foi detectada mas o sistema não conseguiu identificar se é CB ou TCU."
+  },
+  {
+    "id": "met-q15",
+    "materia": "meteorologia",
+    "pergunta": "O que significa o código \"WS R09\" num METAR ou reporte meteorológico de aeródromo?",
+    "opcoes": [
+      "Windshear (tesoura de vento) reportado na pista 09",
+      "Vento de superfície de 9 nós",
+      "Visibilidade de 900 metros na pista 09",
+      "Aviso de tempestade a 9 km da pista"
+    ],
+    "correta": 0,
+    "explicacao": "WS seguido da pista (ex: WS R09) indica windshear — variação rápida de direção/velocidade do vento — reportado naquela pista específica."
+  },
+  {
+    "id": "met-q16",
+    "materia": "meteorologia",
+    "pergunta": "Em condições de alta pressão atmosférica e baixa temperatura, o que acontece com o desempenho da aeronave em comparação com baixa pressão e alta temperatura?",
+    "opcoes": [
+      "Melhora: ar mais denso gera mais sustentação/potência e corrida de decolagem mais curta",
+      "Piora: ar mais denso sempre prejudica o desempenho",
+      "Não há qualquer efeito no desempenho",
+      "Só afeta a velocidade de estol, nunca a distância de decolagem"
+    ],
+    "correta": 0,
+    "explicacao": "Alta pressão + baixa temperatura = ar mais denso = melhor desempenho (menor altitude densidade). Baixa pressão + alta temperatura = ar menos denso = pior desempenho (maior altitude densidade, corrida mais longa)."
+  },
+  {
+    "id": "nav-q13",
+    "materia": "navegacao",
+    "pergunta": "Ao atingir a MDA numa aproximação de não-precisão sem as referências visuais exigidas para pousar, o que o piloto deve fazer?",
+    "opcoes": [
+      "Executar o procedimento de aproximação perdida (arremeter)",
+      "Continuar descendo abaixo da MDA até avistar a pista",
+      "Aguardar em voo nivelado indefinidamente na MDA",
+      "Pousar mesmo assim, pois a MDA já foi atingida"
+    ],
+    "correta": 0,
+    "explicacao": "RBAC 91.1039(c)(2): sem as referências visuais exigidas ao atingir a DA/DH ou MDA, o piloto deve executar a aproximação perdida — nunca descer abaixo da MDA sem referência visual."
+  },
+  {
+    "id": "nav-q14",
+    "materia": "navegacao",
+    "pergunta": "A rota verdadeira (TC) é 090° e a variação magnética local é 10° W (oeste). Qual é o rumo magnético (MC)?",
+    "opcoes": [
+      "100°",
+      "080°",
+      "090°",
+      "110°"
+    ],
+    "correta": 0,
+    "explicacao": "Regra mnemônica \"Variation West, Magnetic Best\": com variação oeste, soma-se ao rumo verdadeiro. MC = TC + variação W = 090 + 10 = 100°. (Com variação leste, seria o contrário: subtrai-se — \"Variation East, Magnetic Least\".)"
   }
 ]

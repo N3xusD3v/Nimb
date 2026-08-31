@@ -70,7 +70,24 @@
     <div class="selfcheck-feedback"></div>
   </div>
 
-  <h2>2. TAF — grupos de mudança</h2>
+  <h2>2. Nuvens significativas, avisos e windshear</h2>
+  <table>
+    <tr><th>Código</th><th>Significado</th></tr>
+    <tr><td>CB (Cumulonimbus)</td><td>Nuvem de maior risco — turbulência severa, granizo, tesoura de vento, atividade elétrica</td></tr>
+    <tr><td>TCU (Towering Cumulus)</td><td>Cumulus de grande desenvolvimento vertical — precursor de CB</td></tr>
+    <tr><td>///</td><td>Nuvem detectada mas tipo (CB/TCU) não identificado — ex: FEW021///</td></tr>
+    <tr><td>//////TCU</td><td>TCU detectado, mas sem dados de cobertura/altura</td></tr>
+    <tr><td>WS Rxx</td><td>Windshear (tesoura de vento) reportado na pista xx — ex: WS R09</td></tr>
+  </table>
+  <h3>SIGMET vs. AIRMET</h3>
+  <table>
+    <tr><th></th><th>SIGMET</th><th>AIRMET</th></tr>
+    <tr><td>Fenômenos</td><td>Significativos/severos: CB, gelo severo, turbulência severa, tempestade de areia</td><td>Intensidade menor que o SIGMET</td></tr>
+    <tr><td>Altitude</td><td>Qualquer nível</td><td>Baixos níveis — superfície até FL100</td></tr>
+    <tr><td>Validade</td><td>4 horas (até 6h em casos excepcionais)</td><td>4 horas (até 6h em casos excepcionais)</td></tr>
+  </table>
+
+  <h2>3. TAF — grupos de mudança</h2>
   <table>
     <tr><th>Grupo</th><th>Significado</th></tr>
     <tr><td>FM (from)</td><td>Mudança abrupta a partir do horário indicado — ex: FM181800</td></tr>
@@ -80,7 +97,7 @@
   </table>
   <p>Validade típica: 24 ou 30 horas. Emissões nos horários sinóticos 00Z, 06Z, 12Z, 18Z.</p>
 
-  <h2>3. Formação de gelo (icing)</h2>
+  <h2>4. Formação de gelo (icing)</h2>
   <div class="note warn">Faixa mais crítica: <strong>0°C a −20°C</strong> (água líquida super-resfriada). Torna-se rara abaixo de −20°C.</div>
   <ul>
     <li><strong>Gelo claro (clear ice):</strong> denso e perigoso, associado a gotas grandes/Cb.</li>
@@ -89,7 +106,7 @@
   </ul>
   <p>Em helicópteros: perda de sustentação/eficiência das pás do rotor, aumento de peso e arrasto, desbalanceamento, obstrução de pitot/tomadas estáticas e entradas de ar do motor. Helicópteros não certificados FIKI (Flight Into Known Icing) não devem operar em IMC com gelo previsto ou observado.</p>
 
-  <h2>4. Nevoeiro</h2>
+  <h2>5. Nevoeiro</h2>
   <p><strong>Regra prática:</strong> spread temperatura/ponto de orvalho de 1°C ou menos indica alta probabilidade de nevoeiro (ar próximo da saturação).</p>
   <ul>
     <li><strong>Nevoeiro de radiação:</strong> noite/madrugada, céu claro, vento fraco — resfriamento radiativo da superfície.</li>
@@ -107,7 +124,7 @@
     <div class="selfcheck-feedback"></div>
   </div>
 
-  <h2>5. Massas de ar e frentes</h2>
+  <h2>6. Massas de ar e frentes</h2>
   <table>
     <tr><th>Frente</th><th>Características</th></tr>
     <tr><td>Fria</td><td>Ar frio avança sob ar quente; Cumulonimbus, chuva intensa, mudança rápida de vento, queda de temperatura</td></tr>
@@ -115,7 +132,8 @@
     <tr><td>Oclusa</td><td>Combinação de sistema frio alcançando o quente</td></tr>
   </table>
 
-  <h2>6. Altitude densidade</h2>
+  <h2>7. Altitude densidade</h2>
+  <div class="note">Regra geral: <strong>alta pressão + baixa temperatura</strong> = ar mais denso = melhor desempenho (mais sustentação/potência, corrida de decolagem mais curta). <strong>Baixa pressão + alta temperatura</strong> = ar menos denso = pior desempenho (corrida mais longa, menor razão de subida) — é exatamente o que a altitude densidade mede.</div>
   <div class="formula">PA = Elevação + (29.92 − Altímetro[inHg]) × 1000
 ISA(°C) = 15 − 2 × (PA/1000)
 DA = PA + K × (OAT − ISA)</div>

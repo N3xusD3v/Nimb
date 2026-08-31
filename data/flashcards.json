@@ -31,5 +31,9 @@
   { "id": "met-7", "materia": "meteorologia", "frente": "Quais grupos de nuvens NÃO definem teto no METAR?", "verso": "FEW e SCT não definem teto; apenas BKN e OVC definem." },
   { "id": "reg-15", "materia": "regulamento", "frente": "Qual lei institui o Código Brasileiro de Aeronáutica?", "verso": "Lei nº 7.565/1986." },
   { "id": "reg-16", "materia": "regulamento", "frente": "Qual lei cria a ANAC?", "verso": "Lei nº 11.182/2005." },
-  { "id": "reg-17", "materia": "regulamento", "frente": "Qual decreto rege o sistema de investigação e prevenção de acidentes aeronáuticos no Brasil?", "verso": "Decreto nº 9.540/2018." }
+  { "id": "reg-17", "materia": "regulamento", "frente": "Qual decreto rege o sistema de investigação e prevenção de acidentes aeronáuticos no Brasil?", "verso": "Decreto nº 9.540/2018." },
+  { "id": "reg-18", "materia": "regulamento", "frente": "Regra de nível de cruzeiro IFR por rumo magnético (RM)?", "verso": "RM 000-179°: nível ímpar (FL035, FL055...). RM 180-359°: nível par (FL040, FL060...). Sem o +500ft do VFR." },
+  { "id": "met-8", "materia": "meteorologia", "frente": "Diferença entre SIGMET e AIRMET?", "verso": "SIGMET: fenômenos severos, qualquer altitude. AIRMET: menor intensidade, só superfície-FL100. Ambos válidos por 4h (até 6h)." },
+  { "id": "met-9", "materia": "meteorologia", "frente": "O que significa 'WS R09' num reporte meteorológico?", "verso": "Windshear (tesoura de vento) reportado na pista 09." },
+  { "id": "nav-10", "materia": "navegacao", "frente": "Conversão de rota verdadeira (TC) para rumo magnético (MC) com variação oeste vs leste?", "verso": "Variação Oeste: MC = TC + variação (\"West is Best\"). Variação Leste: MC = TC − variação (\"East is Least\")." }
 ]
