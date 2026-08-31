@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meteorologia — Nimb IFRH</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Nimb <span class="tag">IFRH · ANAC</span></div>
+  <nav class="mainnav">
+    <a href="index.html">Painel</a>
+    <a href="regulamento.html">Regulamento</a>
+    <a href="meteorologia.html" class="active">Meteorologia</a>
+    <a href="navegacao.html">Navegação</a>
+    <a href="calculadoras.html">Calculadoras</a>
+    <a href="quiz.html">Simulados</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="plano.html">Plano 15 dias</a>
+    <a href="recursos.html">Recursos</a>
+  </nav>
+</header>
+<main>
+  <h1>Meteorologia — Prova MET (20 questões, 35 min)</h1>
+  <p style="color:var(--text-dim)">Base: ICA 105-xx (meteorologia aeronáutica, DECEA), códigos OACI (METAR/TAF/SIGMET).</p>
+
+  <h2>1. METAR — decodificação</h2>
+  <div class="formula">METAR SBRJ 181400Z 18008KT 4000 -RA BR BKN008 OVC015 22/21 Q1012</div>
+  <table>
+    <tr><th>Grupo</th><th>Valor</th><th>Significado</th></tr>
+    <tr><td>Local</td><td>SBRJ</td><td>Aeródromo (Santos Dumont, RJ)</td></tr>
+    <tr><td>Data/hora</td><td>181400Z</td><td>Dia 18, 14:00 UTC</td></tr>
+    <tr><td>Vento</td><td>18008KT</td><td>180° verdadeiro, 8 kt</td></tr>
+    <tr><td>Visibilidade</td><td>4000</td><td>4.000 m</td></tr>
+    <tr><td>Tempo presente</td><td>-RA BR</td><td>Chuva fraca + bruma</td></tr>
+    <tr><td>Nuvens</td><td>BKN008 / OVC015</td><td>Nublado a 800 ft (define teto) / encoberto a 1.500 ft</td></tr>
+    <tr><td>Temp/orvalho</td><td>22/21</td><td>22°C / 21°C — spread de 1°C: alto risco de nevoeiro</td></tr>
+    <tr><td>QNH</td><td>Q1012</td><td>1012 hPa</td></tr>
+  </table>
+
+  <h3>Cobertura de nuvens (oitavos)</h3>
+  <table>
+    <tr><th>Código</th><th>Cobertura</th><th>Define teto?</th></tr>
+    <tr><td>FEW</td><td>1–2 oitavos</td><td>Não</td></tr>
+    <tr><td>SCT</td><td>3–4 oitavos</td><td>Não</td></tr>
+    <tr><td>BKN</td><td>5–7 oitavos</td><td>Sim</td></tr>
+    <tr><td>OVC</td><td>8 oitavos</td><td>Sim</td></tr>
+  </table>
+  <div class="note">Só existe "teto" quando há BKN ou OVC. SCT, FEW, NSC e CAVOK não configuram teto.</div>
+
+  <h3>Incrementos de visibilidade</h3>
+  <p>50 em 50 m até 800 m · 100 em 100 m entre 800 e 5.000 m · 1.000 em 1.000 m entre 5.000 e 9.999 m · "9999" = 10 km ou mais.</p>
+
+  <h2>2. TAF — grupos de mudança</h2>
+  <table>
+    <tr><th>Grupo</th><th>Significado</th></tr>
+    <tr><td>FM (from)</td><td>Mudança abrupta a partir do horário indicado — ex: FM181800</td></tr>
+    <tr><td>BECMG (becoming)</td><td>Mudança gradual dentro de uma janela — ex: BECMG 1820/1822</td></tr>
+    <tr><td>TEMPO</td><td>Variações temporárias, &lt;1h cada, cobrindo &lt;metade do período — ex: TEMPO 1814/1818 TS</td></tr>
+    <tr><td>PROB40 / PROB30</td><td>Probabilidade (40% ou 30%) do fenômeno combinado com TEMPO/BECMG</td></tr>
+  </table>
+  <p>Validade típica: 24 ou 30 horas. Emissões nos horários sinóticos 00Z, 06Z, 12Z, 18Z.</p>
+
+  <h2>3. Formação de gelo (icing)</h2>
+  <div class="note warn">Faixa mais crítica: <strong>0°C a −20°C</strong> (água líquida super-resfriada). Torna-se rara abaixo de −20°C.</div>
+  <ul>
+    <li><strong>Gelo claro (clear ice):</strong> denso e perigoso, associado a gotas grandes/Cb.</li>
+    <li><strong>Geada/escarcha (rime ice):</strong> opaca e quebradiça, associada a nuvens estratiformes.</li>
+    <li><strong>Gelo misto:</strong> combinação dos dois.</li>
+  </ul>
+  <p>Em helicópteros: perda de sustentação/eficiência das pás do rotor, aumento de peso e arrasto, desbalanceamento, obstrução de pitot/tomadas estáticas e entradas de ar do motor. Helicópteros não certificados FIKI (Flight Into Known Icing) não devem operar em IMC com gelo previsto ou observado.</p>
+
+  <h2>4. Nevoeiro</h2>
+  <p><strong>Regra prática:</strong> spread temperatura/ponto de orvalho de 1°C ou menos indica alta probabilidade de nevoeiro (ar próximo da saturação).</p>
+  <ul>
+    <li><strong>Nevoeiro de radiação:</strong> noite/madrugada, céu claro, vento fraco — resfriamento radiativo da superfície.</li>
+    <li><strong>Nevoeiro de advecção:</strong> massa de ar quente e úmida sobre superfície fria.</li>
+    <li><strong>Nevoeiro frontal/de evaporação:</strong> associado à passagem de frentes.</li>
+  </ul>
+
+  <h2>5. Massas de ar e frentes</h2>
+  <table>
+    <tr><th>Frente</th><th>Características</th></tr>
+    <tr><td>Fria</td><td>Ar frio avança sob ar quente; Cumulonimbus, chuva intensa, mudança rápida de vento, queda de temperatura</td></tr>
+    <tr><td>Quente</td><td>Deterioração gradual, nuvens estratiformes, garoa, visibilidade reduzida por período mais longo</td></tr>
+    <tr><td>Oclusa</td><td>Combinação de sistema frio alcançando o quente</td></tr>
+  </table>
+
+  <h2>6. Altitude densidade</h2>
+  <div class="formula">PA = Elevação + (29.92 − Altímetro[inHg]) × 1000
+ISA(°C) = 15 − 2 × (PA/1000)
+DA = PA + K × (OAT − ISA)</div>
+  <div class="note warn">Duas constantes em uso: <strong>K=120</strong> (padrão FAA/OACI) ou <strong>K=100</strong> (usada em alguns gabaritos brasileiros). Confirme qual sua banca adota. Pratique na <a href="calculadoras.html">calculadora</a> (mostra as duas).</div>
+
+  <div class="note">Itens não confirmados nesta pesquisa: gradientes exatos de temperatura/pressão por tipo de frente; limites numéricos de certificação de degelo de rotor de helicóptero.</div>
+</main>
+<footer>Nimb · resumo de estudo — confira sempre a ICA 105-xx vigente em publicacoes.decea.mil.br.</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

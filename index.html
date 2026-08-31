@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nimb — Preparatório IFRH/ANAC</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Nimb <span class="tag">IFRH · ANAC</span></div>
+  <nav class="mainnav">
+    <a href="index.html">Painel</a>
+    <a href="regulamento.html">Regulamento</a>
+    <a href="meteorologia.html">Meteorologia</a>
+    <a href="navegacao.html">Navegação</a>
+    <a href="calculadoras.html">Calculadoras</a>
+    <a href="quiz.html">Simulados</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="plano.html">Plano 15 dias</a>
+    <a href="recursos.html">Recursos</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <h1>Preparatório para a habilitação IFRH</h1>
+      <p>Voo por Instrumentos em Helicóptero — Regulamento, Meteorologia e Navegação. Nota mínima ANAC: 70% por matéria.</p>
+      <div style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-dim)">
+        Data da prova:
+        <input type="date" id="exam-date-input" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.2rem 0.4rem;" />
+      </div>
+    </div>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <h2>Módulos de estudo</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>📘 Regulamento (RTA)</h3>
+      <p>RBAC 61 (habilitação IFR), RBAC 91 (regras de operação IFR), Regras do Ar, procedimentos de espera e aproximação.</p>
+      <div class="progress-bar"><div id="bar-regulamento" style="width:0%"></div></div>
+      <a class="cta" href="regulamento.html">Estudar →</a>
+    </div>
+    <div class="card">
+      <h3>🌦️ Meteorologia</h3>
+      <p>METAR/TAF/SIGMET, mínimos IFR, gelo, nevoeiro, massas de ar e frentes, altitude densidade.</p>
+      <div class="progress-bar"><div id="bar-meteorologia" style="width:0%"></div></div>
+      <a class="cta" href="meteorologia.html">Estudar →</a>
+    </div>
+    <div class="card">
+      <h3>🧭 Navegação Aérea</h3>
+      <p>Triângulo de velocidades, VOR/ADF/ILS, arcos DME, categorias de aproximação, cartas IAC.</p>
+      <div class="progress-bar"><div id="bar-navegacao" style="width:0%"></div></div>
+      <a class="cta" href="navegacao.html">Estudar →</a>
+    </div>
+    <div class="card">
+      <h3>🧮 Calculadoras</h3>
+      <p>Ferramentas interativas: vento/deriva, tempo-distância-combustível, altitude densidade, razão de descida.</p>
+      <a class="cta" href="calculadoras.html">Abrir →</a>
+    </div>
+    <div class="card">
+      <h3>📝 Simulados</h3>
+      <p>Questões de múltipla escolha por matéria, no formato e nota de corte da ANAC (70%).</p>
+      <a class="cta" href="quiz.html">Praticar →</a>
+    </div>
+    <div class="card">
+      <h3>🎴 Flashcards</h3>
+      <p>Revisão espaçada (SRS) dos fatos e números que mais caem na prova.</p>
+      <a class="cta" href="flashcards.html">Revisar →</a>
+    </div>
+  </div>
+
+  <h2>Plano intensivo de 15 dias</h2>
+  <p style="color:var(--text-dim)">Cronograma diário cobrindo as três matérias com blocos de teoria, cálculo e simulado.
+  <a href="plano.html">Ver cronograma completo →</a></p>
+
+  <h2>Comunidades e materiais oficiais</h2>
+  <p style="color:var(--text-dim)">Livros públicos do DECEA/ANAC, fóruns e bancos de questões selecionados.
+  <a href="recursos.html">Ver recursos →</a></p>
+</main>
+
+<footer>Nimb · material de apoio não-oficial para estudo. Sempre confira a norma vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
+
+<script src="js/app.js"></script>
+<script>
+  renderCountdown("countdown");
+  const input = document.getElementById("exam-date-input");
+  input.value = getExamDate();
+  input.addEventListener("change", () => { setExamDate(input.value); renderCountdown("countdown"); });
+  ["regulamento", "meteorologia", "navegacao"].forEach((m) => {
+    const el = document.getElementById("bar-" + m);
+    if (el) el.style.width = materiaProgressPct(m) + "%";
+  });
+</script>
+</body>
+</html>

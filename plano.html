@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plano de 15 dias — Nimb IFRH</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Nimb <span class="tag">IFRH · ANAC</span></div>
+  <nav class="mainnav">
+    <a href="index.html">Painel</a>
+    <a href="regulamento.html">Regulamento</a>
+    <a href="meteorologia.html">Meteorologia</a>
+    <a href="navegacao.html">Navegação</a>
+    <a href="calculadoras.html">Calculadoras</a>
+    <a href="quiz.html">Simulados</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="plano.html" class="active">Plano 15 dias</a>
+    <a href="recursos.html">Recursos</a>
+  </nav>
+</header>
+<main>
+  <h1>Plano intensivo de 15 dias</h1>
+  <p style="color:var(--text-dim)">O exame IFR da ANAC (habilitação de voo por instrumentos, categoria helicóptero) tem 3 provas: <strong>REG</strong> (20 questões, 30 min), <strong>MET</strong> (20 questões, 35 min) e <strong>NAV</strong> (20 questões, 100 min) — nota mínima de <strong>70% em cada uma</strong>. O cronograma abaixo distribui as 3 matérias com blocos de teoria, cálculo e simulado, terminando com revisão cronometrada.</p>
+  <div class="day-list" id="day-list"></div>
+</main>
+<footer>Nimb · marque as tarefas concluídas — o progresso fica salvo no seu navegador.</footer>
+<script src="js/app.js"></script>
+<script>
+async function loadPlano() {
+  const res = await fetch("data/plano.json");
+  const plano = await res.json();
+  const checklist = getJSON(STORE_KEYS.plano, {});
+  const list = document.getElementById("day-list");
+
+  const start = new Date();
+  const todayDay = 16 - daysUntilExam(); // day number within the 15-day plan, best-effort
+
+  list.innerHTML = plano.map((d) => {
+    const done = checklist[d.dia] || [];
+    const isToday = d.dia === todayDay;
+    return `
+      <div class="day-item ${isToday ? "today" : ""}">
+        <div class="day-head"><span>Dia ${d.dia} — ${d.foco}</span>${isToday ? '<span class="tag-pill">hoje</span>' : ""}</div>
+        <ul>
+          ${d.tarefas.map((t, i) => `
+            <li class="${done.includes(i) ? "done" : ""}">
+              <label style="cursor:pointer">
+                <input type="checkbox" ${done.includes(i) ? "checked" : ""} onchange="toggleTask(${d.dia}, ${i})" />
+                ${t}
+              </label>
+            </li>`).join("")}
+        </ul>
+      </div>`;
+  }).join("");
+}
+
+function toggleTask(dia, idx) {
+  const checklist = getJSON(STORE_KEYS.plano, {});
+  const arr = checklist[dia] || [];
+  const pos = arr.indexOf(idx);
+  if (pos >= 0) arr.splice(pos, 1); else arr.push(idx);
+  checklist[dia] = arr;
+  setJSON(STORE_KEYS.plano, checklist);
+  loadPlano();
+}
+
+loadPlano();
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flashcards — Nimb IFRH</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Nimb <span class="tag">IFRH · ANAC</span></div>
+  <nav class="mainnav">
+    <a href="index.html">Painel</a>
+    <a href="regulamento.html">Regulamento</a>
+    <a href="meteorologia.html">Meteorologia</a>
+    <a href="navegacao.html">Navegação</a>
+    <a href="calculadoras.html">Calculadoras</a>
+    <a href="quiz.html">Simulados</a>
+    <a href="flashcards.html" class="active">Flashcards</a>
+    <a href="plano.html">Plano 15 dias</a>
+    <a href="recursos.html">Recursos</a>
+  </nav>
+</header>
+<main>
+  <h1>Flashcards (revisão espaçada)</h1>
+  <p style="color:var(--text-dim)" id="stats-line">Carregando...</p>
+  <div class="flash-card" id="flash-card" onclick="flipCard()">Carregando...</div>
+  <div class="flash-actions" id="flash-actions" style="display:none">
+    <button class="secondary" onclick="grade(0)">😵 Errei</button>
+    <button class="secondary" onclick="grade(1)">🤔 Difícil</button>
+    <button onclick="grade(2)">✅ Fácil</button>
+  </div>
+</main>
+<footer>Nimb · algoritmo de repetição espaçada simplificado (estilo SM-2).</footer>
+<script src="js/app.js"></script>
+<script src="js/srs.js"></script>
+<script>
+let CARDS = [];
+let QUEUE = [];
+let CURRENT = null;
+let FLIPPED = false;
+
+async function loadCards() {
+  const res = await fetch("data/flashcards.json");
+  CARDS = await res.json();
+  QUEUE = dueCards(CARDS);
+  updateStats();
+  nextCard();
+}
+
+function updateStats() {
+  const s = srsStats(CARDS);
+  document.getElementById("stats-line").textContent =
+    `${s.due} para revisar hoje · ${s.learned}/${s.total} consolidados`;
+}
+
+function nextCard() {
+  FLIPPED = false;
+  document.getElementById("flash-actions").style.display = "none";
+  if (QUEUE.length === 0) {
+    document.getElementById("flash-card").textContent = "Nenhum card pendente por agora. Volte mais tarde ou revise os módulos.";
+    CURRENT = null;
+    return;
+  }
+  CURRENT = QUEUE.shift();
+  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${CURRENT.materia}</span></div><div style="margin-top:1rem">${CURRENT.frente}</div>`;
+}
+
+function flipCard() {
+  if (!CURRENT || FLIPPED) return;
+  FLIPPED = true;
+  document.getElementById("flash-card").innerHTML = `<div><span class="tag-pill">${CURRENT.materia}</span></div><div style="margin-top:1rem">${CURRENT.verso}</div>`;
+  document.getElementById("flash-actions").style.display = "flex";
+}
+
+function grade(g) {
+  if (!CURRENT) return;
+  gradeCard(CURRENT.id, g);
+  updateStats();
+  nextCard();
+}
+
+loadCards();
+</script>
+</body>
+</html>

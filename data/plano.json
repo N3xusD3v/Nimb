@@ -1,0 +1,62 @@
+[
+  { "dia": 1, "foco": "Diagnóstico + Regulamento I", "tarefas": [
+    "Ler RBAC 61.223 e Subparte L (requisitos da habilitação IFR)",
+    "Fazer 1 simulado geral (baseline) em quiz.html?materia=todas",
+    "Anotar pontos fracos por matéria" ] },
+  { "dia": 2, "foco": "Regulamento II — Regras do Ar", "tarefas": [
+    "Estudar ICA 100-12 (Regras do Ar): prioridades, separação, procedimentos IFR",
+    "10 flashcards de Regulamento",
+    "Simulado Regulamento (20 questões)" ] },
+  { "dia": 3, "foco": "Regulamento III — RBAC 91", "tarefas": [
+    "Mínimos meteorológicos IFR, alternativa, reserva de combustível (RBAC 91)",
+    "Revisar recência 6 em 6 meses e validade de 12 meses da habilitação",
+    "Simulado Regulamento (20 questões)" ] },
+  { "dia": 4, "foco": "Meteorologia I — Fundamentos", "tarefas": [
+    "Pressão atmosférica, massas de ar, frentes",
+    "Calculadora de altitude densidade — 5 exercícios",
+    "10 flashcards de Meteorologia" ] },
+  { "dia": 5, "foco": "Meteorologia II — Códigos", "tarefas": [
+    "Decodificação de METAR e TAF (praticar 10 exemplos reais)",
+    "SIGMET/AIRMET, gelo e nevoeiro",
+    "Simulado Meteorologia (20 questões)" ] },
+  { "dia": 6, "foco": "Meteorologia III — Revisão", "tarefas": [
+    "Revisar erros dos simulados anteriores de MET",
+    "10 flashcards novos + revisão espaçada",
+    "Simulado Meteorologia (20 questões)" ] },
+  { "dia": 7, "foco": "Navegação I — Triângulo de velocidades", "tarefas": [
+    "Estudar fórmulas de vento/deriva em navegacao.html",
+    "Calculadora de vento — 8 exercícios manuais + conferir no app",
+    "10 flashcards de Navegação" ] },
+  { "dia": 8, "foco": "Navegação II — Auxílios (VOR/ADF/ILS)", "tarefas": [
+    "VOR: radiais, interceptação, TO/FROM",
+    "ILS: categorias, DA/DH, localizer/glideslope",
+    "Simulado Navegação (20 questões)" ] },
+  { "dia": 9, "foco": "Navegação III — Procedimentos IFR", "tarefas": [
+    "Procedimentos de espera (tipos de entrada), arcos DME, procedure turn",
+    "Categorias de aproximação (A/B/C/D) e mínimos",
+    "Simulado Navegação (20 questões)" ] },
+  { "dia": 10, "foco": "Navegação IV — Cálculos", "tarefas": [
+    "Tempo/distância/combustível e razão de descida (TOD)",
+    "Calculadora de descida — 6 exercícios",
+    "Simulado Navegação (20 questões)" ] },
+  { "dia": 11, "foco": "Revisão cruzada I", "tarefas": [
+    "Simulado geral (todas as matérias)",
+    "Revisar todos os flashcards vencidos",
+    "Reforçar a matéria com pior desempenho até agora" ] },
+  { "dia": 12, "foco": "Revisão cruzada II", "tarefas": [
+    "Reler resumos de Regulamento e Meteorologia",
+    "Simulado geral (todas as matérias)",
+    "Ler recursos.html e revisar cartas IAC de exemplo no AISWEB" ] },
+  { "dia": 13, "foco": "Simulado cronometrado", "tarefas": [
+    "Simular a prova real: REG 30min / MET 35min / NAV 100min, em condição de tempo",
+    "Corrigir e listar todos os erros",
+    "Flashcards apenas dos temas errados" ] },
+  { "dia": 14, "foco": "Reforço final dos pontos fracos", "tarefas": [
+    "Focar 100% nos temas que ainda erram nos simulados",
+    "Revisão rápida de todas as fórmulas (calculadoras.html)",
+    "Descansar bem à noite" ] },
+  { "dia": 15, "foco": "Dia da prova", "tarefas": [
+    "Revisão leve pela manhã (flashcards apenas)",
+    "Não estudar conteúdo novo",
+    "Conferir documentos e horário do exame (certpessoas.fgv.br/anac)" ] }
+]
