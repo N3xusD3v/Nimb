@@ -58,11 +58,11 @@ function answerQuiz(btn) {
   if (QUIZ_STATE.answered) return;
   QUIZ_STATE.answered = true;
   const correct = btn.dataset.correct === "true";
+  const q = QUIZ_STATE.questions[QUIZ_STATE.idx];
+  const correctText = q.opcoes[q.correta];
   if (correct) {
     QUIZ_STATE.correct += 1;
   } else {
-    const q = QUIZ_STATE.questions[QUIZ_STATE.idx];
-    const correctText = q.opcoes[q.correta];
     addMissedQuestion(q, correctText);
   }
   document.querySelectorAll(".quiz-options button").forEach((b) => {
@@ -72,6 +72,12 @@ function answerQuiz(btn) {
   });
   document.getElementById("explain-box").classList.add("show");
   document.getElementById("next-btn").style.display = "inline-block";
+  const status = document.getElementById("quiz-status");
+  if (status) {
+    status.textContent = correct
+      ? "Correto. " + (q.explicacao || "")
+      : "Errado. A resposta certa era: " + correctText + ". " + (q.explicacao || "");
+  }
 }
 
 function nextQuestion() {

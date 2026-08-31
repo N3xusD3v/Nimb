@@ -7,9 +7,10 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=7" />
+<link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 <header class="topbar">
   <div class="brand">
     <img src="img/nexus-mark.png" alt="" width="24" height="24" style="border-radius:6px;" />
@@ -31,7 +32,7 @@
       Buscar <kbd>Ctrl K</kbd>
     </button>
 </header>
-<main>
+<main id="conteudo">
   <h1>Navegação — Prova NAV (20 questões, 100 min)</h1>
   <p style="color:var(--text-dim)">A prova mais longa do exame — cálculos manuais (E6B/CR-3) e interpretação de cartas IAC.</p>
 
@@ -104,7 +105,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
       <button onclick="selfCheck(this, true, 'FROM indica que a radial selecionada leva para longe da estação — ela está atrás.')">Está se afastando da estação nessa radial</button>
       <button onclick="selfCheck(this, false, 'Sobrevoar a estação causa uma reversão momentânea da agulha (station passage), não um FROM estável.')">Está exatamente sobre a estação</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>3. Aproximações por instrumentos</h2>
@@ -229,7 +230,7 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
       <button onclick="selfCheck(this, true, '4.000 ft / 300 ≈ 13,3 NM antes do fixo — a GS entra apenas para achar o ROD (120×5=600 ft/min), não a distância do TOD.')">Aproximadamente 13,3 NM</button>
       <button onclick="selfCheck(this, false, 'Isso seria dividir por 30, não por 300 — releia a regra dos 300.')">Aproximadamente 133 NM</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>7. Conversão de unidades</h2>
@@ -240,7 +241,7 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   </table>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=7"></script>
-<script src="js/palette.js?v=7"></script>
+<script src="js/app.js?v=8"></script>
+<script src="js/palette.js?v=8"></script>
 </body>
 </html>

@@ -7,9 +7,10 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=7" />
+<link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 <header class="topbar">
   <div class="brand">
     <img src="img/nexus-mark.png" alt="" width="24" height="24" style="border-radius:6px;" />
@@ -31,14 +32,14 @@
       Buscar <kbd>Ctrl K</kbd>
     </button>
 </header>
-<main>
+<main id="conteudo">
   <h1>Plano intensivo de 15 dias</h1>
   <p style="color:var(--text-dim)">O exame IFR da ANAC (habilitação de voo por instrumentos, categoria helicóptero) tem 3 provas: <strong>REG</strong> (20 questões, 30 min), <strong>MET</strong> (20 questões, 35 min) e <strong>NAV</strong> (20 questões, 100 min) — nota mínima de <strong>70% em cada uma</strong>. O cronograma abaixo distribui as 3 matérias com blocos de teoria, cálculo e simulado, terminando com revisão cronometrada.</p>
   <div class="day-list" id="day-list"></div>
 </main>
 <footer>Nimb · marque as tarefas concluídas — o progresso fica salvo no seu navegador.</footer>
-<script src="js/app.js?v=7"></script>
-<script src="js/palette.js?v=7"></script>
+<script src="js/app.js?v=8"></script>
+<script src="js/palette.js?v=8"></script>
 <script>
 async function loadPlano() {
   const res = await fetch("data/plano.json");

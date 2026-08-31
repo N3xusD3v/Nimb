@@ -7,9 +7,10 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=7" />
+<link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 <header class="topbar">
   <div class="brand">
     <img src="img/nexus-mark.png" alt="" width="24" height="24" style="border-radius:6px;" />
@@ -31,7 +32,7 @@
       Buscar <kbd>Ctrl K</kbd>
     </button>
 </header>
-<main>
+<main id="conteudo">
   <h1>Meteorologia — Prova MET (20 questões, 35 min)</h1>
   <p style="color:var(--text-dim)">Base: ICA 105-xx (meteorologia aeronáutica, DECEA), códigos OACI (METAR/TAF/SIGMET).</p>
 
@@ -69,7 +70,7 @@
       <button onclick="selfCheck(this, true, 'Só BKN/OVC definem teto. SCT (3-4 oitavos) não conta — o teto é 4.000 ft.')">4.000 ft (do BKN)</button>
       <button onclick="selfCheck(this, false, 'Existe teto sim — o grupo BKN (5-7 oitavos) define teto a 4.000 ft.')">Não há teto reportado</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>2. Nuvens significativas, avisos e windshear</h2>
@@ -123,7 +124,7 @@
       <button onclick="selfCheck(this, false, 'Spread de 1°C indica o oposto — ar próximo da saturação, alto risco de nevoeiro.')">Ar seco, sem risco de nevoeiro</button>
       <button onclick="selfCheck(this, false, 'Essas condições (céu claro, vento fraco, spread baixo) não indicam gelo — indicam nevoeiro de radiação.')">Risco de gelo estrutural</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>6. Massas de ar e frentes</h2>
@@ -144,7 +145,7 @@ DA = PA + K × (OAT − ISA)</div>
   <div class="note">Itens não confirmados nesta pesquisa: gradientes exatos de temperatura/pressão por tipo de frente; limites numéricos de certificação de degelo de rotor de helicóptero.</div>
 </main>
 <footer>Nimb · resumo de estudo — confira sempre a ICA 105-xx vigente em publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=7"></script>
-<script src="js/palette.js?v=7"></script>
+<script src="js/app.js?v=8"></script>
+<script src="js/palette.js?v=8"></script>
 </body>
 </html>

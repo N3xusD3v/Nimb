@@ -7,9 +7,10 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=7" />
+<link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 <header class="topbar">
   <div class="brand">
     <img src="img/nexus-mark.png" alt="" width="24" height="24" style="border-radius:6px;" />
@@ -31,7 +32,7 @@
       Buscar <kbd>Ctrl K</kbd>
     </button>
 </header>
-<main>
+<main id="conteudo">
   <h1>Calculadoras de navegação e desempenho</h1>
   <p style="color:var(--text-dim)">Use estas ferramentas para treinar os cálculos manualmente (no E6B/CX-3 real na prova prática) — cada uma mostra a fórmula usada.</p>
 
@@ -42,10 +43,10 @@ WCA = asin( (WS × sin A) / TAS )
 HDG = TC + WCA
 GS = TAS × cos(WCA) − WS × cos A</div>
     <div class="field-row">
-      <div class="field"><label>Rota verdadeira TC (°)</label><input id="w-tc" type="number" placeholder="054" /></div>
-      <div class="field"><label>Velocidade verdadeira TAS (kt)</label><input id="w-tas" type="number" placeholder="220" /></div>
-      <div class="field"><label>Vento — direção (° de onde vem)</label><input id="w-wd" type="number" placeholder="300" /></div>
-      <div class="field"><label>Vento — velocidade (kt)</label><input id="w-ws" type="number" placeholder="40" /></div>
+      <div class="field"><label for="w-tc">Rota verdadeira TC (°)</label><input id="w-tc" type="number" placeholder="054" /></div>
+      <div class="field"><label for="w-tas">Velocidade verdadeira TAS (kt)</label><input id="w-tas" type="number" placeholder="220" /></div>
+      <div class="field"><label for="w-wd">Vento — direção (° de onde vem)</label><input id="w-wd" type="number" placeholder="300" /></div>
+      <div class="field"><label for="w-ws">Vento — velocidade (kt)</label><input id="w-ws" type="number" placeholder="40" /></div>
     </div>
     <button onclick="calcWind()">Calcular</button>
     <div class="result-box" id="w-result">Resultado aparece aqui.</div>
@@ -56,9 +57,9 @@ GS = TAS × cos(WCA) − WS × cos A</div>
     <div class="formula">Tempo (h) = Distância (NM) / GS (kt)
 Combustível = Fluxo × Tempo</div>
     <div class="field-row">
-      <div class="field"><label>Distância (NM)</label><input id="t-dist" type="number" placeholder="120" /></div>
-      <div class="field"><label>Velocidade no solo GS (kt)</label><input id="t-gs" type="number" placeholder="110" /></div>
-      <div class="field"><label>Fluxo de combustível (por hora, opcional)</label><input id="t-flow" type="number" placeholder="ex: 45 L/h" /></div>
+      <div class="field"><label for="t-dist">Distância (NM)</label><input id="t-dist" type="number" placeholder="120" /></div>
+      <div class="field"><label for="t-gs">Velocidade no solo GS (kt)</label><input id="t-gs" type="number" placeholder="110" /></div>
+      <div class="field"><label for="t-flow">Fluxo de combustível (por hora, opcional)</label><input id="t-flow" type="number" placeholder="ex: 45 L/h" /></div>
     </div>
     <button onclick="calcTsd()">Calcular</button>
     <div class="result-box" id="t-result">Resultado aparece aqui.</div>
@@ -71,9 +72,9 @@ ISA(°C) = 15 − 2 × (PA / 1000)
 DA = PA + K × (OAT − ISA)   [K = 120 (FAA/OACI) ou 100 (alguns gabaritos BR)]</div>
     <div class="note warn">Há duas constantes em uso nas fontes pesquisadas (120 vs. 100). O cálculo abaixo mostra as duas — confirme qual a sua banca/curso usa antes da prova.</div>
     <div class="field-row">
-      <div class="field"><label>Elevação do campo (ft)</label><input id="d-elev" type="number" placeholder="2000" /></div>
-      <div class="field"><label>Ajuste de altímetro (inHg)</label><input id="d-qnh" type="number" step="0.01" placeholder="29.92" /></div>
-      <div class="field"><label>Temperatura OAT (°C)</label><input id="d-oat" type="number" placeholder="30" /></div>
+      <div class="field"><label for="d-elev">Elevação do campo (ft)</label><input id="d-elev" type="number" placeholder="2000" /></div>
+      <div class="field"><label for="d-qnh">Ajuste de altímetro (inHg)</label><input id="d-qnh" type="number" step="0.01" placeholder="29.92" /></div>
+      <div class="field"><label for="d-oat">Temperatura OAT (°C)</label><input id="d-oat" type="number" placeholder="30" /></div>
     </div>
     <button onclick="calcDensityAlt()">Calcular</button>
     <div class="result-box" id="d-result">Resultado aparece aqui.</div>
@@ -85,9 +86,9 @@ DA = PA + K × (OAT − ISA)   [K = 120 (FAA/OACI) ou 100 (alguns gabaritos BR)]
 Regra prática 3°: ROD ≈ GS × 5
 Distância p/ perder altitude = (tempo de descida / 60) × GS</div>
     <div class="field-row">
-      <div class="field"><label>Velocidade no solo GS (kt)</label><input id="r-gs" type="number" placeholder="90" /></div>
-      <div class="field"><label>Ângulo de descida (°, padrão 3)</label><input id="r-angle" type="number" placeholder="3" /></div>
-      <div class="field"><label>Altitude a perder (ft, opcional)</label><input id="r-alt" type="number" placeholder="2000" /></div>
+      <div class="field"><label for="r-gs">Velocidade no solo GS (kt)</label><input id="r-gs" type="number" placeholder="90" /></div>
+      <div class="field"><label for="r-angle">Ângulo de descida (°, padrão 3)</label><input id="r-angle" type="number" placeholder="3" /></div>
+      <div class="field"><label for="r-alt">Altitude a perder (ft, opcional)</label><input id="r-alt" type="number" placeholder="2000" /></div>
     </div>
     <button onclick="calcDescent()">Calcular</button>
     <div class="result-box" id="r-result">Resultado aparece aqui.</div>
@@ -96,9 +97,9 @@ Distância p/ perder altitude = (tempo de descida / 60) × GS</div>
   <div class="calc-box" id="calc-conversao">
     <h3><svg class="icon icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14.5-4.5"/><path d="M20 3.5v4.5h-4.5"/><path d="M20 12a8 8 0 0 1-14.5 4.5"/><path d="M4 20.5V16h4.5"/></svg>Conversão de unidades</h3>
     <div class="field-row">
-      <div class="field"><label>Valor</label><input id="c-val" type="number" placeholder="100" /></div>
+      <div class="field"><label for="c-val">Valor</label><input id="c-val" type="number" placeholder="100" /></div>
       <div class="field">
-        <label>Conversão</label>
+        <label for="c-type">Conversão</label>
         <select id="c-type">
           <option value="nm-km">NM → km</option>
           <option value="km-nm">km → NM</option>
@@ -120,8 +121,8 @@ Distância p/ perder altitude = (tempo de descida / 60) × GS</div>
   </div>
 </main>
 <footer>Nimb · fórmulas padrão de navegação aérea (E6B). Confirme sempre com o instrutor de voo por instrumentos.</footer>
-<script src="js/app.js?v=7"></script>
-<script src="js/palette.js?v=7"></script>
-<script src="js/calc.js?v=7"></script>
+<script src="js/app.js?v=8"></script>
+<script src="js/palette.js?v=8"></script>
+<script src="js/calc.js?v=8"></script>
 </body>
 </html>

@@ -7,9 +7,10 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=7" />
+<link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 <header class="topbar">
   <div class="brand">
     <img src="img/nexus-mark.png" alt="" width="24" height="24" style="border-radius:6px;" />
@@ -31,7 +32,7 @@
       Buscar <kbd>Ctrl K</kbd>
     </button>
 </header>
-<main>
+<main id="conteudo">
   <h1>Regulamento — Prova REG (20 questões, 30 min)</h1>
   <p style="color:var(--text-dim)">Base normativa: RBAC 61 (licenças e habilitações), RBAC 91 (regras de operação), ICA 100-12 (regras do ar), IS 00-003 (exames teóricos).</p>
 
@@ -70,7 +71,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
       <button onclick="selfCheck(this, true, 'RBAC 61.223(a)(6): das 40 horas de instrumento, até 20h podem ser em FSTD.')">20 horas</button>
       <button onclick="selfCheck(this, false, 'A resposta certa é 20 horas — releia a tabela acima.')">Todas as 40 horas</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>3. RBAC 91 — Regras de operação IFR</h2>
@@ -136,7 +137,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
       <button onclick="selfCheck(this, false, 'Errado — em aproximação frontal, ambas alteram o rumo para a direita, não apenas a mais rápida.')">Apenas a mais rápida deve desviar</button>
       <button onclick="selfCheck(this, false, 'Errado — em aproximação frontal, ambas alteram o rumo para a direita, não para a esquerda.')">Ambas alteram o rumo para a esquerda</button>
     </div>
-    <div class="selfcheck-feedback"></div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
   <h2>5. Plano de voo IFR</h2>
@@ -159,7 +160,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
   </table>
 </main>
 <footer>Nimb · resumo de estudo — sempre confira o RBAC/ICA vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=7"></script>
-<script src="js/palette.js?v=7"></script>
+<script src="js/app.js?v=8"></script>
+<script src="js/palette.js?v=8"></script>
 </body>
 </html>
