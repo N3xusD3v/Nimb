@@ -757,4 +757,21 @@ html.js .reveal.in-view {
   color: var(--text-dim);
   display: none;
 }
+
+.diagram-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 0.75rem;
+  margin: 1rem 0;
+}
+.diagram-card svg { width: 100%; height: auto; display: block; }
+.diagram-card .diagram-caption {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+}
+.diagram-card .diagram-caption strong { color: var(--text); }
 .selfcheck-feedback.show { display: block; }

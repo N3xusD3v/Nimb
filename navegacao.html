@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Navegação — Nimb IFRH</title>
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
-<link rel="stylesheet" href="css/style.css?v=5" />
+<link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body>
 <header class="topbar">
@@ -55,6 +55,46 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
     <li>Interceptação de radial: ângulos de 30° a 90° são os mais usados — quanto maior o ângulo, mais rápida a interceptação, exigindo mais atenção ao CDI.</li>
   </ul>
 
+  <div class="diagram-card">
+    <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama mostrando a mesma aeronave, no mesmo radial 090/270, com indicação TO antes de passar pela estação e FROM depois de passar">
+      <text x="150" y="24" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="700">Antes da estação</text>
+      <text x="490" y="24" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="700">Depois da estação</text>
+
+      <line x1="30" y1="130" x2="610" y2="130" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="3 4"/>
+      <line x1="200" y1="70" x2="200" y2="190" stroke="var(--border)" stroke-width="1"/>
+      <line x1="440" y1="70" x2="440" y2="190" stroke="var(--border)" stroke-width="1"/>
+
+      <circle cx="200" cy="130" r="34" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="200" cy="130" r="4" fill="var(--accent)"/>
+      <text x="200" y="180" text-anchor="middle" fill="var(--text-dim)" font-size="10">VOR (radial 090/270)</text>
+
+      <circle cx="440" cy="130" r="34" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="440" cy="130" r="4" fill="var(--accent)"/>
+      <text x="440" y="180" text-anchor="middle" fill="var(--text-dim)" font-size="10">VOR (radial 090/270)</text>
+
+      <g transform="translate(90,130) rotate(90)">
+        <polygon points="0,-10 8,10 -8,10" fill="var(--ok)"/>
+      </g>
+      <text x="90" y="118" text-anchor="middle" fill="var(--text)" font-size="11">Aeronave · rumo 090°</text>
+
+      <g transform="translate(490,130) rotate(90)">
+        <polygon points="0,-10 8,10 -8,10" fill="var(--ok)"/>
+      </g>
+      <text x="490" y="118" text-anchor="middle" fill="var(--text)" font-size="11">Aeronave · rumo 090°</text>
+
+      <rect x="60" y="210" width="120" height="40" rx="8" fill="var(--bg)" stroke="var(--ok)" stroke-width="1.5"/>
+      <line x1="80" y1="230" x2="160" y2="230" stroke="var(--text-dim)" stroke-width="1"/>
+      <line x1="120" y1="215" x2="120" y2="245" stroke="var(--ok)" stroke-width="2.5"/>
+      <text x="150" y="234" fill="var(--ok)" font-size="14" font-weight="800">TO</text>
+
+      <rect x="400" y="210" width="120" height="40" rx="8" fill="var(--bg)" stroke="var(--warn)" stroke-width="1.5"/>
+      <line x1="420" y1="230" x2="500" y2="230" stroke="var(--text-dim)" stroke-width="1"/>
+      <line x1="460" y1="215" x2="460" y2="245" stroke="var(--warn)" stroke-width="2.5"/>
+      <text x="488" y="234" fill="var(--warn)" font-size="13" font-weight="800">FROM</text>
+    </svg>
+    <div class="diagram-caption">Mesmo radial selecionado (090/270) e mesmo rumo de voo (090°) nos dois painéis — a única coisa que muda é a posição da aeronave em relação à estação. <strong>TO</strong>: a estação está à frente. <strong>FROM</strong>: a estação ficou para trás.</div>
+  </div>
+
   <div class="selfcheck">
     <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: o CDI mostra "FROM" com a agulha centrada. O que isso indica sobre a posição da aeronave?</div>
     <div class="selfcheck-opts">
@@ -79,6 +119,43 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   </table>
   <p>Tipo A (não-precisão): MDA/DA ≥ 75 m (250 ft).</p>
 
+  <div class="diagram-card">
+    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Perfil comparando aproximação de precisão ILS com decisão em DA/DH sem nivelar, e aproximação de não precisão com voo nivelado em MDA até o MAPt">
+      <text x="175" y="22" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="700">ILS — precisão (DA/DH)</text>
+      <text x="525" y="22" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="700">Não-precisão (MDA)</text>
+
+      <line x1="20" y1="260" x2="330" y2="260" stroke="var(--text-dim)" stroke-width="1.5"/>
+      <line x1="370" y1="260" x2="680" y2="260" stroke="var(--text-dim)" stroke-width="1.5"/>
+      <rect x="292" y="255" width="38" height="8" fill="var(--border)"/>
+      <rect x="642" y="255" width="38" height="8" fill="var(--border)"/>
+
+      <text x="55" y="72" fill="var(--text-dim)" font-size="10">FAF</text>
+      <line x1="60" y1="80" x2="300" y2="255" stroke="var(--accent)" stroke-width="2.5"/>
+      <line x1="20" y1="218" x2="330" y2="218" stroke="var(--warn)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="24" y="212" fill="var(--warn)" font-size="11" font-weight="700">DA/DH</text>
+      <circle cx="250" cy="218" r="4" fill="var(--warn)"/>
+      <path d="M250,218 Q265,150 245,95" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowRed1)"/>
+      <text x="330" y="105" text-anchor="end" fill="var(--danger)" font-size="9.5">sem referência visual → arremete já, em voo</text>
+
+      <text x="405" y="72" fill="var(--text-dim)" font-size="10">FAF</text>
+      <line x1="410" y1="80" x2="500" y2="230" stroke="var(--accent)" stroke-width="2.5"/>
+      <line x1="500" y1="230" x2="600" y2="230" stroke="var(--accent)" stroke-width="2.5"/>
+      <line x1="370" y1="230" x2="680" y2="230" stroke="var(--warn)" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="374" y="224" fill="var(--warn)" font-size="11" font-weight="700">MDA</text>
+      <circle cx="600" cy="230" r="4" fill="var(--ok)"/>
+      <text x="604" y="246" fill="var(--ok)" font-size="10" font-weight="700">MAPt</text>
+      <line x1="600" y1="230" x2="600" y2="260" stroke="var(--ok)" stroke-width="1" stroke-dasharray="2 3"/>
+      <path d="M600,230 Q615,165 595,95" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrowRed2)"/>
+      <text x="680" y="105" text-anchor="end" fill="var(--danger)" font-size="9.5">sem referência no MAPt → arremete</text>
+
+      <defs>
+        <marker id="arrowRed1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--danger)"/></marker>
+        <marker id="arrowRed2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--danger)"/></marker>
+      </defs>
+    </svg>
+    <div class="diagram-caption"><strong>DA/DH</strong>: decisão tomada durante a descida contínua — se não houver referência visual, a arremetida começa imediatamente, sem nivelar. <strong>MDA</strong>: permite voo nivelado (sem descer mais) até o MAPt; só ali, sem referência visual, inicia-se a arremetida.</div>
+  </div>
+
   <h3>Categorias de aproximação por velocidade (Vat = 1,3 × Vso no peso máximo de pouso)</h3>
   <table>
     <tr><th>Categoria</th><th>Vat</th></tr>
@@ -94,8 +171,40 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   <ul>
     <li>Sentido padrão: curvas <strong>à direita</strong>, salvo indicação contrária na carta.</li>
     <li>Perna de afastamento: <strong>1 min</strong> abaixo de FL 140; <strong>1,5 min</strong> entre FL 140 e FL 340.</li>
-    <li>Tipos de entrada — <strong>direta</strong>, <strong>paralela</strong> e <strong>setor/offset</strong> — definidos pelo ângulo entre o rumo de chegada e o rumo de afastamento (setores de aproximadamente 70°/110° a partir do curso de entrada).</li>
+    <li>Tipos de entrada — <strong>direta</strong>, <strong>paralela</strong> e <strong>setor/offset (teardrop)</strong> — definidos pelo ângulo entre o rumo de chegada e o curso de espera.</li>
   </ul>
+
+  <div class="diagram-card">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama dos três setores de entrada em espera: direta 180 graus do lado do circuito, paralela 110 graus e teardrop 70 graus do lado oposto, para circuito padrão com curvas à direita">
+      <path d="M200,200 L200,50 A150,150 0 0,1 200,350 Z" fill="var(--ok)" fill-opacity="0.16"/>
+      <path d="M200,200 L200,350 A150,150 0 0,1 59,251 Z" fill="var(--warn)" fill-opacity="0.22"/>
+      <path d="M200,200 L59,251 A150,150 0 0,1 200,50 Z" fill="var(--accent)" fill-opacity="0.16"/>
+
+      <line x1="200" y1="200" x2="200" y2="50" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="200" y1="200" x2="200" y2="350" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <line x1="200" y1="200" x2="59" y2="251" stroke="var(--border)" stroke-width="1" stroke-dasharray="2 3"/>
+
+      <g transform="translate(200,385) rotate(180)">
+        <polygon points="0,-11 9,11 -9,11" fill="var(--accent-2)"/>
+      </g>
+      <text x="200" y="398" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700">Rumo de chegada (inbound)</text>
+
+      <text x="145" y="120" text-anchor="middle" fill="var(--ok)" font-size="13" font-weight="800">Direta</text>
+      <text x="145" y="136" text-anchor="middle" fill="var(--text-dim)" font-size="10">180° · lado do circuito</text>
+
+      <text x="130" y="270" text-anchor="middle" fill="var(--warn)" font-size="13" font-weight="800">Teardrop</text>
+      <text x="130" y="286" text-anchor="middle" fill="var(--text-dim)" font-size="10">70°</text>
+
+      <text x="135" y="330" text-anchor="middle" fill="var(--accent)" font-size="13" font-weight="800">Paralela</text>
+      <text x="135" y="346" text-anchor="middle" fill="var(--text-dim)" font-size="10">110°</text>
+
+      <text x="205" y="70" fill="var(--text-dim)" font-size="9.5">curso de espera (outbound) ↓</text>
+
+      <circle cx="200" cy="200" r="4" fill="var(--text)"/>
+    </svg>
+    <div class="diagram-caption">Exemplo para circuito padrão (<strong>curvas à direita</strong>) — se o procedimento indicar curvas à esquerda, espelhe os setores. O setor de <strong>entrada direta</strong> ocupa os 180° inteiros do lado do circuito; do lado oposto, <strong>paralela</strong> (110°, junto ao rumo de chegada) e <strong>teardrop</strong> (70°, junto ao curso de afastamento) dividem os outros 180°.</div>
+  </div>
+
   <div class="note warn">A determinação visual do tipo de entrada é melhor treinada com diagramas/cartas reais do que memorizada como "fórmula" — pratique com cartas de exemplo no <a href="https://aisweb.decea.mil.br/?i=publicacoes&p=aip" target="_blank" rel="noopener">AISWEB</a>.</div>
 
   <h2>5. Arco DME</h2>
@@ -129,7 +238,7 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   </table>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=5"></script>
-<script src="js/palette.js?v=5"></script>
+<script src="js/app.js?v=6"></script>
+<script src="js/palette.js?v=6"></script>
 </body>
 </html>
