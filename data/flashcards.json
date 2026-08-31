@@ -28,5 +28,8 @@
   { "id": "nav-8", "materia": "navegacao", "frente": "Faixas de Vat para categorias de aproximação A a D?", "verso": "A: <91kt · B: 91-120kt · C: 121-140kt · D: 141-165kt." },
   { "id": "nav-9", "materia": "navegacao", "frente": "Mínimos CAT I do ILS (DH e RVR/visibilidade)?", "verso": "DH ≥ 60m (200ft); RVR ≥ 550m ou visibilidade ≥ 800m." },
   { "id": "met-6", "materia": "meteorologia", "frente": "Regra prática de spread T/Td para risco de nevoeiro?", "verso": "Spread de 1°C ou menos indica alta probabilidade de nevoeiro." },
-  { "id": "met-7", "materia": "meteorologia", "frente": "Quais grupos de nuvens NÃO definem teto no METAR?", "verso": "FEW e SCT não definem teto; apenas BKN e OVC definem." }
+  { "id": "met-7", "materia": "meteorologia", "frente": "Quais grupos de nuvens NÃO definem teto no METAR?", "verso": "FEW e SCT não definem teto; apenas BKN e OVC definem." },
+  { "id": "reg-15", "materia": "regulamento", "frente": "Qual lei institui o Código Brasileiro de Aeronáutica?", "verso": "Lei nº 7.565/1986." },
+  { "id": "reg-16", "materia": "regulamento", "frente": "Qual lei cria a ANAC?", "verso": "Lei nº 11.182/2005." },
+  { "id": "reg-17", "materia": "regulamento", "frente": "Qual decreto rege o sistema de investigação e prevenção de acidentes aeronáuticos no Brasil?", "verso": "Decreto nº 9.540/2018." }
 ]
