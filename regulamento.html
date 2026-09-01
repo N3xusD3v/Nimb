@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=10" />
+<link rel="stylesheet" href="css/style.css?v=11" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -36,7 +36,9 @@
   <h1>Regulamento — Prova REG (20 questões, 30 min)</h1>
   <p style="color:var(--text-dim)">Base normativa: RBAC 61 (licenças e habilitações), RBAC 91 (regras de operação), ICA 100-12 (regras do ar), IS 00-003 (exames teóricos).</p>
 
-  <h2>1. Estrutura oficial do exame teórico IFR (IS 00-003H)</h2>
+  <div class="section-tracker" id="section-tracker"></div>
+
+  <h2 id="estrutura-exame">1. Estrutura oficial do exame teórico IFR (IS 00-003H)</h2>
   <table>
     <tr><th>Prova</th><th>Questões</th><th>Duração</th><th>Nota mínima</th></tr>
     <tr><td>REG — Regulamentos (ênfase IFR)</td><td>20</td><td>30 min</td><td>70%</td></tr>
@@ -47,7 +49,7 @@
     <strong>Nota é por prova, não é média.</strong> Reprovar em 1 das 3 provas (com ≥30% de acerto nela) permite refazer só essa prova em 2ª época, em até 90 dias da 1ª tentativa. O exame IFR é <strong>totalmente dispensado</strong> se o candidato já possui habilitação IFR vigente em outra categoria de aeronave.
   </div>
 
-  <h2>2. RBAC 61 — Subparte L (Habilitação de Voo por Instrumentos)</h2>
+  <h2 id="rbac-61">2. RBAC 61 — Subparte L (Habilitação de Voo por Instrumentos)</h2>
   <p>Requisitos para obter a habilitação IFR (61.223):</p>
   <table>
     <tr><th>Requisito</th><th>Valor</th></tr>
@@ -74,7 +76,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>3. RBAC 91 — Regras de operação IFR</h2>
+  <h2 id="rbac-91">3. RBAC 91 — Regras de operação IFR</h2>
   <h3>Reserva de combustível (91.167)</h3>
   <p>Após alcançar o aeródromo de alternativa, reserva final em velocidade normal de cruzeiro:</p>
   <table>
@@ -102,7 +104,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
   </table>
   <p>Regra de arredondamento do nível de transição: se QNH ≤ 1013,2 hPa, soma-se 1.000 ft à altitude de transição; se QNH &gt; 1013,2 hPa, soma-se 500 ft. <span style="color:var(--text-dim)">(A altitude de transição em si é publicada por aeródromo/FIR no AIP-Brasil ENR 1.7 — não é um valor único nacional.)</span></p>
 
-  <h2>4. Regras do ar (ICA 100-12) — prioridades e direito de passagem</h2>
+  <h2 id="regras-ar">4. Regras do ar (ICA 100-12) — prioridades e direito de passagem</h2>
   <ul>
     <li><strong>Aproximação frontal:</strong> ambas as aeronaves alteram o rumo para a <strong>direita</strong>.</li>
     <li><strong>Convergência:</strong> quem tem a outra aeronave à sua <strong>direita</strong> cede passagem.</li>
@@ -140,7 +142,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>5. Plano de voo IFR</h2>
+  <h2 id="plano-voo">5. Plano de voo IFR</h2>
   <p>Plano de voo IFR é obrigatório antes da decolagem (formulário ICAO, aprovado via DECEA/AIS), contendo tipo de voo, indicativo, tipo de aeronave/esteira de turbulência, equipamento, aeródromo/hora de partida, velocidade/nível/rota de cruzeiro, destino/tempo estimado/alternativa, e informações suplementares (autonomia, pessoas a bordo, equipamento de emergência).</p>
 
   <div class="note">
@@ -153,7 +155,7 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
     <strong>Item que ainda vale checar na fonte primária antes da prova:</strong> a tabela completa de velocidades máximas de espera por categoria de aeronave (ICAO Doc 8168) varia conforme a edição de critérios em uso — não encontramos essa tabela publicada de forma inequívoca em fonte primária brasileira nesta pesquisa. Na prática, helicópteros voam a espera bem abaixo de qualquer limite de categoria (tipicamente 90–120 kt), então memorizar a tabela exata tem baixo retorno — o importante é saber que <strong>o limite existe e diminui a velocidade permitida</strong>, não o valor exato.
   </div>
 
-  <h2>6. Tópicos adicionais do REG (baixa prioridade para a prova IFR)</h2>
+  <h2 id="topicos-adicionais">6. Tópicos adicionais do REG (baixa prioridade para a prova IFR)</h2>
   <p style="color:var(--text-dim)">O Apêndice D da IS 00-003H lista objetivos de REG compartilhados entre vários exames da ANAC (não exclusivos de IFR). Em uma prova de 20 questões/30min focada em IFR, é pouco provável que estes temas dominem a prova, mas podem render 1–2 questões isoladas. Revise por último, depois de dominar as seções 1–5 acima.</p>
   <table>
     <tr><th>Tema (ICAO/normativo)</th><th>O que revisar por alto</th></tr>
@@ -164,9 +166,24 @@ Recência para PIC em IFR (61.21(b)): 6 aproximações por instrumentos na categ
     <tr><td>Anexo 13 — Investigação de Acidentes</td><td>Definições (acidente vs. incidente sério), Decreto 9.540/2018 (sistema brasileiro de investigação)</td></tr>
     <tr><td>Marco regulatório e profissão</td><td>Lei 7.565/1986 (Código Brasileiro de Aeronáutica), Lei 11.182/2005 (cria a ANAC), Lei 13.475/2017 (profissão de aeronauta)</td></tr>
   </table>
+
+  <div class="section-complete-banner" id="section-complete-banner">
+    🎉 <strong>Você completou toda a matéria de Regulamento!</strong>
+    <a class="btn" href="quiz.html?materia=regulamento"><span class="cta-label">Fazer simulado de Regulamento →</span></a>
+  </div>
 </main>
 <footer>Nimb · resumo de estudo — sempre confira o RBAC/ICA vigente em anac.gov.br e publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=10"></script>
-<script src="js/palette.js?v=10"></script>
+<script src="js/app.js?v=11"></script>
+<script src="js/palette.js?v=11"></script>
+<script>
+  initSectionTracker("regulamento", [
+    { id: "estrutura-exame", label: "1. Estrutura do exame" },
+    { id: "rbac-61", label: "2. RBAC 61 (Habilitação)" },
+    { id: "rbac-91", label: "3. RBAC 91 (Operação)" },
+    { id: "regras-ar", label: "4. Regras do ar" },
+    { id: "plano-voo", label: "5. Plano de voo IFR" },
+    { id: "topicos-adicionais", label: "6. Tópicos adicionais" },
+  ]);
+</script>
 </body>
 </html>

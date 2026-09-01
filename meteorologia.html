@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=10" />
+<link rel="stylesheet" href="css/style.css?v=11" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -36,7 +36,9 @@
   <h1>Meteorologia — Prova MET (20 questões, 35 min)</h1>
   <p style="color:var(--text-dim)">Base: ICA 105-xx (meteorologia aeronáutica, DECEA), códigos OACI (METAR/TAF/SIGMET).</p>
 
-  <h2>1. METAR — decodificação</h2>
+  <div class="section-tracker" id="section-tracker"></div>
+
+  <h2 id="metar">1. METAR — decodificação</h2>
   <div class="formula">METAR SBRJ 181400Z 18008KT 4000 -RA BR BKN008 OVC015 22/21 Q1012</div>
   <table>
     <tr><th>Grupo</th><th>Valor</th><th>Significado</th></tr>
@@ -73,7 +75,7 @@
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>2. Nuvens significativas, avisos e windshear</h2>
+  <h2 id="nuvens-avisos">2. Nuvens significativas, avisos e windshear</h2>
   <table>
     <tr><th>Código</th><th>Significado</th></tr>
     <tr><td>CB (Cumulonimbus)</td><td>Nuvem de maior risco — turbulência severa, granizo, tesoura de vento, atividade elétrica</td></tr>
@@ -90,7 +92,7 @@
     <tr><td>Validade</td><td>4 horas (até 6h em casos excepcionais)</td><td>4 horas (até 6h em casos excepcionais)</td></tr>
   </table>
 
-  <h2>3. TAF — grupos de mudança</h2>
+  <h2 id="taf">3. TAF — grupos de mudança</h2>
   <table>
     <tr><th>Grupo</th><th>Significado</th></tr>
     <tr><td>FM (from)</td><td>Mudança abrupta a partir do horário indicado — ex: FM181800</td></tr>
@@ -100,7 +102,7 @@
   </table>
   <p>Validade típica: 24 ou 30 horas. Emissões nos horários sinóticos 00Z, 06Z, 12Z, 18Z.</p>
 
-  <h2>4. Formação de gelo (icing)</h2>
+  <h2 id="icing">4. Formação de gelo (icing)</h2>
   <div class="note warn">Faixa mais crítica: <strong>0°C a −20°C</strong> (água líquida super-resfriada). Torna-se rara abaixo de −20°C.</div>
   <ul>
     <li><strong>Gelo claro (clear ice):</strong> denso e perigoso, associado a gotas grandes/Cb.</li>
@@ -109,7 +111,7 @@
   </ul>
   <p>Em helicópteros: perda de sustentação/eficiência das pás do rotor, aumento de peso e arrasto, desbalanceamento, obstrução de pitot/tomadas estáticas e entradas de ar do motor. Helicópteros não certificados FIKI (Flight Into Known Icing) não devem operar em IMC com gelo previsto ou observado.</p>
 
-  <h2>5. Nevoeiro</h2>
+  <h2 id="nevoeiro">5. Nevoeiro</h2>
   <p><strong>Regra prática:</strong> spread temperatura/ponto de orvalho de 1°C ou menos indica alta probabilidade de nevoeiro (ar próximo da saturação).</p>
   <ul>
     <li><strong>Nevoeiro de radiação:</strong> noite/madrugada, céu claro, vento fraco — resfriamento radiativo da superfície.</li>
@@ -127,7 +129,7 @@
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>6. Massas de ar e frentes</h2>
+  <h2 id="frentes">6. Massas de ar e frentes</h2>
   <table>
     <tr><th>Frente</th><th>Características</th></tr>
     <tr><td>Fria</td><td>Ar frio avança sob ar quente; Cumulonimbus, chuva intensa, mudança rápida de vento, queda de temperatura</td></tr>
@@ -135,7 +137,7 @@
     <tr><td>Oclusa</td><td>Combinação de sistema frio alcançando o quente</td></tr>
   </table>
 
-  <h2>7. Altitude densidade</h2>
+  <h2 id="altitude-densidade">7. Altitude densidade</h2>
   <div class="note">Regra geral: <strong>alta pressão + baixa temperatura</strong> = ar mais denso = melhor desempenho (mais sustentação/potência, corrida de decolagem mais curta). <strong>Baixa pressão + alta temperatura</strong> = ar menos denso = pior desempenho (corrida mais longa, menor razão de subida) — é exatamente o que a altitude densidade mede.</div>
   <div class="formula">PA = Elevação + (29.92 − Altímetro[inHg]) × 1000
 ISA(°C) = 15 − 2 × (PA/1000)
@@ -143,9 +145,25 @@ DA = PA + K × (OAT − ISA)</div>
   <div class="note warn">Duas constantes em uso: <strong>K=120</strong> (padrão FAA/OACI) ou <strong>K=100</strong> (usada em alguns gabaritos brasileiros). Confirme qual sua banca adota. Pratique na <a href="calculadoras.html">calculadora</a> (mostra as duas).</div>
 
   <div class="note">Dois pontos que não têm um número único para decorar: os <strong>gradientes exatos de temperatura/pressão na passagem de uma frente</strong> variam com a massa de ar e a intensidade do sistema (por isso a prova cobra o padrão qualitativo — o que sobe/desce/vira — e não uma tabela fixa de valores); e os <strong>limites de certificação de degelo de rotor</strong> são específicos por modelo de helicóptero/STC, não um valor único da ANAC. Se a prova cobrar algo assim, será sobre um caso específico dado na questão, não um número para memorizar de antemão.</div>
+
+  <div class="section-complete-banner" id="section-complete-banner">
+    🎉 <strong>Você completou toda a matéria de Meteorologia!</strong>
+    <a class="btn" href="quiz.html?materia=meteorologia"><span class="cta-label">Fazer simulado de Meteorologia →</span></a>
+  </div>
 </main>
 <footer>Nimb · resumo de estudo — confira sempre a ICA 105-xx vigente em publicacoes.decea.mil.br.</footer>
-<script src="js/app.js?v=10"></script>
-<script src="js/palette.js?v=10"></script>
+<script src="js/app.js?v=11"></script>
+<script src="js/palette.js?v=11"></script>
+<script>
+  initSectionTracker("meteorologia", [
+    { id: "metar", label: "1. METAR" },
+    { id: "nuvens-avisos", label: "2. Nuvens e avisos" },
+    { id: "taf", label: "3. TAF" },
+    { id: "icing", label: "4. Formação de gelo" },
+    { id: "nevoeiro", label: "5. Nevoeiro" },
+    { id: "frentes", label: "6. Massas de ar/frentes" },
+    { id: "altitude-densidade", label: "7. Altitude densidade" },
+  ]);
+</script>
 </body>
 </html>

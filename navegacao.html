@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=10" />
+<link rel="stylesheet" href="css/style.css?v=11" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -36,7 +36,9 @@
   <h1>Navegação — Prova NAV (20 questões, 100 min)</h1>
   <p style="color:var(--text-dim)">A prova mais longa do exame — cálculos manuais (E6B/CR-3) e interpretação de cartas IAC.</p>
 
-  <h2>1. Triângulo de velocidades (vento e deriva)</h2>
+  <div class="section-tracker" id="section-tracker"></div>
+
+  <h2 id="velocidades">1. Triângulo de velocidades (vento e deriva)</h2>
   <div class="formula">A = WD − TC  (ângulo entre direção do vento e a rota)
 WCA = asin( (WS × sin A) / TAS )
 Proa (HDG) = TC + WCA
@@ -51,7 +53,7 @@ GS = TAS × cos(WCA) − WS × cos A</div>
 Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least")</div>
   <p><strong>Exemplo:</strong> TC = 090°, variação local = 10°W → MC = 090 + 10 = <strong>100°</strong>.</p>
 
-  <h2>2. VOR — radiais e indicações</h2>
+  <h2 id="vor">2. VOR — radiais e indicações</h2>
   <ul>
     <li><strong>TO:</strong> seguindo a radial selecionada, a estação está à frente.</li>
     <li><strong>FROM:</strong> a estação está atrás (a radial selecionada afasta da estação).</li>
@@ -108,7 +110,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>3. Aproximações por instrumentos</h2>
+  <h2 id="aproximacoes">3. Aproximações por instrumentos</h2>
   <table>
     <tr><th>Conceito</th><th>Uso</th></tr>
     <tr><td>DA/DH (Decision Altitude/Height)</td><td>Aproximações de <strong>precisão</strong> (ILS) — decisão tomada durante descida contínua, sem nivelamento</td></tr>
@@ -170,7 +172,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   </table>
   <div class="note">Helicópteros normalmente caem em Categoria A, mas isso depende do Vat real do procedimento — alguns procedimentos têm categoria própria ("Copter approach").</div>
 
-  <h2>4. Procedimento de espera (holding)</h2>
+  <h2 id="holding">4. Procedimento de espera (holding)</h2>
   <ul>
     <li>Sentido padrão: curvas <strong>à direita</strong>, salvo indicação contrária na carta.</li>
     <li>Perna de afastamento: <strong>1 min</strong> abaixo de FL 140; <strong>1,5 min</strong> entre FL 140 e FL 340.</li>
@@ -210,12 +212,12 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
 
   <div class="note warn">A determinação visual do tipo de entrada é melhor treinada com diagramas/cartas reais do que memorizada como "fórmula" — pratique com cartas de exemplo no <a href="https://aisweb.decea.mil.br/?i=publicacoes&p=aip" target="_blank" rel="noopener">AISWEB</a>.</div>
 
-  <h2>5. Arco DME</h2>
+  <h2 id="arco-dme">5. Arco DME</h2>
   <p>Mantém distância fixa (raio) de uma estação VOR/DME. Técnica: a cada 5–10° de variação no DME/CDI, corrigir o rumo em 10–20° para dentro/fora do arco ("bracketing").</p>
   <div class="formula">Raio de curva padrão (rate 1, 3°/s) ≈ TAS (kt) / 62,8
 Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
 
-  <h2>6. Tempo, distância, combustível e descida</h2>
+  <h2 id="tempo-distancia">6. Tempo, distância, combustível e descida</h2>
   <div class="formula">Tempo (h) = Distância (NM) / GS (kt)
 Combustível = Fluxo × Tempo
 Distância até o TOD (NM) ≈ Altitude a perder (ft) / 300   (gradiente 3°)
@@ -233,15 +235,31 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2>7. Conversão de unidades</h2>
+  <h2 id="conversao">7. Conversão de unidades</h2>
   <table>
     <tr><td>1 NM</td><td>1.852 m = 6.076,12 ft</td></tr>
     <tr><td>1 kt</td><td>1,852 km/h = 0,5144 m/s</td></tr>
     <tr><td>1 ft</td><td>0,3048 m</td></tr>
   </table>
+
+  <div class="section-complete-banner" id="section-complete-banner">
+    🎉 <strong>Você completou toda a matéria de Navegação!</strong>
+    <a class="btn" href="quiz.html?materia=navegacao"><span class="cta-label">Fazer simulado de Navegação →</span></a>
+  </div>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=10"></script>
-<script src="js/palette.js?v=10"></script>
+<script src="js/app.js?v=11"></script>
+<script src="js/palette.js?v=11"></script>
+<script>
+  initSectionTracker("navegacao", [
+    { id: "velocidades", label: "1. Vento e deriva" },
+    { id: "vor", label: "2. VOR" },
+    { id: "aproximacoes", label: "3. Aproximações" },
+    { id: "holding", label: "4. Espera (holding)" },
+    { id: "arco-dme", label: "5. Arco DME" },
+    { id: "tempo-distancia", label: "6. Tempo/distância" },
+    { id: "conversao", label: "7. Conversão de unidades" },
+  ]);
+</script>
 </body>
 </html>

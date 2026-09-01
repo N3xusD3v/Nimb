@@ -8,6 +8,7 @@ const STORE_KEYS = {
   onboarded: "nimb_onboarded",
   missed: "nimb_missed_cards",
   streak: "nimb_streak",
+  sections: "nimb_section_progress",
 };
 
 const DEFAULT_EXAM_DATE = "2026-09-15";
@@ -178,6 +179,88 @@ function selfCheck(btn, correct, feedbackText) {
   const fb = box.querySelector(".selfcheck-feedback");
   fb.textContent = (correct ? "✓ Correto. " : "✗ Não é essa. ") + (feedbackText || "");
   fb.classList.add("show");
+}
+
+// ---- Section-progress checklist for content pages (regulamento/meteorologia/navegacao) ----
+// Purely a self-tracked reading checklist (honor system, same as the plano.html tasks) —
+// gives the student a visible "where am I / what's left" flow through a long reference page.
+const MATERIA_LABELS = { regulamento: "Regulamento", meteorologia: "Meteorologia", navegacao: "Navegação" };
+let _sectionTrackerState = null;
+
+function getSectionProgress(page) {
+  const all = getJSON(STORE_KEYS.sections, {});
+  return all[page] || [];
+}
+
+function setSectionDone(page, id, done) {
+  const all = getJSON(STORE_KEYS.sections, {});
+  const list = all[page] || [];
+  const idx = list.indexOf(id);
+  if (done && idx === -1) list.push(id);
+  if (!done && idx !== -1) list.splice(idx, 1);
+  all[page] = list;
+  setJSON(STORE_KEYS.sections, all);
+  if (done) recordActivity();
+}
+
+function initSectionTracker(page, sections) {
+  _sectionTrackerState = { page, sections };
+  renderSectionTracker();
+  if (!("IntersectionObserver" in window)) return;
+  const headings = sections.map((s) => document.getElementById(s.id)).filter(Boolean);
+  if (!headings.length) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        document.querySelectorAll(".tracker-row").forEach((row) => {
+          row.classList.toggle("current", row.dataset.section === entry.target.id);
+        });
+      });
+    },
+    { rootMargin: "-15% 0px -75% 0px" }
+  );
+  headings.forEach((h) => observer.observe(h));
+}
+
+function renderSectionTracker() {
+  const { page, sections } = _sectionTrackerState;
+  const mount = document.getElementById("section-tracker");
+  if (!mount) return;
+  const done = getSectionProgress(page);
+  const pct = sections.length ? Math.round((done.length / sections.length) * 100) : 0;
+  mount.innerHTML = `
+    <div class="tracker-head">
+      <span>Seu progresso nesta matéria</span>
+      <span class="tracker-pct">${done.length}/${sections.length} seções</span>
+    </div>
+    <div class="progress-bar"><div style="width:${pct}%"></div></div>
+    <div class="tracker-list">
+      ${sections
+        .map(
+          (s) => `
+        <div class="tracker-row ${done.includes(s.id) ? "done" : ""}" data-section="${s.id}">
+          <input type="checkbox" id="chk-${s.id}" ${done.includes(s.id) ? "checked" : ""} onchange="onSectionToggle('${s.id}', this.checked)" />
+          <label for="chk-${s.id}">${s.label}</label>
+          <a class="tracker-jump" href="#${s.id}" aria-label="Ir para a seção ${s.label}">→</a>
+        </div>`
+        )
+        .join("")}
+    </div>
+  `;
+  const banner = document.getElementById("section-complete-banner");
+  if (banner) {
+    banner.classList.toggle("show", pct === 100);
+    if (pct === 100) {
+      const label = MATERIA_LABELS[page] || page;
+      banner.querySelector(".cta-label") && (banner.querySelector(".cta-label").textContent = "Fazer simulado de " + label + " →");
+    }
+  }
+}
+
+function onSectionToggle(id, checked) {
+  setSectionDone(_sectionTrackerState.page, id, checked);
+  renderSectionTracker();
 }
 
 // ---- Backup: export/import all progress as a downloadable JSON file ----

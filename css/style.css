@@ -830,4 +830,48 @@ html.js .reveal.in-view {
   border-top: 1px solid var(--border);
 }
 .diagram-card .diagram-caption strong { color: var(--text); }
+
+/* ---- Section-progress checklist (content pages) ---- */
+.section-tracker {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0 2rem;
+}
+.tracker-head { display: flex; justify-content: space-between; align-items: baseline; font-weight: 700; margin-bottom: 0.6rem; }
+.tracker-pct { font-size: 0.85rem; color: var(--text-dim); font-weight: 600; }
+.section-tracker .progress-bar { margin-bottom: 0.9rem; }
+.tracker-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.3rem 1rem;
+}
+.tracker-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.4rem; border-radius: 8px; min-height: 44px; }
+.tracker-row.current { background: rgba(63, 182, 255, 0.12); }
+.tracker-row input[type="checkbox"] { accent-color: var(--ok); width: 19px; height: 19px; flex-shrink: 0; cursor: pointer; }
+.tracker-row label { color: var(--text); font-size: 0.9rem; cursor: pointer; flex-grow: 1; }
+.tracker-row.done label { color: var(--text-dim); text-decoration: line-through; }
+.tracker-row .tracker-jump {
+  color: var(--text-dim);
+  flex-shrink: 0;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+}
+.tracker-row .tracker-jump:hover { color: var(--accent); text-decoration: none; background: var(--bg-elev-2); }
+
+.section-complete-banner {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(76, 217, 123, 0.14), rgba(63, 182, 255, 0.1));
+  border: 1px solid var(--ok);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+.section-complete-banner.show { display: flex; }
 .selfcheck-feedback.show { display: block; }
