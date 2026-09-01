@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=11" />
+<link rel="stylesheet" href="css/style.css?v=12" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -37,6 +37,129 @@
   <p style="color:var(--text-dim)">A prova mais longa do exame — cálculos manuais (E6B/CR-3) e interpretação de cartas IAC.</p>
 
   <div class="section-tracker" id="section-tracker"></div>
+
+  <h2 id="roteiro">Roteiro: como resolver uma questão de NAV com carta e enunciado</h2>
+  <p>Na prova, cada questão te dá uma carta (ou os dados que ela mostraria) e um enunciado com o resto. O trabalho é sempre o mesmo: separar o que vem <strong>pronto</strong> do que precisa ser <strong>calculado</strong>, e seguir a ordem certa. Vamos resolver uma perna de rota completa, do jeito que cairia na prova — depois use as seções de referência abaixo para cada auxílio, aproximação ou espera que aparecer no caminho.</p>
+
+  <div class="wt-scenario">
+    <strong>Cenário de exemplo:</strong> a carta mostra a aerovia entre o VOR PVT e o aeródromo de destino. O enunciado informa: <strong>TAS 110 kt</strong>, <strong>vento 090°/25 kt</strong> (do METAR — direção sempre em relação ao norte verdadeiro) e <strong>fluxo de combustível 100 L/h</strong>.
+  </div>
+
+  <div class="diagram-card">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carta ilustrativa de exemplo: rota do VOR PVT ao aeródromo de destino, rumo magnético 134 graus, distância 42 milhas náuticas, declinação magnética 20 graus oeste, vento 090 graus 25 nós">
+      <path d="M40,40 L40,15 M32,23 L40,15 L48,23" fill="none" stroke="var(--text-dim)" stroke-width="1.5"/>
+      <text x="40" y="55" text-anchor="middle" fill="var(--text-dim)" font-size="10">N</text>
+
+      <polygon points="90,150 105,138 120,150 105,162" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <circle cx="105" cy="150" r="3" fill="var(--accent)"/>
+      <text x="105" y="188" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="700">VOR PVT · 115.5</text>
+      <text x="105" y="204" text-anchor="middle" fill="var(--warn)" font-size="11">DMG 20°W</text>
+
+      <line x1="120" y1="150" x2="600" y2="150" stroke="var(--accent-2)" stroke-width="2.5"/>
+      <text x="360" y="138" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="700">RM 134° · 42 NM</text>
+
+      <rect x="600" y="142" width="26" height="16" rx="2" fill="none" stroke="var(--text)" stroke-width="1.5"/>
+      <text x="613" y="188" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="700">Aeródromo destino</text>
+      <text x="613" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="11">→ ver carta IAC (seção 3)</text>
+
+      <line x1="420" y1="80" x2="355" y2="80" stroke="var(--danger)" stroke-width="2" marker-end="url(#windArrow)"/>
+      <text x="388" y="66" text-anchor="middle" fill="var(--danger)" font-size="11" font-weight="700">Vento 090°/25 kt</text>
+      <defs>
+        <marker id="windArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--danger)"/></marker>
+      </defs>
+    </svg>
+    <div class="diagram-caption">O que a carta te entrega pronto: <strong>rumo magnético (RM)</strong> e <strong>distância</strong> da rota, mais a <strong>declinação magnética (DMG)</strong> da região. O resto (vento, TAS, fluxo) vem do enunciado/METAR.</div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">1</div>
+    <div class="wt-step-body">
+      <h4>Leia a carta: rumo magnético e distância</h4>
+      <span class="wt-source chart">Da carta</span>
+      <p>O rumo já vem impresso na aerovia — na maioria das cartas brasileiras é o <strong>Rumo Magnético (RM)</strong>, não o verdadeiro. A distância entre os fixos também vem impressa ao lado da rota (se não vier, mede-se na escala da própria carta).</p>
+      <div class="wt-result">RM = 134° · Distância = 42 NM</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">2</div>
+    <div class="wt-step-body">
+      <h4>Converta para rumo verdadeiro (RV)</h4>
+      <span class="wt-source chart">Da carta</span> <span class="wt-source calc">Calculado</span>
+      <p>O vento do METAR é sempre dado em relação ao norte <strong>verdadeiro</strong> — então, antes do triângulo de vento, converta o RM da carta para verdadeiro usando a declinação magnética (DMG), também impressa na carta. Repare que é o <strong>inverso</strong> da fórmula TC→MC da seção 1 abaixo: aqui você já tem o magnético e quer o verdadeiro.</p>
+      <div class="formula">RV = RM − DMG (declinação Oeste) · RV = RM + DMG (declinação Leste)</div>
+      <div class="wt-result">RV = 134° − 20° = 114° (isso é o mesmo "TC" das fórmulas da seção 1)</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">3</div>
+    <div class="wt-step-body">
+      <h4>Pegue o vento no enunciado/METAR</h4>
+      <span class="wt-source given">Do enunciado</span>
+      <p>Direção de onde o vento vem (WD) e velocidade (WS) — vêm prontos no enunciado ou no METAR da questão, nunca são calculados.</p>
+      <div class="wt-result">WD = 090° · WS = 25 kt · TAS = 110 kt (dado)</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">4</div>
+    <div class="wt-step-body">
+      <h4>Resolva o triângulo de velocidades</h4>
+      <span class="wt-source calc">Calculado</span>
+      <p>Use RV no lugar do TC na fórmula da <a href="#velocidades">seção 1</a>: primeiro o ângulo entre vento e rota, depois a correção de deriva (WCA) e a velocidade no solo (GS).</p>
+      <div class="formula">A = WD − RV = 90 − 114 = −24°
+WCA = asin(WS × sinA / TAS) = asin(25 × sin(−24°) / 110) ≈ −5,3°
+GS = TAS × cos(WCA) − WS × cos(A) ≈ 110×0,996 − 25×0,914 ≈ 86,7 kt</div>
+      <div class="wt-result">WCA ≈ −5,3° · GS ≈ 86,7 kt</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">5</div>
+    <div class="wt-step-body">
+      <h4>Proa verdadeira → proa magnética</h4>
+      <span class="wt-source calc">Calculado</span>
+      <p>Some o WCA ao RV para achar a proa verdadeira (TH) — o rumo que a aeronave realmente precisa apontar. Depois converta de volta para magnético (é para esse valor que você vai olhar no bússola/HSI durante o voo), usando a DMG do mesmo jeito que a seção 1 ensina.</p>
+      <div class="formula">TH = RV + WCA = 114 + (−5,3) ≈ 108,7°
+MH = TH + DMG (oeste) = 108,7 + 20 ≈ 128,7°</div>
+      <div class="wt-result">Proa a voar (magnética) ≈ 129°</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">6</div>
+    <div class="wt-step-body">
+      <h4>Tempo e combustível da perna</h4>
+      <span class="wt-source calc">Calculado</span>
+      <p>Distância (da carta) dividida pela GS (calculada) dá o tempo; tempo vezes o fluxo (do enunciado) dá o combustível. Fórmulas completas na <a href="#tempo-distancia">seção 6</a>.</p>
+      <div class="formula">Tempo = 42 / 86,7 ≈ 0,485 h ≈ 29 min
+Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
+      <div class="wt-result">≈ 29 min de voo · ≈ 48,5 L de combustível</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">7</div>
+    <div class="wt-step-body">
+      <h4>Auxílios ao longo da rota</h4>
+      <span class="wt-source chart">Da carta</span>
+      <p>Se a rota passa por um VOR/NDB, a carta mostra a frequência e o identificador (como o "PVT · 115.5" do exemplo). Se a questão pedir para interpretar TO/FROM ou um ângulo de interceptação de radial, isso está todo detalhado na <a href="#vor">seção 2</a>.</p>
+      <div class="wt-see-also">Ver seção 2 — VOR</div>
+    </div>
+  </div>
+
+  <div class="wt-step">
+    <div class="wt-step-num">8</div>
+    <div class="wt-step-body">
+      <h4>Chegando: espera (se houver) e aproximação</h4>
+      <span class="wt-source chart">Da carta</span>
+      <p>Antes de pousar, a carta IAC pode pedir uma espera (holding) — o rumo de chegada comparado ao curso de espera define o setor de entrada (direta, paralela ou deslocada/teardrop). Na aproximação em si, a carta traz o tipo de mínimo (DA/DH ou MDA) por categoria de aeronave. Tudo isso está nas seções 3 e 4 abaixo, com diagrama.</p>
+      <div class="wt-see-also">Ver seção 3 — Aproximações · Ver seção 4 — Espera (holding)</div>
+    </div>
+  </div>
+
+  <div class="note">Essa é a sequência completa de uma perna de rota — exatamente o que a prova cobra, só que espalhado em questões separadas. Domine este roteiro e cada questão de NAV vira "só mais uma vez a mesma conta".</div>
 
   <h2 id="velocidades">1. Triângulo de velocidades (vento e deriva)</h2>
   <div class="formula">A = WD − TC  (ângulo entre direção do vento e a rota)
@@ -176,7 +299,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   <ul>
     <li>Sentido padrão: curvas <strong>à direita</strong>, salvo indicação contrária na carta.</li>
     <li>Perna de afastamento: <strong>1 min</strong> abaixo de FL 140; <strong>1,5 min</strong> entre FL 140 e FL 340.</li>
-    <li>Tipos de entrada — <strong>direta</strong>, <strong>paralela</strong> e <strong>setor/offset (teardrop)</strong> — definidos pelo ângulo entre o rumo de chegada e o curso de espera.</li>
+    <li>Tipos de entrada — <strong>direta</strong>, <strong>paralela</strong> e <strong>deslocada (teardrop)</strong> — definidos pelo ângulo entre o rumo de chegada e o curso de espera.</li>
   </ul>
 
   <div class="diagram-card">
@@ -197,7 +320,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
       <text x="145" y="120" text-anchor="middle" fill="var(--ok)" font-size="13" font-weight="800">Direta</text>
       <text x="145" y="136" text-anchor="middle" fill="var(--text-dim)" font-size="10">180° · lado do circuito</text>
 
-      <text x="130" y="270" text-anchor="middle" fill="var(--warn)" font-size="13" font-weight="800">Teardrop</text>
+      <text x="130" y="270" text-anchor="middle" fill="var(--warn)" font-size="13" font-weight="800">Deslocada</text>
       <text x="130" y="286" text-anchor="middle" fill="var(--text-dim)" font-size="10">70°</text>
 
       <text x="135" y="330" text-anchor="middle" fill="var(--accent)" font-size="13" font-weight="800">Paralela</text>
@@ -207,7 +330,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
 
       <circle cx="200" cy="200" r="4" fill="var(--text)"/>
     </svg>
-    <div class="diagram-caption">Exemplo para circuito padrão (<strong>curvas à direita</strong>) — se o procedimento indicar curvas à esquerda, espelhe os setores. O setor de <strong>entrada direta</strong> ocupa os 180° inteiros do lado do circuito; do lado oposto, <strong>paralela</strong> (110°, junto ao rumo de chegada) e <strong>teardrop</strong> (70°, junto ao curso de afastamento) dividem os outros 180°.</div>
+    <div class="diagram-caption">Exemplo para circuito padrão (<strong>curvas à direita</strong>) — se o procedimento indicar curvas à esquerda, espelhe os setores. O setor de <strong>entrada direta</strong> ocupa os 180° inteiros do lado do circuito; do lado oposto, <strong>paralela</strong> (110°, junto ao rumo de chegada) e <strong>deslocada/teardrop</strong> (70°, junto ao curso de afastamento) dividem os outros 180°.</div>
   </div>
 
   <div class="note warn">A determinação visual do tipo de entrada é melhor treinada com diagramas/cartas reais do que memorizada como "fórmula" — pratique com cartas de exemplo no <a href="https://aisweb.decea.mil.br/?i=publicacoes&p=aip" target="_blank" rel="noopener">AISWEB</a>.</div>
@@ -248,10 +371,11 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   </div>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=11"></script>
-<script src="js/palette.js?v=11"></script>
+<script src="js/app.js?v=12"></script>
+<script src="js/palette.js?v=12"></script>
 <script>
   initSectionTracker("navegacao", [
+    { id: "roteiro", label: "Roteiro passo a passo" },
     { id: "velocidades", label: "1. Vento e deriva" },
     { id: "vor", label: "2. VOR" },
     { id: "aproximacoes", label: "3. Aproximações" },
