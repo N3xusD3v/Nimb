@@ -292,5 +292,23 @@
     "materia": "navegacao",
     "frente": "5 erros clássicos do ADF/NDB?",
     "verso": "Efeito noturno (sky wave), refração costeira, efeito de montanha/terreno (multipath), efeito de tempestade (estática atrai a agulha), interferência de estação."
+  },
+  {
+    "id": "nav-17",
+    "materia": "navegacao",
+    "frente": "Diferença entre RNAV e RNP?",
+    "verso": "RNP exige monitoramento e alerta de precisão pelo sistema de bordo; RNAV não exige esse alerta."
+  },
+  {
+    "id": "nav-18",
+    "materia": "navegacao",
+    "frente": "Precisão lateral da RNAV5 (aerovias do Brasil) e da RNP APCH?",
+    "verso": "RNAV5 = 5 NM (todas as aerovias do Brasil). RNP APCH (aproximação) = 0,3 NM."
+  },
+  {
+    "id": "nav-19",
+    "materia": "navegacao",
+    "frente": "O que fazer se perder a capacidade de navegação PBN em voo?",
+    "verso": "Reverter para navegação convencional (VOR/NDB/DME) — procedimento de contingência da IS 91-001."
   }
 ]

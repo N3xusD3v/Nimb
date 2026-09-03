@@ -817,5 +817,44 @@
     ],
     "correta": 1,
     "explicacao": "Refração costeira: o sinal se propaga mais rápido sobre a água, causando uma curvatura (bending) ao cruzar a linha de costa. O erro é menor quando o cruzamento é perpendicular à costa."
+  },
+  {
+    "id": "nav-q27",
+    "materia": "navegacao",
+    "pergunta": "Qual é a principal diferença entre uma especificação de navegação RNAV e uma RNP?",
+    "opcoes": [
+      "RNAV é sempre mais preciso numericamente que qualquer especificação RNP",
+      "RNP exige que o sistema de bordo monitore a precisão em tempo real e alerte o piloto se não for cumprida; RNAV não tem esse requisito",
+      "RNP só pode ser usado em rotas oceânicas remotas",
+      "Não há diferença prática — são apenas nomes alternativos para o mesmo conceito"
+    ],
+    "correta": 1,
+    "explicacao": "A diferença central é o monitoramento e alerta de performance a bordo (RNP exige, RNAV não). A precisão numérica depende da especificação exata (ex: RNP 1 é mais preciso que RNAV 5), não do nome da família."
+  },
+  {
+    "id": "nav-q28",
+    "materia": "navegacao",
+    "pergunta": "Qual é a precisão lateral típica de uma aproximação RNP APCH?",
+    "opcoes": [
+      "5 NM",
+      "1 NM",
+      "0,3 NM",
+      "10 NM"
+    ],
+    "correta": 2,
+    "explicacao": "RNP APCH exige precisão lateral de 0,3 NM. Para comparação: RNAV 5 (rota) = 5 NM, RNP 1 (terminal) = 1 NM, RNP AR APCH (autorização especial) chega a 0,1–0,5 NM."
+  },
+  {
+    "id": "nav-q29",
+    "materia": "navegacao",
+    "pergunta": "Se a aeronave perde a capacidade de navegação PBN (ex: falha ou degradação do GNSS) durante o voo, qual é o procedimento correto?",
+    "opcoes": [
+      "Pousar imediatamente no aeródromo mais próximo, mesmo sem condições",
+      "Reverter para a navegação convencional com os auxílios disponíveis (VOR, NDB, DME)",
+      "Continuar a rota normalmente, já que o GNSS sempre se recupera sozinho",
+      "Declarar emergência automaticamente perante o órgão ATS"
+    ],
+    "correta": 1,
+    "explicacao": "O procedimento de contingência para perda de capacidade PBN é reverter para navegação convencional (VOR/NDB/DME), conforme previsto na IS 91-001 da ANAC — por isso dominar VOR e NDB continua essencial mesmo com GNSS a bordo."
   }
 ]

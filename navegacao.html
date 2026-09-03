@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=16" />
+<link rel="stylesheet" href="css/style.css?v=17" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -60,7 +60,7 @@
 
       <rect x="600" y="142" width="26" height="16" rx="2" fill="none" stroke="var(--text)" stroke-width="1.5"/>
       <text x="613" y="188" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="700">Aeródromo destino</text>
-      <text x="613" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="11">→ ver carta IAC (seção 6)</text>
+      <text x="613" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="11">→ ver carta IAC (seção 7)</text>
 
       <line x1="420" y1="80" x2="355" y2="80" stroke="var(--danger)" stroke-width="2" marker-end="url(#windArrow)"/>
       <text x="388" y="66" text-anchor="middle" fill="var(--danger)" font-size="11" font-weight="700">Vento 090°/25 kt</text>
@@ -132,7 +132,7 @@ MH = TH + DMG (oeste) = 108,7 + 20 ≈ 128,7°</div>
     <div class="wt-step-body">
       <h4>Tempo e combustível da perna</h4>
       <span class="wt-source calc">Calculado</span>
-      <p>Distância (da carta) dividida pela GS (calculada) dá o tempo; tempo vezes o fluxo (do enunciado) dá o combustível. Fórmulas completas na <a href="#tempo-distancia">seção 8</a>.</p>
+      <p>Distância (da carta) dividida pela GS (calculada) dá o tempo; tempo vezes o fluxo (do enunciado) dá o combustível. Fórmulas completas na <a href="#tempo-distancia">seção 9</a>.</p>
       <div class="formula">Tempo = 42 / 86,7 ≈ 0,485 h ≈ 29 min
 Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
       <div class="wt-result">≈ 29 min de voo · ≈ 48,5 L de combustível</div>
@@ -154,8 +154,8 @@ Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
     <div class="wt-step-body">
       <h4>Chegando: espera (se houver) e aproximação</h4>
       <span class="wt-source chart">Da carta</span>
-      <p>Antes de pousar, a carta IAC pode pedir uma espera (holding) — o rumo de chegada comparado ao curso de espera define o setor de entrada (direta, paralela ou deslocada/teardrop). Na aproximação em si, a carta traz o tipo de mínimo (DA/DH ou MDA) por categoria de aeronave. Tudo isso está nas seções 6 e 7 abaixo, com diagrama.</p>
-      <div class="wt-see-also">Ver seção 6 — Aproximações · Ver seção 7 — Espera (holding)</div>
+      <p>Antes de pousar, a carta IAC pode pedir uma espera (holding) — o rumo de chegada comparado ao curso de espera define o setor de entrada (direta, paralela ou deslocada/teardrop). Na aproximação em si, a carta traz o tipo de mínimo (DA/DH ou MDA) por categoria de aeronave. Tudo isso está nas seções 7 e 8 abaixo, com diagrama.</p>
+      <div class="wt-see-also">Ver seção 7 — Aproximações · Ver seção 8 — Espera (holding)</div>
     </div>
   </div>
 
@@ -196,7 +196,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
     <span class="phase-num">2</span>
     <div>
       <div class="phase-title">Rádio-navegação</div>
-      <div class="phase-sub">VOR, NDB/ADF e a técnica do arco DME</div>
+      <div class="phase-sub">VOR, NDB/ADF, arco DME e navegação de área (RNAV/RNP)</div>
     </div>
   </div>
 
@@ -320,6 +320,31 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   <div class="formula">Raio de curva padrão (rate 1, 3°/s) ≈ TAS (kt) / 62,8
 Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
 
+  <h2 id="rnav-pbn">6. RNAV, RNP e GNSS (navegação de área)</h2>
+  <p><strong>PBN</strong> (Performance-Based Navigation) é o conceito guarda-chuva que define a precisão exigida para navegar por área — sem precisar sobrevoar uma estação, como no VOR/NDB. Duas famílias de especificação:</p>
+  <table>
+    <tr><th>Especificação</th><th>Precisão lateral</th><th>Uso típico</th></tr>
+    <tr><td>RNAV 5</td><td>5 NM</td><td>Rota continental — todas as aerovias do Brasil são RNAV 5</td></tr>
+    <tr><td>RNAV 1 / RNAV 2</td><td>1–2 NM</td><td>Área terminal (SID/STAR)</td></tr>
+    <tr><td>RNP 1</td><td>1 NM</td><td>Área terminal, com monitoramento de bordo</td></tr>
+    <tr><td>RNP APCH</td><td>0,3 NM</td><td>Aproximação por instrumentos</td></tr>
+    <tr><td>RNP AR APCH</td><td>0,1–0,5 NM</td><td>Aproximação de precisão exigida (autorização especial)</td></tr>
+  </table>
+  <div class="note"><strong>RNAV × RNP:</strong> a diferença é o monitoramento — RNP exige que o sistema de bordo monitore e alerte se a precisão exigida não estiver sendo cumprida; RNAV não tem esse requisito de alerta.</div>
+  <p><strong>GNSS</strong> (posicionamento por satélite — GPS e similares) é a infraestrutura mais usada para cumprir essas especificações, mas o sinal de satélite puro não tem precisão/integridade suficiente para uso IFR sozinho — precisa de aumento (augmentation) para ser certificado.</p>
+  <div class="note warn"><strong>Confirme antes da prova:</strong> na data desta pesquisa, o Brasil não tinha cobertura operacional de SBAS/WAAS (sistema de aumento por satélite) — isso pode mudar com o tempo; verifique a situação atual no AIP-Brasil antes de assumir como fato.</div>
+  <p>Se a capacidade de navegação PBN for perdida em voo (falha de GNSS, degradação de precisão), o procedimento de contingência é reverter para os auxílios convencionais (VOR, NDB, DME) das seções 3 a 5.</p>
+
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: qual é a principal diferença entre uma especificação RNAV e uma RNP?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, true, 'RNP exige que o sistema de bordo monitore a precisão em tempo real e alerte o piloto se ela não for cumprida. RNAV não tem esse requisito de alerta.')">RNP exige monitoramento e alerta de precisão a bordo; RNAV não</button>
+      <button onclick="selfCheck(this, false, 'O nome não indica qual é mais preciso — depende do valor numérico (ex: RNP 1 é mais preciso que RNAV 5). A diferença real é o monitoramento a bordo.')">RNAV é sempre mais preciso que RNP</button>
+      <button onclick="selfCheck(this, false, 'RNP também é usado em rota, área terminal e aproximação — não só oceânica.')">RNP só existe para rotas oceânicas</button>
+    </div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
+  </div>
+
   <div class="phase-banner">
     <span class="phase-num">3</span>
     <div>
@@ -328,7 +353,7 @@ Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
     </div>
   </div>
 
-  <h2 id="aproximacoes">6. Aproximações por instrumentos</h2>
+  <h2 id="aproximacoes">7. Aproximações por instrumentos</h2>
   <table>
     <tr><th>Conceito</th><th>Uso</th></tr>
     <tr><td>DA/DH (Decision Altitude/Height)</td><td>Aproximações de <strong>precisão</strong> (ILS) — decisão tomada durante descida contínua, sem nivelamento</td></tr>
@@ -390,7 +415,7 @@ Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
   </table>
   <div class="note">Helicópteros normalmente caem em Categoria A, mas isso depende do Vat real do procedimento — alguns procedimentos têm categoria própria ("Copter approach").</div>
 
-  <h2 id="holding">7. Procedimento de espera (holding)</h2>
+  <h2 id="holding">8. Procedimento de espera (holding)</h2>
   <ul>
     <li>Sentido padrão: curvas <strong>à direita</strong>, salvo indicação contrária na carta.</li>
     <li>Perna de afastamento: <strong>1 min</strong> abaixo de FL 140; <strong>1,5 min</strong> entre FL 140 e FL 340.</li>
@@ -438,7 +463,7 @@ Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
     </div>
   </div>
 
-  <h2 id="tempo-distancia">8. Tempo, distância, combustível e descida</h2>
+  <h2 id="tempo-distancia">9. Tempo, distância, combustível e descida</h2>
   <div class="formula">Tempo (h) = Distância (NM) / GS (kt)
 Combustível = Fluxo × Tempo
 Distância até o TOD (NM) ≈ Altitude a perder (ft) / 300   (gradiente 3°)
@@ -462,8 +487,8 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
   </div>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=16"></script>
-<script src="js/palette.js?v=16"></script>
+<script src="js/app.js?v=17"></script>
+<script src="js/palette.js?v=17"></script>
 <script>
   initSectionTracker("navegacao", [
     { id: "roteiro", label: "Roteiro passo a passo" },
@@ -472,9 +497,10 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
     { id: "vor", label: "3. VOR", phase: "Rádio-navegação" },
     { id: "ndb-adf", label: "4. NDB e ADF", phase: "Rádio-navegação" },
     { id: "arco-dme", label: "5. Arco DME", phase: "Rádio-navegação" },
-    { id: "aproximacoes", label: "6. Aproximações", phase: "Chegada" },
-    { id: "holding", label: "7. Espera (holding)", phase: "Chegada" },
-    { id: "tempo-distancia", label: "8. Tempo/distância", phase: "Planejamento" },
+    { id: "rnav-pbn", label: "6. RNAV/RNP/GNSS", phase: "Rádio-navegação" },
+    { id: "aproximacoes", label: "7. Aproximações", phase: "Chegada" },
+    { id: "holding", label: "8. Espera (holding)", phase: "Chegada" },
+    { id: "tempo-distancia", label: "9. Tempo/distância", phase: "Planejamento" },
   ]);
 </script>
 </body>
