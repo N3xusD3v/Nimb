@@ -274,5 +274,23 @@
     "materia": "navegacao",
     "frente": "Conversão rápida: 1 kt em km/h?",
     "verso": "1 kt = 1,852 km/h."
+  },
+  {
+    "id": "nav-14",
+    "materia": "navegacao",
+    "frente": "Diferença entre RBI e RMI no ADF?",
+    "verso": "RBI: rosa fixa (nariz=0°), agulha mostra rumo relativo (RB) — precisa somar à proa: QDM = MH + RB. RMI: rosa gira com a proa, agulha já aponta o rumo magnético direto (cabeça=QDM, cauda=QDR)."
+  },
+  {
+    "id": "nav-15",
+    "materia": "navegacao",
+    "frente": "Homing x Tracking no NDB — qual o preferido e por quê?",
+    "verso": "Tracking é o preferido: corrige o vento e mantém rota reta. Homing (agulha sempre no nariz) não corrige deriva e resulta em trajetória curva."
+  },
+  {
+    "id": "nav-16",
+    "materia": "navegacao",
+    "frente": "5 erros clássicos do ADF/NDB?",
+    "verso": "Efeito noturno (sky wave), refração costeira, efeito de montanha/terreno (multipath), efeito de tempestade (estática atrai a agulha), interferência de estação."
   }
 ]

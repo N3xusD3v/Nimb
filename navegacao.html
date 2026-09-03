@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="img/nexus-mark.png" />
 <link rel="manifest" href="manifest.json" />
 <meta name="theme-color" content="#0b0f14" />
-<link rel="stylesheet" href="css/style.css?v=12" />
+<link rel="stylesheet" href="css/style.css?v=14" />
 </head>
 <body>
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -34,7 +34,7 @@
 </header>
 <main id="conteudo">
   <h1>Navegação — Prova NAV (20 questões, 100 min)</h1>
-  <p style="color:var(--text-dim)">A prova mais longa do exame — cálculos manuais (E6B/CR-3) e interpretação de cartas IAC.</p>
+  <p style="color:var(--text-dim)">A prova mais longa do exame — cálculos manuais (E6B/CR-3) e interpretação de cartas IAC. Organizada em 4 fases: fundamentos → rádio-navegação → chegada → planejamento.</p>
 
   <div class="section-tracker" id="section-tracker"></div>
 
@@ -60,7 +60,7 @@
 
       <rect x="600" y="142" width="26" height="16" rx="2" fill="none" stroke="var(--text)" stroke-width="1.5"/>
       <text x="613" y="188" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="700">Aeródromo destino</text>
-      <text x="613" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="11">→ ver carta IAC (seção 3)</text>
+      <text x="613" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="11">→ ver carta IAC (seção 6)</text>
 
       <line x1="420" y1="80" x2="355" y2="80" stroke="var(--danger)" stroke-width="2" marker-end="url(#windArrow)"/>
       <text x="388" y="66" text-anchor="middle" fill="var(--danger)" font-size="11" font-weight="700">Vento 090°/25 kt</text>
@@ -86,9 +86,9 @@
     <div class="wt-step-body">
       <h4>Converta para rumo verdadeiro (RV)</h4>
       <span class="wt-source chart">Da carta</span> <span class="wt-source calc">Calculado</span>
-      <p>O vento do METAR é sempre dado em relação ao norte <strong>verdadeiro</strong> — então, antes do triângulo de vento, converta o RM da carta para verdadeiro usando a declinação magnética (DMG), também impressa na carta. Repare que é o <strong>inverso</strong> da fórmula TC→MC da seção 1 abaixo: aqui você já tem o magnético e quer o verdadeiro.</p>
+      <p>O vento do METAR é sempre dado em relação ao norte <strong>verdadeiro</strong> — então, antes do triângulo de vento, converta o RM da carta para verdadeiro usando a declinação magnética (DMG), também impressa na carta. Repare que é o <strong>inverso</strong> da fórmula TC→MC da seção 2 abaixo: aqui você já tem o magnético e quer o verdadeiro.</p>
       <div class="formula">RV = RM − DMG (declinação Oeste) · RV = RM + DMG (declinação Leste)</div>
-      <div class="wt-result">RV = 134° − 20° = 114° (isso é o mesmo "TC" das fórmulas da seção 1)</div>
+      <div class="wt-result">RV = 134° − 20° = 114° (isso é o mesmo "TC" das fórmulas da seção 2)</div>
     </div>
   </div>
 
@@ -107,7 +107,7 @@
     <div class="wt-step-body">
       <h4>Resolva o triângulo de velocidades</h4>
       <span class="wt-source calc">Calculado</span>
-      <p>Use RV no lugar do TC na fórmula da <a href="#velocidades">seção 1</a>: primeiro o ângulo entre vento e rota, depois a correção de deriva (WCA) e a velocidade no solo (GS).</p>
+      <p>Use RV no lugar do TC na fórmula da <a href="#velocidades">seção 2</a>: primeiro o ângulo entre vento e rota, depois a correção de deriva (WCA) e a velocidade no solo (GS).</p>
       <div class="formula">A = WD − RV = 90 − 114 = −24°
 WCA = asin(WS × sinA / TAS) = asin(25 × sin(−24°) / 110) ≈ −5,3°
 GS = TAS × cos(WCA) − WS × cos(A) ≈ 110×0,996 − 25×0,914 ≈ 86,7 kt</div>
@@ -120,7 +120,7 @@ GS = TAS × cos(WCA) − WS × cos(A) ≈ 110×0,996 − 25×0,914 ≈ 86,7 kt</
     <div class="wt-step-body">
       <h4>Proa verdadeira → proa magnética</h4>
       <span class="wt-source calc">Calculado</span>
-      <p>Some o WCA ao RV para achar a proa verdadeira (TH) — o rumo que a aeronave realmente precisa apontar. Depois converta de volta para magnético (é para esse valor que você vai olhar no bússola/HSI durante o voo), usando a DMG do mesmo jeito que a seção 1 ensina.</p>
+      <p>Some o WCA ao RV para achar a proa verdadeira (TH) — o rumo que a aeronave realmente precisa apontar. Depois converta de volta para magnético (é para esse valor que você vai olhar no bússola/HSI durante o voo), usando a DMG do mesmo jeito que a seção 2 ensina.</p>
       <div class="formula">TH = RV + WCA = 114 + (−5,3) ≈ 108,7°
 MH = TH + DMG (oeste) = 108,7 + 20 ≈ 128,7°</div>
       <div class="wt-result">Proa a voar (magnética) ≈ 129°</div>
@@ -132,7 +132,7 @@ MH = TH + DMG (oeste) = 108,7 + 20 ≈ 128,7°</div>
     <div class="wt-step-body">
       <h4>Tempo e combustível da perna</h4>
       <span class="wt-source calc">Calculado</span>
-      <p>Distância (da carta) dividida pela GS (calculada) dá o tempo; tempo vezes o fluxo (do enunciado) dá o combustível. Fórmulas completas na <a href="#tempo-distancia">seção 6</a>.</p>
+      <p>Distância (da carta) dividida pela GS (calculada) dá o tempo; tempo vezes o fluxo (do enunciado) dá o combustível. Fórmulas completas na <a href="#tempo-distancia">seção 8</a>.</p>
       <div class="formula">Tempo = 42 / 86,7 ≈ 0,485 h ≈ 29 min
 Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
       <div class="wt-result">≈ 29 min de voo · ≈ 48,5 L de combustível</div>
@@ -144,8 +144,8 @@ Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
     <div class="wt-step-body">
       <h4>Auxílios ao longo da rota</h4>
       <span class="wt-source chart">Da carta</span>
-      <p>Se a rota passa por um VOR/NDB, a carta mostra a frequência e o identificador (como o "PVT · 115.5" do exemplo). Se a questão pedir para interpretar TO/FROM ou um ângulo de interceptação de radial, isso está todo detalhado na <a href="#vor">seção 2</a>.</p>
-      <div class="wt-see-also">Ver seção 2 — VOR</div>
+      <p>Se a rota passa por um VOR ou NDB, a carta mostra a frequência e o identificador (como o "PVT · 115.5" do exemplo). Se a questão pedir para interpretar TO/FROM, um ângulo de interceptação de radial, ou o QDM de um NDB, isso está detalhado nas seções 3 e 4 abaixo.</p>
+      <div class="wt-see-also">Ver seção 3 — VOR · Ver seção 4 — NDB e ADF</div>
     </div>
   </div>
 
@@ -154,14 +154,30 @@ Combustível = 100 L/h × 0,485 h ≈ 48,5 L</div>
     <div class="wt-step-body">
       <h4>Chegando: espera (se houver) e aproximação</h4>
       <span class="wt-source chart">Da carta</span>
-      <p>Antes de pousar, a carta IAC pode pedir uma espera (holding) — o rumo de chegada comparado ao curso de espera define o setor de entrada (direta, paralela ou deslocada/teardrop). Na aproximação em si, a carta traz o tipo de mínimo (DA/DH ou MDA) por categoria de aeronave. Tudo isso está nas seções 3 e 4 abaixo, com diagrama.</p>
-      <div class="wt-see-also">Ver seção 3 — Aproximações · Ver seção 4 — Espera (holding)</div>
+      <p>Antes de pousar, a carta IAC pode pedir uma espera (holding) — o rumo de chegada comparado ao curso de espera define o setor de entrada (direta, paralela ou deslocada/teardrop). Na aproximação em si, a carta traz o tipo de mínimo (DA/DH ou MDA) por categoria de aeronave. Tudo isso está nas seções 6 e 7 abaixo, com diagrama.</p>
+      <div class="wt-see-also">Ver seção 6 — Aproximações · Ver seção 7 — Espera (holding)</div>
     </div>
   </div>
 
   <div class="note">Essa é a sequência completa de uma perna de rota — exatamente o que a prova cobra, só que espalhado em questões separadas. Domine este roteiro e cada questão de NAV vira "só mais uma vez a mesma conta".</div>
 
-  <h2 id="velocidades">1. Triângulo de velocidades (vento e deriva)</h2>
+  <div class="phase-banner">
+    <span class="phase-num">1</span>
+    <div>
+      <div class="phase-title">Fundamentos</div>
+      <div class="phase-sub">A caixa de ferramentas antes de qualquer conta</div>
+    </div>
+  </div>
+
+  <h2 id="conversao">1. Conversão de unidades</h2>
+  <p>Toda fórmula das próximas seções usa NM, kt e ft — tenha essas conversões automáticas antes de seguir.</p>
+  <table>
+    <tr><td>1 NM</td><td>1.852 m = 6.076,12 ft</td></tr>
+    <tr><td>1 kt</td><td>1,852 km/h = 0,5144 m/s</td></tr>
+    <tr><td>1 ft</td><td>0,3048 m</td></tr>
+  </table>
+
+  <h2 id="velocidades">2. Triângulo de velocidades (vento e deriva)</h2>
   <div class="formula">A = WD − TC  (ângulo entre direção do vento e a rota)
 WCA = asin( (WS × sin A) / TAS )
 Proa (HDG) = TC + WCA
@@ -176,7 +192,15 @@ GS = TAS × cos(WCA) − WS × cos A</div>
 Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least")</div>
   <p><strong>Exemplo:</strong> TC = 090°, variação local = 10°W → MC = 090 + 10 = <strong>100°</strong>.</p>
 
-  <h2 id="vor">2. VOR — radiais e indicações</h2>
+  <div class="phase-banner">
+    <span class="phase-num">2</span>
+    <div>
+      <div class="phase-title">Rádio-navegação</div>
+      <div class="phase-sub">VOR, NDB/ADF e a técnica do arco DME</div>
+    </div>
+  </div>
+
+  <h2 id="vor">3. VOR — radiais e indicações</h2>
   <ul>
     <li><strong>TO:</strong> seguindo a radial selecionada, a estação está à frente.</li>
     <li><strong>FROM:</strong> a estação está atrás (a radial selecionada afasta da estação).</li>
@@ -233,7 +257,78 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2 id="aproximacoes">3. Aproximações por instrumentos</h2>
+  <h2 id="ndb-adf">4. NDB e ADF</h2>
+  <p>O <strong>NDB</strong> (Non-Directional Beacon) é uma estação em terra que transmite em todas as direções. O <strong>ADF</strong> (Automatic Direction Finder) é o receptor a bordo — a agulha aponta sempre para a estação, mas o que o indicador mostra depende do instrumento.</p>
+  <table>
+    <tr><th>Indicador</th><th>Como funciona</th><th>Fórmula</th></tr>
+    <tr><td><strong>RBI</strong> (Relative Bearing Indicator)</td><td>Rosa <strong>fixa</strong> — 0° é sempre o nariz da aeronave. A agulha mostra o rumo relativo (RB) até a estação.</td><td>QDM = Proa magnética (MH) + RB</td></tr>
+    <tr><td><strong>RMI</strong> (Radio Magnetic Indicator)</td><td>Rosa <strong>gira</strong> mostrando a proa magnética no topo — a agulha já aponta o rumo magnético direto, sem precisar somar nada.</td><td>Cabeça da agulha = QDM · Cauda = QDR</td></tr>
+  </table>
+  <div class="note">Repare a semelhança com o VOR da seção 3: a cabeça da agulha do RMI (QDM, rumo <em>até</em> a estação) é o equivalente do <strong>TO</strong>; a cauda (QDR, rumo <em>a partir</em> da estação) é o equivalente do <strong>FROM</strong> — só que já em rumo magnético direto, sem sintonizar radial.</div>
+
+  <div class="diagram-card">
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama do RBI mostrando rosa fixa com o nariz da aeronave no topo, agulha apontando a estação NDB a 40 graus de rumo relativo, com proa magnética 090 graus resultando em QDM de 130 graus">
+      <circle cx="150" cy="150" r="70" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="150" y1="80" x2="150" y2="95" stroke="var(--text-dim)" stroke-width="2"/>
+      <text x="150" y="66" text-anchor="middle" fill="var(--text-dim)" font-size="10">0° (nariz)</text>
+
+      <polygon points="150,138 144,158 156,158" fill="var(--accent-2)"/>
+
+      <path d="M150,120 A30,30 0 0,1 169.3,127" fill="none" stroke="var(--warn)" stroke-width="1.5"/>
+      <text x="180" y="112" fill="var(--warn)" font-size="12" font-weight="700">RB 40°</text>
+
+      <line x1="150" y1="150" x2="195" y2="96.4" stroke="var(--accent)" stroke-width="2.5"/>
+      <line x1="195" y1="96.4" x2="220.7" y2="65.7" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#ndbArrow)"/>
+      <circle cx="220.7" cy="65.7" r="5" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+      <circle cx="220.7" cy="65.7" r="1.5" fill="var(--accent)"/>
+      <text x="230" y="50" fill="var(--text)" font-size="12" font-weight="700">NDB ABC</text>
+      <text x="230" y="64" fill="var(--text-dim)" font-size="10">350 kHz</text>
+
+      <defs>
+        <marker id="ndbArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)"/></marker>
+      </defs>
+
+      <text x="150" y="240" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="700">Proa magnética (MH) = 090°</text>
+      <text x="150" y="270" text-anchor="middle" fill="var(--ok)" font-size="13" font-weight="800">QDM = MH + RB = 090° + 40° = 130°</text>
+    </svg>
+    <div class="diagram-caption">No RBI a rosa não gira — o nariz é sempre "0°". A agulha mostra o <strong>rumo relativo (RB)</strong>, o ângulo entre o nariz e a estação. Para achar o rumo magnético até a estação (QDM), some a proa magnética ao RB.</div>
+  </div>
+
+  <p><strong>Homing × Tracking:</strong> "homear" (manter a agulha sempre na posição de 12h, nariz apontado à estação) não corrige o vento e resulta numa trajetória curva. "Tracking" — corrigir a proa para compensar a deriva e manter um rumo reto — é o método correto, igual ao WCA da seção 2.</p>
+
+  <table>
+    <tr><th>Erro do ADF/NDB</th><th>Causa</th></tr>
+    <tr><td>Efeito noturno (night effect)</td><td>Ao entardecer/amanhecer, a onda celeste (refletida na ionosfera) interfere com a onda terrestre — agulha oscila, erro de até 30° além de 70 NM.</td></tr>
+    <tr><td>Refração costeira (coastal refraction)</td><td>O sinal se propaga mais rápido sobre a água e se curva ao cruzar a costa; erro menor se o cruzamento for perpendicular à linha da costa.</td></tr>
+    <tr><td>Efeito de montanha/terreno</td><td>Reflexão do sinal em terreno gera recepção por múltiplos percursos (multipath).</td></tr>
+    <tr><td>Efeito de tempestade (estática)</td><td>A agulha é atraída para descargas elétricas próximas, se afastando da estação sintonizada.</td></tr>
+    <tr><td>Interferência de estação</td><td>Duas estações NDB próximas na mesma frequência confundem a leitura.</td></tr>
+  </table>
+
+  <div class="selfcheck">
+    <div class="selfcheck-q"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.5c0 1.7-2.4 1.9-2.4 3.5"/><circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none"/></svg>Teste seu entendimento: proa magnética 270°, agulha do RBI mostra rumo relativo de 45° à direita do nariz. Qual é o QDM?</div>
+    <div class="selfcheck-opts">
+      <button onclick="selfCheck(this, false, 'Isso é só o RB — falta somar a proa magnética (MH).')">045°</button>
+      <button onclick="selfCheck(this, false, 'Isso seria MH − RB, mas a fórmula do QDM é MH + RB.')">225°</button>
+      <button onclick="selfCheck(this, true, 'QDM = MH + RB = 270 + 45 = 315°.')">315°</button>
+    </div>
+    <div class="selfcheck-feedback" aria-live="polite"></div>
+  </div>
+
+  <h2 id="arco-dme">5. Arco DME</h2>
+  <p>Mantém distância fixa (raio) de uma estação VOR/DME. Técnica: a cada 5–10° de variação no DME/CDI, corrigir o rumo em 10–20° para dentro/fora do arco ("bracketing").</p>
+  <div class="formula">Raio de curva padrão (rate 1, 3°/s) ≈ TAS (kt) / 62,8
+Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
+
+  <div class="phase-banner">
+    <span class="phase-num">3</span>
+    <div>
+      <div class="phase-title">Chegada</div>
+      <div class="phase-sub">Aproximação por instrumentos e procedimento de espera</div>
+    </div>
+  </div>
+
+  <h2 id="aproximacoes">6. Aproximações por instrumentos</h2>
   <table>
     <tr><th>Conceito</th><th>Uso</th></tr>
     <tr><td>DA/DH (Decision Altitude/Height)</td><td>Aproximações de <strong>precisão</strong> (ILS) — decisão tomada durante descida contínua, sem nivelamento</td></tr>
@@ -295,7 +390,7 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
   </table>
   <div class="note">Helicópteros normalmente caem em Categoria A, mas isso depende do Vat real do procedimento — alguns procedimentos têm categoria própria ("Copter approach").</div>
 
-  <h2 id="holding">4. Procedimento de espera (holding)</h2>
+  <h2 id="holding">7. Procedimento de espera (holding)</h2>
   <ul>
     <li>Sentido padrão: curvas <strong>à direita</strong>, salvo indicação contrária na carta.</li>
     <li>Perna de afastamento: <strong>1 min</strong> abaixo de FL 140; <strong>1,5 min</strong> entre FL 140 e FL 340.</li>
@@ -335,12 +430,15 @@ Variação Leste (E): MC = TC − variação   ("Variation East, Magnetic Least"
 
   <div class="note warn">A determinação visual do tipo de entrada é melhor treinada com diagramas/cartas reais do que memorizada como "fórmula" — pratique com cartas de exemplo no <a href="https://aisweb.decea.mil.br/?i=publicacoes&p=aip" target="_blank" rel="noopener">AISWEB</a>.</div>
 
-  <h2 id="arco-dme">5. Arco DME</h2>
-  <p>Mantém distância fixa (raio) de uma estação VOR/DME. Técnica: a cada 5–10° de variação no DME/CDI, corrigir o rumo em 10–20° para dentro/fora do arco ("bracketing").</p>
-  <div class="formula">Raio de curva padrão (rate 1, 3°/s) ≈ TAS (kt) / 62,8
-Exemplo: TAS=120kt → raio ≈ 1,9 NM</div>
+  <div class="phase-banner">
+    <span class="phase-num">4</span>
+    <div>
+      <div class="phase-title">Planejamento</div>
+      <div class="phase-sub">Fechando a conta da perna de rota</div>
+    </div>
+  </div>
 
-  <h2 id="tempo-distancia">6. Tempo, distância, combustível e descida</h2>
+  <h2 id="tempo-distancia">8. Tempo, distância, combustível e descida</h2>
   <div class="formula">Tempo (h) = Distância (NM) / GS (kt)
 Combustível = Fluxo × Tempo
 Distância até o TOD (NM) ≈ Altitude a perder (ft) / 300   (gradiente 3°)
@@ -358,31 +456,25 @@ ROD (ft/min) ≈ GS (kt) × 5</div>
     <div class="selfcheck-feedback" aria-live="polite"></div>
   </div>
 
-  <h2 id="conversao">7. Conversão de unidades</h2>
-  <table>
-    <tr><td>1 NM</td><td>1.852 m = 6.076,12 ft</td></tr>
-    <tr><td>1 kt</td><td>1,852 km/h = 0,5144 m/s</td></tr>
-    <tr><td>1 ft</td><td>0,3048 m</td></tr>
-  </table>
-
   <div class="section-complete-banner" id="section-complete-banner">
     🎉 <strong>Você completou toda a matéria de Navegação!</strong>
     <a class="btn" href="quiz.html?materia=navegacao"><span class="cta-label">Fazer simulado de Navegação →</span></a>
   </div>
 </main>
 <footer>Nimb · resumo de estudo — pratique cálculos manuais no E6B/CR-3, a prova prática exige isso.</footer>
-<script src="js/app.js?v=12"></script>
-<script src="js/palette.js?v=12"></script>
+<script src="js/app.js?v=14"></script>
+<script src="js/palette.js?v=14"></script>
 <script>
   initSectionTracker("navegacao", [
     { id: "roteiro", label: "Roteiro passo a passo" },
-    { id: "velocidades", label: "1. Vento e deriva" },
-    { id: "vor", label: "2. VOR" },
-    { id: "aproximacoes", label: "3. Aproximações" },
-    { id: "holding", label: "4. Espera (holding)" },
-    { id: "arco-dme", label: "5. Arco DME" },
-    { id: "tempo-distancia", label: "6. Tempo/distância" },
-    { id: "conversao", label: "7. Conversão de unidades" },
+    { id: "conversao", label: "1. Conversão de unidades", phase: "Fundamentos" },
+    { id: "velocidades", label: "2. Vento e deriva", phase: "Fundamentos" },
+    { id: "vor", label: "3. VOR", phase: "Rádio-navegação" },
+    { id: "ndb-adf", label: "4. NDB e ADF", phase: "Rádio-navegação" },
+    { id: "arco-dme", label: "5. Arco DME", phase: "Rádio-navegação" },
+    { id: "aproximacoes", label: "6. Aproximações", phase: "Chegada" },
+    { id: "holding", label: "7. Espera (holding)", phase: "Chegada" },
+    { id: "tempo-distancia", label: "8. Tempo/distância", phase: "Planejamento" },
   ]);
 </script>
 </body>

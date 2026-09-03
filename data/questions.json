@@ -778,5 +778,44 @@
     ],
     "correta": 1,
     "explicacao": "Combustível = Fluxo × Tempo = 40 L/h × 1,5 h = 60 L. Lembre-se de somar a reserva final exigida (30 min para helicópteros, RBAC 91.167) antes de decidir o combustível total a embarcar."
+  },
+  {
+    "id": "nav-q21",
+    "materia": "navegacao",
+    "pergunta": "No RBI (Relative Bearing Indicator), a proa magnética (MH) é 090° e a agulha do ADF mostra um rumo relativo (RB) de 45° à direita do nariz. Qual é o QDM (rumo magnético até a estação)?",
+    "opcoes": [
+      "045°",
+      "135°",
+      "225°",
+      "315°"
+    ],
+    "correta": 1,
+    "explicacao": "QDM = MH + RB = 090° + 45° = 135°. No RBI a rosa é fixa (nariz sempre em 0°) — por isso é preciso somar a proa magnética ao rumo relativo mostrado pela agulha."
+  },
+  {
+    "id": "nav-q22",
+    "materia": "navegacao",
+    "pergunta": "Ao 'homear' (homing) para um NDB — manter a agulha do ADF sempre na posição de 12 horas, nariz apontado para a estação — qual é a desvantagem desse método na presença de vento?",
+    "opcoes": [
+      "Não há desvantagem, é o método preferido para qualquer condição",
+      "A aeronave voa uma trajetória curva (não reta), pois o método não corrige a deriva do vento",
+      "Só funciona à noite, por causa do efeito noturno",
+      "Consome muito mais combustível que qualquer outro método de navegação"
+    ],
+    "correta": 1,
+    "explicacao": "Homing não corrige a deriva do vento — a aeronave curva continuamente para manter o nariz na estação, resultando numa trajetória espiral, não reta. 'Tracking' (corrigir a proa para compensar o vento) é o método preferido."
+  },
+  {
+    "id": "nav-q23",
+    "materia": "navegacao",
+    "pergunta": "Qual erro de recepção do ADF/NDB é mais associado à passagem do sinal por uma linha de costa, causada pela diferença de velocidade de propagação sobre água e sobre terra?",
+    "opcoes": [
+      "Efeito noturno (night effect)",
+      "Refração costeira (coastal refraction)",
+      "Efeito de tempestade (thunderstorm effect)",
+      "Interferência de estação"
+    ],
+    "correta": 1,
+    "explicacao": "Refração costeira: o sinal se propaga mais rápido sobre a água, causando uma curvatura (bending) ao cruzar a linha de costa. O erro é menor quando o cruzamento é perpendicular à costa."
   }
 ]

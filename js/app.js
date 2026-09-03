@@ -229,24 +229,25 @@ function renderSectionTracker() {
   if (!mount) return;
   const done = getSectionProgress(page);
   const pct = sections.length ? Math.round((done.length / sections.length) * 100) : 0;
+  let lastPhase;
+  const rows = sections
+    .map((s) => {
+      const phaseHtml = s.phase && s.phase !== lastPhase ? `<div class="tracker-phase-label">${s.phase}</div>` : "";
+      lastPhase = s.phase;
+      return `${phaseHtml}<div class="tracker-row ${done.includes(s.id) ? "done" : ""}" data-section="${s.id}">
+          <input type="checkbox" id="chk-${s.id}" ${done.includes(s.id) ? "checked" : ""} onchange="onSectionToggle('${s.id}', this.checked)" />
+          <label for="chk-${s.id}">${s.label}</label>
+          <a class="tracker-jump" href="#${s.id}" aria-label="Ir para a seção ${s.label}">→</a>
+        </div>`;
+    })
+    .join("");
   mount.innerHTML = `
     <div class="tracker-head">
       <span>Seu progresso nesta matéria</span>
       <span class="tracker-pct">${done.length}/${sections.length} seções</span>
     </div>
     <div class="progress-bar"><div style="width:${pct}%"></div></div>
-    <div class="tracker-list">
-      ${sections
-        .map(
-          (s) => `
-        <div class="tracker-row ${done.includes(s.id) ? "done" : ""}" data-section="${s.id}">
-          <input type="checkbox" id="chk-${s.id}" ${done.includes(s.id) ? "checked" : ""} onchange="onSectionToggle('${s.id}', this.checked)" />
-          <label for="chk-${s.id}">${s.label}</label>
-          <a class="tracker-jump" href="#${s.id}" aria-label="Ir para a seção ${s.label}">→</a>
-        </div>`
-        )
-        .join("")}
-    </div>
+    <div class="tracker-list">${rows}</div>
   `;
   const banner = document.getElementById("section-complete-banner");
   if (banner) {
